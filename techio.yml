@@ -1,4 +1,15 @@
-title: Simple Python Template
+title: Smart Money
 plan:
-- title: Python Snippet
-  statement: statement.md
+  - title: Welcome
+    plan:
+      - title: Introduction
+        statement: 01 - introduction/01 - introduction.md
+  - title: Roth IRA Basics
+    plan:
+      - title: Introduction to Roth IRAs
+        statement: 02 - Roth IRA Basics/01 - roth ira introduction.md
+      - title: Key Features of a Roth IRA
+        statement: 02 - Roth IRA Basics/02 - roth ira key features.md
+      - title: Eligibility and Contribution Limits
+        statement: 02 - Roth IRA Basics/03 - eligibility and contribution limits.md
+
