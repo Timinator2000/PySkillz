@@ -3,7 +3,7 @@ plan:
   - title: Welcome
     plan:
       - title: Introduction
-        statement: 01 - introduction/01 - introduction.md
+        statement: 01 - Introduction/01 - introduction.md
   - title: Roth IRA Basics
     plan:
       - title: Introduction to Roth IRAs
