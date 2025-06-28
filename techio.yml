@@ -12,4 +12,18 @@ plan:
         statement: 02 - Roth IRA Basics/02 - roth ira key features.md
       - title: Eligibility and Contribution Limits
         statement: 02 - Roth IRA Basics/03 - eligibility and contribution limits.md
+      - title: Benefits of a Roth IRA
+        statement: 02 - Roth IRA Basics/04 - benefits of a roth ira.md
+      - title: Roth IRA Withdrawal Rules
+        statement: 02 - Roth IRA Basics/05 - roth ira withdrawal rules.md
+      - title: Roth IRAs vs Other Retirement Accounts
+        statement: 02 - Roth IRA Basics/06 - roth ira vs other retirement accounts.md
+      - title: Strategies for Maximizing a Roth IRA
+        statement: 02 - Roth IRA Basics/07 - strategies for maximizing a roth ira.md
+      - title: Common Mistakes
+        statement: 02 - Roth IRA Basics/08 - common mistakes.md
+      - title: FAQs and Myths
+        statement: 02 - Roth IRA Basics/09 - FAQs and myths.md
+      - title: Conclusion
+        statement: 02 - Roth IRA Basics/10 - conclusion.md
 
