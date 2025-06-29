@@ -12,9 +12,11 @@ Roth IRAs offer several advantages that make them a popular choice for retiremen
 
 These benefits make Roth IRAs appealing for those seeking tax efficiency and flexibility in their retirement strategy.
 
-<details><summary><b>Click for disclaimers and other important information.</b></summary>
+<BR>
+<BR>
+<BR>
 
-<i>This content was sourced with help from xAI’s Grok AI. This information is for educational purposes and users should consult a financial advisor or the IRS for the most current rules.</i>
+*********************
 
-</details>
+_This information is for educational purposes only and users should consult a financial advisor or the IRS for the most current rules._
 
