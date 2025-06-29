@@ -6,6 +6,9 @@ The Roth IRA was established under the Taxpayer Relief Act of 1997, named after 
 
 Retirement planning is critical in today’s economy, where rising life expectancy and inflation underscore the need for robust savings. A Roth IRA plays a vital role in this strategy by offering tax-free growth, no mandatory withdrawals during the account holder’s lifetime, and the ability to pass wealth to heirs tax-free. Whether you’re just starting your career or nearing retirement, understanding the Roth IRA’s benefits can help you build a secure financial future.
 
+
+*********************
+
 <details><summary><b>Click for disclaimers and other important information.</b></summary>
 
 <i>This content was sourced with help from xAI’s Grok AI. This information is for educational purposes and users should consult a financial advisor or the IRS for the most current rules.</i>
