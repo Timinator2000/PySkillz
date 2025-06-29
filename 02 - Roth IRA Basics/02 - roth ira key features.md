@@ -12,6 +12,11 @@ The Roth IRA offers distinct features that set it apart from other retirement ac
 
 These features make the Roth IRA a versatile option, offering both tax benefits and flexibility for savers planning for retirement or legacy goals.
 
-```{include} /disclosure.md
+<BR>
+<BR>
+<BR>
 
-```
+*********************
+
+_This information is for educational purposes only and users should consult a financial advisor or the IRS for the most current rules._
+
