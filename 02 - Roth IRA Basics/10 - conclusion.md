@@ -10,3 +10,11 @@ Take action by opening an account, contributing regularly, and investing wisely 
 
 </details>
 
+<BR>
+<BR>
+<BR>
+
+*********************
+
+_This information is for educational purposes only and users should consult a financial advisor or the IRS for the most current rules._
+
