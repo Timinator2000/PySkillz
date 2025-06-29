@@ -111,7 +111,7 @@ If Madison forgets about her Roth IRA after graduating at age 22 and makes **no 
 These values are **completely tax-free** under Roth IRA rules, assuming qualified withdrawals. The takeaway? Even modest contributions in childhood can become generational wealth—**especially when paired with time and compounding.**
 
 
-```
+```python
 #!/usr/bin/env python3
 """
 Madison’s Roth IRA projection
