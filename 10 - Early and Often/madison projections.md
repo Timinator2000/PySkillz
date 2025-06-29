@@ -90,3 +90,13 @@ The earlier the runway, the more dramatic the effect—so making that first cust
 
 [1]: https://www.financecharts.com/etfs/QQQ/performance/total-return?utm_source=chatgpt.com "Invesco QQQ Trust (QQQ) Total Return YTD, TTM, 3Y, 5Y, 10Y, 20Y"
 [2]: https://www.investopedia.com/ask/answers/061715/what-qqq-etf.asp?utm_source=chatgpt.com "QQQ ETF Risks and Rewards"
+
+
+
+
+If Madison forgets about her Roth IRA after graduating at age 22 and makes **no additional contributions**, here’s what her account would grow to by age **60** (38 years later):
+
+* **At 7% annual growth:** ≈ **\$847,047**
+* **At 18.2% annual growth:** ≈ **\$60,367,747**
+
+These values are **completely tax-free** under Roth IRA rules, assuming qualified withdrawals. The takeaway? Even modest contributions in childhood can become generational wealth—**especially when paired with time and compounding.**
