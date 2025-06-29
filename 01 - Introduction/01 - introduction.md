@@ -8,5 +8,5 @@ But this tutorial isn’t really about lattes. It’s about concepts that unfold
 
 Don’t be put off by that phrase — “outside the box.” None of the strategies here are radical or risky. More likely, you’ll find yourself wondering, “Why didn’t I think of that?” or “Why hasn’t my advisor ever mentioned this?”
 
-Consider Mary’s 10‑year‑old daughter, Madison. She walks the neighbor’s dog and earns $10 for every half‑hour walk. That’s earned income—and it makes her eligible to contribute to a Roth IRA. Is Madison actually contributing to one? Probably not. Is Mary making a contribution on Madison’s behalf? Also unlikely. Yet even a very small Roth IRA contribution today could grow into hundreds of thousands—maybe even millions—of dollars in tax‑free retirement savings by the time Madison retires.
+Consider Mary’s 10‑year‑old daughter, Madison. She walks the neighbor’s dog and earns $10 for every half‑hour walk. That’s earned income—and it makes her eligible to contribute to a Roth IRA. Is Madison actually contributing to one? Probably not. Is Mary making a contribution on Madison’s behalf? Also unlikely. Yet even a very small Roth contribution today could grow into hundreds of thousands—maybe even millions—of dollars in tax‑free retirement savings by the time Madison retires.
 
