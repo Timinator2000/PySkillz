@@ -26,4 +26,8 @@ plan:
         statement: 02 - Roth IRA Basics/09 - FAQs and myths.md
       - title: Conclusion
         statement: 02 - Roth IRA Basics/10 - conclusion.md
+  - title: Early and Often
+    plan:
+      - title: Potential Game-Changer for Kids
+        statement: 03 - Early and Often/01 - early and often.md
 
