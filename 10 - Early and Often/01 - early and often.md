@@ -22,8 +22,8 @@ For dependent children, the standard deduction generally equals their earned inc
 
 Self‑employment (SE) income is subject to Social Security and Medicare taxes (15.3 % combined in 2025) once it exceeds a very low threshold. Parents often balk at the idea of sending that money to the United States Treasury. Yet over a lifetime, the value of decades of tax‑free Roth growth can dwarf the small, one‑time SE tax cost:
 
-| One‑time Roth Contribution | Potential Value after 60 Years\* | One‑time SE Tax (15.3 %) | Outcome                                                        |
-| :-------------------------: |:-------------------------------: | :-----------------------: | :-------------------------------------------------------------- |
+| One‑time Roth Contribution | Potential Value after 60 Years\* | One‑time SE Tax (15.3 %) | Outcome |
+| :-------------------------: |:-------------------------------: | :-----------------------: | :---: |
 | \$1,000 | ≈ \$57,000 | \$153 | A price many would gladly pay for \$57k tax‑free at retirement |
 
 \*Assumes 7 % annual growth, compounded.
