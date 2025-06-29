@@ -12,9 +12,11 @@ To contribute to a Roth IRA, you must meet specific eligibility criteria based o
 
 Always check the IRS website for the latest income and contribution limits, as they adjust annually for inflation.
 
-<details><summary><b>Click for disclaimers and other important information.</b></summary>
+<BR>
+<BR>
+<BR>
 
-<i>This content was sourced with help from xAI’s Grok AI. This information is for educational purposes and users should consult a financial advisor or the IRS for the most current rules.</i>
+*********************
 
-</details>
+_This information is for educational purposes only and users should consult a financial advisor or the IRS for the most current rules._
 
