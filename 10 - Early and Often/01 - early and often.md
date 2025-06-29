@@ -33,7 +33,9 @@ Parents might also take comfort in knowing those SE tax payments help the child 
 # Bottom Line
 
 * **Document the earnings** with a simple tax return.
+
 * **Embrace the small SE tax** as the cost of admission to decades of tax‑free growth.
+
 * **Fund the Roth immediately**—even a small annual amount gives compounding an enormous runway.
 
 Taken together, these steps open the door for a child to start adulthood with a meaningful, tax‑advantaged nest egg—and teach lifelong lessons about saving and investing along the way.
