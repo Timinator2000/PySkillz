@@ -19,9 +19,11 @@ Understanding withdrawal rules is critical to avoid penalties and maximize benef
 Plan withdrawals carefully to preserve tax advantages and avoid unnecessary costs.
 
 
-<details><summary><b>Click for disclaimers and other important information.</b></summary>
+<BR>
+<BR>
+<BR>
 
-<i>This content was sourced with help from xAI’s Grok AI. This information is for educational purposes and users should consult a financial advisor or the IRS for the most current rules.</i>
+*********************
 
-</details>
+_This information is for educational purposes only and users should consult a financial advisor or the IRS for the most current rules._
 
