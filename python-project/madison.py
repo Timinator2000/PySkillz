@@ -123,7 +123,7 @@ def print_projection_table(contributions, rates_of_return):
     return after_college_balances
 
 
-def main_program():
+def generate_madisons_projections():
 
     print('\nMadison\'s Roth IRA Projection (contributions made at year-end)\n')
     balances_after_graduation_year = print_projection_table(CONTRIBUTIONS, GROWTH_RATES)
