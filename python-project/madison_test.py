@@ -16,6 +16,6 @@ def fail():
     
 
 if __name__ == "__main__":
-    main_program()
+    generate_madisons_projections()
     success()
     send_msg(f"{random.choice(CONGRATS)} 🌟", "You have given Madison a tremendous head start down her future path!!!")
