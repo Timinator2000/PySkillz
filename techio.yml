@@ -37,3 +37,9 @@ plan:
       - title: Never Trust, Always Verify
         statement: 10 - Early and Often/10 - never trust, always verify.md
 
+projects:
+  python:
+    root: /python-project
+    runner: 
+      name: python
+      version: '3'
