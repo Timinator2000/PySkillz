@@ -1,4 +1,5 @@
-from madison import main_program
+# from madison import main_program
+import madison
 from timinator import CONGRATS
 import random
 
