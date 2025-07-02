@@ -5,7 +5,7 @@ plan:
       - title: What is Smart Money?
         statement: 01 - Introduction/01 - introduction.md
       - title: Wealth Classifications?
-        statement: 01 - Introduction/03 - wealth classifications.md
+        statement: 01 - Introduction/03 - wealth classification.md
   - title: Roth IRA Basics
     plan:
       - title: Introduction to Roth IRAs
