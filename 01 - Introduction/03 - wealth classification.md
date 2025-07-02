@@ -1,4 +1,4 @@
-![Wealth Classifications](wealth_classifications.png)
+![Wealth Classification](wealth_classification.png)
 
 # Introduction to Wealth Classification
 
