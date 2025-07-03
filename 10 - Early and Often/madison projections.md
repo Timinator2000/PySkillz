@@ -1,3 +1,5 @@
+# Madison
+
 Let’s bring this strategy to life with a real-world example. Meet Madison, a responsible and entrepreneurial young girl. At just 10 years old, she begins walking her neighbor’s dog for $10 per half-hour walk. 
 
 <BR>
