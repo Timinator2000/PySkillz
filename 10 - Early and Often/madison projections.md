@@ -4,7 +4,7 @@ Let’s bring this strategy to life with a real-world example. Meet Madison, a r
 
 <BR>
 
-![Madison](madison.jpg)
+![Madison](madison.png)
 
 <BR>
 
