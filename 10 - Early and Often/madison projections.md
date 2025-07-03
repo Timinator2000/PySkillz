@@ -1,5 +1,7 @@
 Let’s bring this strategy to life with a real-world example.
 
+![Madison](madison.png)
+
 Meet Madison, a responsible and entrepreneurial young girl. At just 10 years old, she begins walking her neighbor’s dog for $10 per half-hour walk. Over the next few years, Madison continues building her mini side business. By the time she's 15, she adds babysitting to her list of services, increasing her income significantly. At 17, she trades dog walking and babysitting for a part-time job at a local fast food restaurant, where she earns a steady paycheck all through high school and college.
 
 Now imagine Madison’s parent—let’s say her mom, Mary—takes the initiative to file a simple tax return each year and contributes the maximum allowed to a custodial Roth IRA on Madison’s behalf, up to the amount of Madison’s earned income. These contributions are modest at first, increasing as Madison earns more, and they stop altogether when she graduates college at 22. From that point forward, Madison completely forgets about the Roth IRA and never contributes another dime.
