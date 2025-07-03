@@ -38,8 +38,12 @@ plan:
         statement: 10 - Early and Often/10 - never trust, always verify.md
   - title: More Funds Create More Options
     plan:
-      - title: Reallocating Funds
-        statement: 20 - Reallocating Funds/01 - reallocating funds.md
+      - title: Overview
+        statement: 20 - Reallocating Funds/01 - more funds equals more options.md
+      - title: Max Fund a Roth 401(k)
+        statement: 20 - Reallocating Funds/02 - max fund a roth 401k.md
+      - title: Max Fund a Traditional 401(k) and Convert to Roth
+        statement: 20 - Reallocating Funds/03 - traditional 401k and convert.md
 projects:
   python:
     root: /python-project
