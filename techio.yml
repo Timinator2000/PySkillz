@@ -39,7 +39,7 @@ plan:
   - title: More Funds Create More Options
     plan:
       - title: Reallocating Funds
-        statement: 20 - Rallocating Funds/01 - reallocating funds.md
+        statement: 20 - Reallocating Funds/01 - reallocating funds.md
 projects:
   python:
     root: /python-project
