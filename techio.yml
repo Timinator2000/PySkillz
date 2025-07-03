@@ -36,6 +36,10 @@ plan:
         statement: 10 - Early and Often/madison projections.md
       - title: Never Trust, Always Verify
         statement: 10 - Early and Often/10 - never trust, always verify.md
+  - title: More Funds Create More Options
+    plan:
+      - title: Reallocating Funds
+        statement: 20 - Rallocating Funds/01 - reallocating funds.md
 projects:
   python:
     root: /python-project
