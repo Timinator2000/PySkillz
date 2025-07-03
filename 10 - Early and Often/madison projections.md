@@ -1,6 +1,6 @@
 Let’s bring this strategy to life with a real-world example.
 
-![Madison](madison.png)
+![Madison](madison.jpg)
 
 Meet Madison, a responsible and entrepreneurial young girl. At just 10 years old, she begins walking her neighbor’s dog for $10 per half-hour walk. Over the next few years, Madison continues building her mini side business. By the time she's 15, she adds babysitting to her list of services, increasing her income significantly. At 17, she trades dog walking and babysitting for a part-time job at a local fast food restaurant, where she earns a steady paycheck all through high school and college.
 
