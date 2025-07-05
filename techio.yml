@@ -13,15 +13,15 @@ plan:
   - title: Wealth Classification
     plan:
       - title: Overview
-        statement: 02 - Wealth Classificaiton/01 - wealth classification overview.md
+        statement: 02 - Wealth Classification/01 - wealth classification overview.md
       - title: Non-Qualified
-        statement: 02 - Wealth Classificaiton/02 - non-qualified.md
+        statement: 02 - Wealth Classification/02 - non-qualified.md
       - title: Qualified (Traditional)
-        statement: 02 - Wealth Classificaiton/03 - qualified traditional.md
+        statement: 02 - Wealth Classification/03 - qualified traditional.md
       - title: Qualified (Roth)
-        statement: 02 - Wealth Classificaiton/04 - qualified roth.md
+        statement: 02 - Wealth Classification/04 - qualified roth.md
       - title: What About Trusts?
-        statement: 02 - Wealth Classificaiton/05 - what about trusts.md
+        statement: 02 - Wealth Classification/05 - what about trusts.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
