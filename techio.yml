@@ -13,7 +13,7 @@ plan:
   - title: Wealth Classification
     plan:
       - title: Overview
-        statement: 02 - Wealth Classificaiton/01 - wealth classificaiton overview.md
+        statement: 02 - Wealth Classificaiton/01 - wealth classification overview.md
       - title: Non-Qualified
         statement: 02 - Wealth Classificaiton/02 - non-qualified.md
       - title: Qualified (Traditional)
