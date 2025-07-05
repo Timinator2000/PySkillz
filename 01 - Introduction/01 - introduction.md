@@ -1,3 +1,5 @@
+![Smart Money](smart_money.png)
+
 # What is Smart Money?
 
 If you're looking for investment advice, talk to a financial advisor. You won’t find specific investment recommendations here. Instead, this tutorial is about making smart, practical decisions that can set you on the path to long‑term wealth accumulation.
