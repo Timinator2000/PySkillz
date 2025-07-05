@@ -14,11 +14,11 @@ If yes, don’t miss the section on jumpstarting their financial future through 
 
 Whether it’s due to diligent saving or a recent inheritance, if this money isn’t already earmarked for a specific goal (like a new car or home remodel), you may have untapped opportunities. Learn how to align your overall financial strategy with your goals to make a meaningful long-term impact—for yourself and those you care about.
 
-* Are you already maxing out your own retirement contributions?
+**Are you already maxing out your own retirement contributions?**
 
-* Could you help adult children with their retirement savings?
+**Could you help adult children with their retirement savings?**
 
-* Do you have a plan to minimize the taxes on your own retirement income?
+**Do you have a plan to minimize the taxes on your own retirement income?**
 
 If any of this resonates with you, let’s explore further.
 
