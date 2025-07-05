@@ -6,7 +6,7 @@ This tutorial covers a lot of ground. The questions below can help you quickly i
 
 If so, be sure to review the section on proper risk allocation. Making smart choices here can significantly improve your long-term outcomes.
 
-**Do you have kids or grandkids earning money from jobs like dog-walking, babysitting, or working at a local restaurant?**
+* **Do you have kids or grandkids earning money from jobs like dog-walking, babysitting, or working at a local restaurant?**
 
 If yes, don’t miss the section on jumpstarting their financial future through early Roth IRA contributions. A little now can mean a lot later.
 
