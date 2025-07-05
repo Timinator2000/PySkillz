@@ -1,4 +1,4 @@
-title: Smart Money $$$$$
+atitle: Smart Money $$$$$
 plan:
   - title: Welcome
     plan:
@@ -10,13 +10,13 @@ plan:
         statement: 01 - Introduction/03 - a few preliminaries.md
   - title: Wealth Classification
     plan:
-      - title: Overview
+      - title: Wealth Classification Overview
         statement: 02 - Wealth Classification/01 - wealth classification overview.md
-      - title: Non-Qualified
+      - title: Non-Qualified $
         statement: 02 - Wealth Classification/02 - non-qualified.md
-      - title: Qualified (Traditional)
+      - title: Qualified (Traditional) $
         statement: 02 - Wealth Classification/03 - qualified traditional.md
-      - title: Qualified (Roth)
+      - title: Qualified (Roth) $
         statement: 02 - Wealth Classification/04 - qualified roth.md
       - title: What About Trusts?
         statement: 02 - Wealth Classification/05 - what about trusts.md
