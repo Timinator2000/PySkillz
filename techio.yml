@@ -8,8 +8,6 @@ plan:
         statement: 01 - Introduction/02 - questions to consider.md
       - title: A Few Preliminaries
         statement: 01 - Introduction/03 - a few preliminaries.md
-      - title: Wealth Classification
-        statement: 01 - Introduction/04 - classification hierarchy.md
   - title: Wealth Classification
     plan:
       - title: Overview
@@ -22,6 +20,8 @@ plan:
         statement: 02 - Wealth Classification/04 - qualified roth.md
       - title: What About Trusts?
         statement: 02 - Wealth Classification/05 - what about trusts.md
+      - title: Classification Hierarchy
+        statement: 02 - Wealth Classification/06 - classification hierarchy.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
