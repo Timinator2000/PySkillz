@@ -10,7 +10,7 @@ This presentation assumes Roth accounts are generally better than traditional ac
 
 - **Non-Qualified Accounts**: These lack tax advantages, making them less efficient for long-term growth but more accessible for immediate needs.
 
-# Easy to Foreget
+# Easy to Forget
 
 
 
