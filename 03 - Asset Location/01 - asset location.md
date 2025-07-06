@@ -10,7 +10,7 @@ Most investors stop at **risk profile**—how much stock‑market risk (70 % e
 
 Because Roth dollars will *never* be taxed again, every extra percentage point of return compounds untouched—making location every bit as powerful as traditional stock‑bond diversification. 
 
-# 🔑 Core Principle (Emphasized)
+# 🔑 Core Principle
 
 >Whatever it is you want to invest in where you hope to get the biggest returns must be placed in one of your Roth accounts if at all possible.
 
