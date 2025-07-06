@@ -1,5 +1,9 @@
 ![Smart Money](smart_money.png)
 
+# TL;DR
+
+The tax-free growth and withdrawals of Roth IRAs make them the holy grail of long-term wealth building. Chances are, you're not taking full advantage of Roth opportunities. With the right strategy—even one that unfolds over many years—you can create lasting financial benefits for yourself and future generations.
+
 # What is Smart Money?
 
 If you're looking for investment advice, talk to a financial advisor. You won’t find specific investment recommendations here. Instead, this tutorial is about making smart, practical decisions that can set you on the path to long‑term wealth accumulation.
