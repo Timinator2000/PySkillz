@@ -18,10 +18,10 @@ Roth accounts are unique:
 
 * No taxes while the money grows.
 
-* No taxes when you take it out.
+* No taxes when you take the money out.
 
-* No required minimum distributions during your lifetime.
+* No required minimum distributions (RMDs) during your lifetime.
 
-* Your heirs get another 10 years of tax-free growth after you pass via an inherited Roth IRA.
+* Your heirs can have another 10 years of tax-free growth after you pass via an inherited Roth IRA.
 
-Let's take a look at the types of returns achieved over the past 10 to 20 years in various asset classes to really solidify this concept.
+Let's take a look at the types of returns achieved over the past 10 to 20 years in various asset classes to really solidify why this concept is so important.
