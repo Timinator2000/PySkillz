@@ -24,6 +24,10 @@ plan:
         statement: 02 - Wealth Classification/06 - classification hierarchy.md
       - title: Often Overlooked Benefit
         statement: 02 - Wealth Classification/07 - often overlooked.md
+  - title: Asset/Risk/Reward Location
+    plan:
+      - title: Asset Locaiton
+        statement: 03 - Location Matters/01 - asset location.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
