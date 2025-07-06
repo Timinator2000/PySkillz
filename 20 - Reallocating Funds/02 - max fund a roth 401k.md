@@ -4,7 +4,7 @@ Here’s one powerful “depth‑leveraging” play: super‑charge your 401(k) 
 
 <BR>
 
-![Initial Funds](Funds_Reallocation_01.png)
+![Initial Funds](Funds_Reallocation_01-1.png)
 
 <BR>
 
@@ -12,7 +12,7 @@ In the diagram above, you have $500,000 in taxable savings (non-qualified accoun
 
 <BR>
 
-![May Fund Your Roth 401(k)](Funds_Reallocation_02.png)
+![May Fund Your Roth 401(k)](Funds_Reallocation_02-1.png)
 
 <BR>
 
@@ -22,7 +22,7 @@ There’s just one issue: your reduced take-home pay may no longer cover your li
 
 <BR>
 
-![Paying for Expenses](Funds_Reallocation_03.png)
+![Paying for Expenses](Funds_Reallocation_03-1.png)
 
 <BR>
 
