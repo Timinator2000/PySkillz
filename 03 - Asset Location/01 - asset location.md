@@ -12,7 +12,7 @@ Because Roth dollars will *never* be taxed again, every extra percentage point o
 
 # 🔑 Core Principle
 
->Whatever it is you want to invest in where you hope to get the biggest returns must be placed in one of your Roth accounts if at all possible.
+>Whatever it is you want to invest in, where you hope to get the biggest returns, must be placed in one of your Roth accounts if at all possible!
 
 Roth accounts are unique:
 
