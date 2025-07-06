@@ -28,6 +28,8 @@ plan:
     plan:
       - title: Location Matters
         statement: 03 - Asset Location/01 - asset location.md
+      - title: Historical Returns
+        statement: 03 - Asset Location/01 - historical returns.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
