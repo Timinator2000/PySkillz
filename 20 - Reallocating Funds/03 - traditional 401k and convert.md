@@ -4,7 +4,7 @@ If your 401(k) plan doesn’t offer a Roth option, you can still pursue a powerf
 
 <BR>
 
-![Max Fund Your Traditional 401(k)](Funds_Reallocation_04.png)
+![Max Fund Your Traditional 401(k)](Funds_Reallocation_04-1.png)
 
 <BR>
 
@@ -14,7 +14,7 @@ Once you're eligible—typically after age 59½, or sooner if you're planning to
 
 <BR>
 
-![In-Service Rollover from 401(k) to IRA](Funds_Reallocation_05.png)
+![In-Service Rollover from 401(k) to IRA](Funds_Reallocation_05-1.png)
 
 <BR>
 
@@ -22,7 +22,7 @@ Once the funds land in the IRA, you can then convert them to a Roth IRA. The amo
 
 <BR>
 
-![Roth Conversion](Funds_Reallocation_06.png)
+![Roth Conversion](Funds_Reallocation_06-1.png)
 
 <BR>
 
