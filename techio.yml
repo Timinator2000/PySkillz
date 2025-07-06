@@ -1,4 +1,4 @@
-atitle: Smart Money $$$$$
+title: Smart Money $$$$$
 plan:
   - title: Welcome
     plan:
@@ -26,8 +26,8 @@ plan:
         statement: 02 - Wealth Classification/07 - often overlooked.md
   - title: Asset/Risk/Reward Location
     plan:
-      - title: Asset Locaiton
-        statement: 03 - Location Matters/01 - asset location.md
+      - title: Location Matters
+        statement: 03 - Asset Location/01 - asset location.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
