@@ -1,4 +1,4 @@
-# “Asset Location” Deserves as Much Attention as Asset Allocation
+# Asset Location Deserves Significant Attention
 
 Most investors stop at **risk profile**—how much stock‑market risk (70 % equities / 30 % fixed income is used here) they can stomach. Yet *where* each slice sits—**asset location**—often delivers a quieter but surprisingly large payoff:
 
@@ -6,7 +6,7 @@ Most investors stop at **risk profile**—how much stock‑market risk (70 % e
 | --------------- | ------------------- | -------------------- | --------------------------- |
 | **Roth IRA / Roth 401(k)** | 0 % | 0 % | **Highest‑octane growth assets** |
 | **Traditional 401(k), SEP‑IRA, etc.** | Tax‑deferred | Ordinary income | Next‑highest growth (preserves Roth‑conversion option) |
-| **Non-Qualified Taxable Brokerage** | Ongoing taxes on dividends/gains | Capital‑gains rates  | Only after tax‑advantaged space is stuffed |
+| **Non-Qualified Taxable Brokerage** | Ongoing taxes on dividends/gains | n/a  | Only after tax‑advantaged space is stuffed |
 
 Because Roth dollars will *never* be taxed again, every extra percentage point of return compounds untouched—making location every bit as powerful as traditional stock‑bond diversification.
 
