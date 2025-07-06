@@ -4,11 +4,11 @@ Most investors stop at **risk profile**—how much stock‑market risk (70 % e
 
 | Account Wrapper | Taxes While Growing | Taxes When Withdrawn | Conceptual “Best Home” for… |
 | --------------- | ------------------- | -------------------- | --------------------------- |
-| **Roth IRA / Roth 401(k)** | 0 % | 0 % | **Highest‑octane growth assets** |
-| **Traditional 401(k), SEP‑IRA, etc.** | Tax‑deferred | Ordinary income | Next‑highest growth (preserves Roth‑conversion option) |
-| **Non-Qualified Taxable Brokerage** | Ongoing taxes on dividends/gains | n/a  | Only after tax‑advantaged space is stuffed |
+| **Qualified (Roth)** | 0 % | 0 % | **Highest‑octane growth assets** |
+| **Qualified (Traditional)** | Tax‑deferred | Ordinary income | Next‑highest growth assets |
+| **Non-Qualified** | Ongoing taxes on earnings/realized gains | n/a  | Only after tax‑advantaged space is stuffed |
 
-Because Roth dollars will *never* be taxed again, every extra percentage point of return compounds untouched—making location every bit as powerful as traditional stock‑bond diversification.
+Because Roth dollars will *never* be taxed again, every extra percentage point of return compounds untouched—making location every bit as powerful as traditional stock‑bond diversification. Let's take a look at the types of returns achieved over the past 10 to years.
 
 ---
 
