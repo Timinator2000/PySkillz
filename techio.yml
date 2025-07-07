@@ -27,11 +27,11 @@ plan:
   - title: Asset/Risk/Reward Location
     plan:
       - title: Location Matters
-        statement: 03 - Asset Location/01 - asset location.md
+        statement: 04 - Asset Location/01 - asset location.md
       - title: Historical Returns
-        statement: 03 - Asset Location/02 - historical returns.md
+        statement: 04 - Asset Location/02 - historical returns.md
       - title: Elite Returns
-        statement: 03 - Asset Location/the big boys.md
+        statement: 04 - Asset Location/the big boys.md
   - title: Early and Often
     plan:
       - title: Potential Game-Changer for Kids
