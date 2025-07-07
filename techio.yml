@@ -24,6 +24,10 @@ plan:
         statement: 02 - Wealth Classification/06 - classification hierarchy.md
       - title: Often Overlooked Benefit
         statement: 02 - Wealth Classification/07 - often overlooked.md
+  - title: Advisor Fees
+    plan:
+      - title: Choose Payment Source Wisely
+        statement: 03 - Advisor Fees/01 - choose fee source wisely.md
   - title: Asset/Risk/Reward Location
     plan:
       - title: Location Matters
