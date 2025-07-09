@@ -56,8 +56,16 @@ plan:
         statement: Under Construction.md
   - title: List Comprehensions
     plan:
-      - title: List Comprehensions
-        statement: 08 - list comprehensions/list comprehension.md
+      - title: Video 1
+        statement: Under Construction.md
+      - title: Video 2
+        statement: Under Construction.md
+      - title: Exercises
+        plan:
+          - title: Exercise #1
+            statement: 08 - list comprehensions/list comprehension.md
+          - title: Exercise #2
+            statement: Under Construction.md
       - title: More to Come
         statement: Under Construction.md
   - title: Dictionary Comprehensions
