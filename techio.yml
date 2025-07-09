@@ -10,6 +10,79 @@ plan:
         statement: 08 - list comprehensions/list comprehension.md
       - title: Sub 3
         statement: Under Construction.md
+  - title: Coding for Kids Python
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Basic Building Blocks
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Strings
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Numbers
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Lists
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Dictionaries
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Sets
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Conditionals
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Loops
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Functions
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Map & Filter
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Sorting
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: List Comprehensions
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Dictionary Comprehensions
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Set Comprehensions
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Algorithms
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Data Structures
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+  - title: Time Complexity
+    plan:
+      - title: Sub 1
+        statement: Under Construction.md
+
 projects:
   python:
     root: /python-project
