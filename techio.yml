@@ -7,7 +7,7 @@ plan:
       - title: Sub 1
         statement: Under Construction.md
       - title: List Comprehensions
-        statement: 08 - List Comprehensions/list comprehension.md
+        statement: 08 - list comprehensions/list comprehension.md
       - title: Sub 3
         statement: Under Construction.md
 projects:
