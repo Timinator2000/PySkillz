@@ -6,10 +6,6 @@ plan:
     plan:
       - title: Sub 1
         statement: Under Construction.md
-      - title: List Comprehensions
-        statement: 08 - list comprehensions/list comprehension.md
-      - title: Sub 3
-        statement: Under Construction.md
   - title: Coding for Kids Python
     plan:
       - title: Sub 1
@@ -60,7 +56,9 @@ plan:
         statement: Under Construction.md
   - title: List Comprehensions
     plan:
-      - title: Sub 1
+      - title: List Comprehensions
+        statement: 08 - list comprehensions/list comprehension.md
+      - title: More to Come
         statement: Under Construction.md
   - title: Dictionary Comprehensions
     plan:
