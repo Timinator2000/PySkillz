@@ -1,7 +1,7 @@
 title: Python Skillz
 cover: PySkillz_3.png
 
-plan: iii
+plan:
   - title: Welcome
     plan:
       - title: Sub 1
@@ -55,17 +55,14 @@ plan: iii
       - title: Sub 1
         statement: Under Construction.md
   - title: List Comprehensions
+    description: This is the list comprehension lesson description.
     plan:
       - title: Video 1
         statement: Under Construction.md
       - title: Video 2
         statement: Under Construction.md
-      - title: Exercises
-        plan:
-          - title: Exercise #1
-            statement: 08 - list comprehensions/list comprehension.md
-          - title: Exercise #2
-            statement: Under Construction.md
+      - title: Exercise #1 & #2
+        statement: 08 - list comprehensions/list comprehension.md
       - title: More to Come
         statement: Under Construction.md
   - title: Dictionary Comprehensions
