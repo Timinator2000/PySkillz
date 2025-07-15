@@ -10,11 +10,23 @@ def remove_odds(a_list: list[int]) -> list[int]:
 
 """
 
+
+success_message = """
+
+Q: Why was 5 afraid of 7?
+
+A: Becuase 7 ate 9.
+
+"""
+
+
 class RemoveOdds(timinator.Exercise):
     
     def __init__(self):
         
-        super().__init__(suggested_solution_text, remove_odds)
+        super().__init__(remove_odds)
+        self.suggested_solution_text = suggested_solution_text
+        self.success_message = success_message
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
