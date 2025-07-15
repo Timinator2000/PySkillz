@@ -14,8 +14,10 @@ def remove_odds(a_list: list[int]) -> list[int]:
 success_message = """
 
 Q: Why was 5 afraid of 7?
-
 A: Becuase 7 ate 9.
+
+Q: Do you know what's really odd?
+A: Numbers not divisible by two.
 
 """
 
