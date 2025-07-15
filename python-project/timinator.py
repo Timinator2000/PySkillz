@@ -35,6 +35,15 @@ CONGRATS = ['Kudos!',
 
 CONGRATS_EMOJIS = '🌟🔥👏💥🎆🎉🥳💓💖💗🤟💯😀🤩😍'
 
+BUG = ['Oops!',
+       'Uh-oh!',
+       'Oh no!',
+       'Hmmm?',
+       'Might have to try again!',
+       'Ugh!',
+       'Egad!']
+
+BUG_EMOJIS = '🐞🐛🪲🦗😔😢😧'
 
 class Exercise():
     
@@ -49,6 +58,7 @@ class Exercise():
         self.success_message = ''
 
         self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
+        self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
 
 
     def send_multiline_text(self, channel, msg):
@@ -121,22 +131,22 @@ class Exercise():
         if expected_answer_format != user_answer_format:
 
             self.fail()
-            self.send_msg("Oops! 🐞", 'Incorrect Data Types:')
+            self.send_msg(self.bug_channel, 'Incorrect Data Types:')
             self.display_test_case(test_case)
-            self.send_msg("Oops! 🐞", '')
-            self.send_msg("Oops! 🐞", f'   Expected answer format = {expected_answer_format}')
-            self.send_msg("Oops! 🐞", f'   Expected answer        = {expected_answer}')
-            self.send_msg("Oops! 🐞", '')
-            self.send_msg("Oops! 🐞", f'   Your answer format = {user_answer_format}')
-            self.send_msg("Oops! 🐞", f'   Your answer        = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
+            self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
+            self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
             
             return False
         
         if expected_answer != user_answer:
-            self.send_msg("Oops! 🐞", f'Incorrect Answer:')
+            self.send_msg(self.bug_channel, f'Incorrect Answer:')
             self.display_test_case(test_case)
-            self.send_msg("Oops! 🐞", f'   Expected answer = {expected_answer}')
-            self.send_msg("Oops! 🐞", f'   Your answer     = {user_answer}')
+            self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+            self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
             
             return False
 
