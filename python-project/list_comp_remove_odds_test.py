@@ -21,6 +21,11 @@ A: Numbers not divisible by two.
 
 """
 
+success_message += 'Fun fact about odd numbers: When you add all the odd numbers from 1 to any number, '
+success_message += 'the sum that you get will always be a perfect square. For instance, the sum of odd '
+success_message += 'numbers from 1 to 10 is 25, which is a perfect square!'
+
+
 
 class RemoveOdds(timinator.Exercise):
     
