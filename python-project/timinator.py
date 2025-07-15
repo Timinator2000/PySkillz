@@ -40,15 +40,21 @@ class Exercise():
     
     CONTAINERS = ['list', 'tuple', 'set']
     
-    def __init__(self, suggested_solution_text: str, user_solution):
+    def __init__(self, user_solution):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
-        self.suggested_solution_text = suggested_solution_text.strip().split('\n')
         self.user_solution = user_solution
 
-        self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
+        self.suggested_solution_text = ''
         self.success_message = ''
-        
+
+        self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
+
+
+    def send_multiline_text(self, channel, msg):
+        for line in msg.strip().split('\n'):
+            self.send_msg(channel, line)
+
         
     def send_msg(self, channel, msg):
         print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
@@ -166,8 +172,6 @@ class Exercise():
             return
 
         self.success()
-        self.send_msg(self.success_channel, self.success_message)
-
-        for line in self.suggested_solution_text:
-            self.send_msg(f'Suggested Solution', line)
+        self.send_multiline_text(self.success_channel, self.success_message)
+        self.send_multiline_text(f'Suggested Solution', self.suggested_solution_text)
 
