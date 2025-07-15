@@ -33,6 +33,8 @@ CONGRATS = ['Kudos!',
             'B-E-A-UTIFUL!',
             'Congratulations!']
 
+CONGRATS_EMOJIS = '🌟🔥👏💥🎆🎉🥳💓💖💗🤟💯😀🤩😍'
+
 
 class Exercise():
     
@@ -43,6 +45,8 @@ class Exercise():
         self.num_random_test_cases = 0
         self.suggested_solution_text = suggested_solution_text.strip().split('\n')
         self.user_solution = user_solution
+
+        self.success_channel = f'{random.choice(CONGRATS)} random.choice(CONGRATS_EMOJIS)'
         
         
     def send_msg(self, channel, msg):
@@ -161,7 +165,7 @@ class Exercise():
             return
 
         self.success()
-        self.send_msg(f'{random.choice(CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
+        self.send_msg(self.success_channel, self.success_message)
 
         for line in self.suggested_solution_text:
             self.send_msg(f'Suggested Solution', line)
