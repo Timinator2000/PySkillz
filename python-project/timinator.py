@@ -163,7 +163,7 @@ class Exercise():
                 
             count += 1
             
-        print(f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
+        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
         
         if count != len(self.fixed_test_cases):
             return
@@ -175,7 +175,7 @@ class Exercise():
                 
             count += 1
 
-        print(f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
+        self.send_msg('Standard Output', f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
 
         if count != self.num_random_test_cases:
             return
