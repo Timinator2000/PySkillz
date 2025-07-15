@@ -36,15 +36,6 @@ class Exercise():
     
     CONTAINERS = ['list', 'tuple', 'set']
     
-    def send_msg(channel, msg):
-        print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
-    
-    def success():
-        print("TECHIO> success true")
-    
-    def fail():
-        print("TECHIO> success false")
-
     def __init__(self, suggested_solution_text: str, user_solution):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
@@ -52,6 +43,18 @@ class Exercise():
         self.user_solution = user_solution
         
         
+    def send_msg(self,channel, msg):
+        print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
+
+            
+    def success(self):
+        print("TECHIO> success true")
+
+            
+    def fail(self):
+        print("TECHIO> success false")
+
+            
     def container_element_types(self, container) -> str:
         element_types = {self.data_type(element) for element in container}
         
