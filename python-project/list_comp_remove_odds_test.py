@@ -1,5 +1,5 @@
-import timinator
 import random
+import timinator
 from list_comp_remove_odds import remove_odds
 
 
