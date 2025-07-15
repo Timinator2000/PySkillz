@@ -11,9 +11,6 @@ def remove_odds(a_list: list[int]) -> list[int]:
 """.strip().split('\n')
 
 
-# for line in suggested_solution:
-#     print(line)
-    
 
 def test_remove_odds():
     try:
