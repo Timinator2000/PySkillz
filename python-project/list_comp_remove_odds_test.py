@@ -50,7 +50,7 @@ class RemoveOdds(timinator.Exercise):
     
     
     def display_test_case(self, test_case) -> None:
-        print(f'   a_list = {test_case[0]}')
+        self.send_msg(self.bug_channel, f'   a_list = {test_case[0]}')
         
         
     def generate_random_test_case(self):
