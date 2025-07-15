@@ -72,7 +72,7 @@ class Exercise():
     def data_type(self, data) -> str:
         string = str(type(data)).split("'")[-2]
         
-        if string in self.CONTAINERS:
+        if string in Exercise.CONTAINERS:
             string += self.container_element_types(data)
         
         if string == 'dict':
@@ -161,7 +161,7 @@ class Exercise():
             return
 
         self.success()
-        self.send_msg(f'{random.choice(Exercise.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
+        self.send_msg(f'{random.choice(CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
 
         for line in self.suggested_solution_text:
             self.send_msg(f'Suggested Solution', line)
