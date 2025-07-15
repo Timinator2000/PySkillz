@@ -1,3 +1,5 @@
+import random
+
 CONGRATS = ['Kudos!',
             'Well Done!',
             'Bravo!',
