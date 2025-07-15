@@ -35,7 +35,7 @@ class RemoveOdds(timinator.Exercise):
         
         
     def generate_random_test_case(self):
-        return [[random.randit(0, 1000000) for _ in range(random.randint(0, 100))]]
+        return [[random.randint(0, 1000000) for _ in range(random.randint(0, 100))]]
 
 
 if __name__ == "__main__":
