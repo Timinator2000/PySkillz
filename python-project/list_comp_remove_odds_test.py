@@ -8,7 +8,7 @@ suggested_solution = """
 def remove_odds(a_list: list[int]) -> list[int]:
     return [i for i in a_list if i % 2 == 0]
 
-"""
+""".strip().split('/n')
 
 def test_remove_odds():
     try:
@@ -25,7 +25,9 @@ def test_remove_odds():
      
         timinator.success()
         timinator.send_msg(f'{random.choice(timinator.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
-        timinator.send_msg(f'Suggested Solution', suggested_solution.strip())
+
+        for line in suggested_solution:
+            timinator.send_msg(f'Suggested Solution', line)
 
     except AssertionError as e:
         timinator.fail()
