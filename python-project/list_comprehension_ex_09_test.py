@@ -1,4 +1,64 @@
+import random
+import timinator
 from list_comprehension_ex_09 import num_spaces
+
+
+suggested_solution_text = """
+
+def num_spaces(a_string: str) -> int:
+    return sum(c == ' ' for c in a_string)
+
+"""
+
+
+success_message = """
+
+Well, I just don't know yet.
+
+"""
+
+success_message += ''
+
+
+
+class NumSpaces(timinator.Exercise):
+    
+    def __init__(self):
+        
+        super().__init__(num_spaces)
+        self.suggested_solution_text = suggested_solution_text
+        self.success_message = success_message
+        self.num_random_test_cases = 10
+        
+        self.fixed_test_cases = [
+            ['Rex and Blue need to go for a walk.'],
+            [''],
+            ['          ],
+            ['This exercise is quite easy, right?'],
+            ['abc']
+        ]
+        
+        
+    def solution(a_string: str) -> int:
+        return sum(c == ' ' for c in a_string)
+    
+    
+    def display_test_case(self, test_case) -> None:
+        self.send_msg(self.bug_channel, f'   a_string = {test_case[0]}')
+        
+        
+    def generate_random_test_case(self):
+        return [''.join(random.choice('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(randint(0, 50))]
+
+
+if __name__ == "__main__":
+    exercise = NumSpaces()
+    exercise.run()
+
+
+
+
+
 import builtins
 
 
