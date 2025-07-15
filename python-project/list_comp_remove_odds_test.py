@@ -8,7 +8,12 @@ suggested_solution = """
 def remove_odds(a_list: list[int]) -> list[int]:
     return [i for i in a_list if i % 2 == 0]
 
-""".strip().split('/n')
+""".strip().split('\n')
+
+
+# for line in suggested_solution:
+#     print(line)
+    
 
 def test_remove_odds():
     try:
