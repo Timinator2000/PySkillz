@@ -161,7 +161,7 @@ class Exercise():
             return
 
         self.success()
-        self.send_msg(f'{random.choice(self.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
+        self.send_msg(f'{random.choice(Exercise.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
 
         for line in self.suggested_solution_text:
             self.send_msg(f'Suggested Solution', line)
