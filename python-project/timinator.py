@@ -1,5 +1,3 @@
-import random
-
 CONGRATS = ['Kudos!',
             'Well Done!',
             'Bravo!',
@@ -121,9 +119,7 @@ class Exercise():
         if expected_answer_format != user_answer_format:
 
             self.fail()
-            self.send_msg("Oops! 🐞", e)
-            
-            self.send_msg("Oops! 🐞", f'Incorrect Data Types:')
+            self.send_msg("Oops! 🐞", 'Incorrect Data Types:')
             self.display_test_case(test_case)
             self.send_msg("Oops! 🐞", '')
             self.send_msg("Oops! 🐞", f'   Expected answer format = {expected_answer_format}')
