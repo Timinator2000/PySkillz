@@ -16,7 +16,7 @@ def test_remove_odds():
         assert answer == [25678, 24], f'Trying remove_odds([25678, 435, 24, 999])... Expected [[25678, 24]], got {answer}'
      
         timinator.success()
-        send_msg(f'{random.choice(CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
+        timinator.send_msg(f'{random.choice(CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
 
     except AssertionError as e:
         timinator.fail()
