@@ -145,6 +145,7 @@ class Exercise():
         if expected_answer != user_answer:
             self.send_msg(self.bug_channel, f'Incorrect Answer:')
             self.display_test_case(test_case)
+            self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
             self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
             
