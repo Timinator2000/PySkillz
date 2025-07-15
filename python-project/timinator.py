@@ -47,6 +47,7 @@ class Exercise():
         self.user_solution = user_solution
 
         self.success_channel = f'{random.choice(CONGRATS)} random.choice(CONGRATS_EMOJIS)'
+        self.success_message = ''
         
         
     def send_msg(self, channel, msg):
