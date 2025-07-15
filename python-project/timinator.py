@@ -1,3 +1,5 @@
+import random
+
 CONGRATS = ['Kudos!',
             'Well Done!',
             'Bravo!',
@@ -43,7 +45,7 @@ class Exercise():
         self.user_solution = user_solution
         
         
-    def send_msg(self,channel, msg):
+    def send_msg(self, channel, msg):
         print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
 
             
