@@ -184,5 +184,5 @@ class Exercise():
 
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
-        self.send_multiline_text(f'Suggested Solution', self.suggested_solution_text)
+        self.send_multiline_text(f'Suggested Solution ✅', self.suggested_solution_text)
 
