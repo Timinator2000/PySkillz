@@ -25,7 +25,7 @@ def test_remove_odds():
      
         timinator.success()
         timinator.send_msg(f'{random.choice(timinator.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
-        timinator.send_msg(f'Suggested Solution', suggested_solution.trim())
+        timinator.send_msg(f'Suggested Solution', suggested_solution.strip())
 
     except AssertionError as e:
         timinator.fail()
