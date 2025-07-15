@@ -33,7 +33,7 @@ class NumSpaces(timinator.Exercise):
         self.fixed_test_cases = [
             ['Rex and Blue need to go for a walk.'],
             [''],
-            ['          ],
+            ['          '],
             ['This exercise is quite easy, right?'],
             ['abc']
         ]
