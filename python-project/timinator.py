@@ -143,6 +143,8 @@ class Exercise():
             return False
         
         if expected_answer != user_answer:
+
+            self.fail()
             self.send_msg(self.bug_channel, f'Incorrect Answer:')
             self.display_test_case(test_case)
             self.send_msg(self.bug_channel, '')
