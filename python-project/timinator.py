@@ -1,12 +1,3 @@
-def send_msg(channel, msg):
-    print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
-
-def success():
-    print("TECHIO> success true")
-
-def fail():
-    print("TECHIO> success false")
-
 CONGRATS = ['Kudos!',
             'Well Done!',
             'Bravo!',
@@ -39,3 +30,134 @@ CONGRATS = ['Kudos!',
             'Marvelous!',
             'B-E-A-UTIFUL!',
             'Congratulations!']
+
+
+class Exercise():
+    
+    CONTAINERS = ['list', 'tuple', 'set']
+    
+    def send_msg(channel, msg):
+        print("TECHIO> message --channel \"{}\" \"{}\"".format(channel, msg))
+    
+    def success():
+        print("TECHIO> success true")
+    
+    def fail():
+        print("TECHIO> success false")
+
+    def __init__(self, suggested_solution_text: str, user_solution):
+        self.fixed_test_cases = []
+        self.num_random_test_cases = 0
+        self.suggested_solution_text = suggested_solution_text.strip().split('\n')
+        self.user_solution = user_solution
+        
+        
+    def container_element_types(self, container) -> str:
+        element_types = {self.data_type(element) for element in container}
+        
+        if len(element_types) > 1:
+            return '[multiple types]'
+        
+        if len(element_types) == 1:
+            return f'[{element_types.pop()}]'
+        
+        return ''
+    
+    
+    def data_type(self, data) -> str:
+        string = str(type(data)).split("'")[-2]
+        
+        if string in self.CONTAINERS:
+            string += self.container_element_types(data)
+        
+        if string == 'dict':
+            key_types = self.container_element_types(data.keys())
+            value_types = self.container_element_types(data.values())
+            
+            if key_types and value_types:
+                string += f'[{key_types[1: -1]}, {value_types[1: -1]}]'
+            
+        return string
+    
+    
+    def solution(self):
+        print('THIS METHOD MUST BE OVERRIDDEN')
+        return None
+
+
+    def display_test_case(self, test_case):
+        print('THIS METHOD MUST BE OVERRIDDEN')
+        return None
+
+
+    def generate_random_test_case(self):
+        print('THIS METHOD MUST BE OVERRIDDEN')
+        return None
+        
+        
+    def run_test_case(self, test_case):
+        expected_answer = self.solution(*test_case)
+        user_answer =self.user_solution(*test_case)
+
+        expected_answer_format = self.data_type(expected_answer)
+        user_answer_format = self.data_type(user_answer)
+
+        if expected_answer_format != user_answer_format:
+
+            self.fail()
+            self.send_msg("Oops! 🐞", e)
+            
+            self.send_msg("Oops! 🐞", f'Incorrect Data Types:')
+            self.display_test_case(test_case)
+            self.send_msg("Oops! 🐞", '')
+            self.send_msg("Oops! 🐞", f'   Expected answer format = {expected_answer_format}')
+            self.send_msg("Oops! 🐞", f'   Expected answer        = {expected_answer}')
+            self.send_msg("Oops! 🐞", '')
+            self.send_msg("Oops! 🐞", f'   Your answer format = {user_answer_format}')
+            self.send_msg("Oops! 🐞", f'   Your answer        = {user_answer}')
+            
+            return False
+        
+        if expected_answer != user_answer:
+            self.send_msg("Oops! 🐞", f'Incorrect Answer:')
+            self.display_test_case(test_case)
+            self.send_msg("Oops! 🐞", f'   Expected answer = {expected_answer}')
+            self.send_msg("Oops! 🐞", f'   Your answer     = {user_answer}')
+            
+            return False
+
+        return True
+
+        
+    def run(self):
+        
+        count = 0
+        for test_case in self.fixed_test_cases:
+            if not self.run_test_case(test_case):
+                break
+                
+            count += 1
+            
+        print(f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
+        
+        if count != len(self.fixed_test_cases):
+            return
+        
+        count = 0
+        for _ in range(self.num_random_test_cases):
+            if not self.run_test_case(self.generate_random_test_case()):
+                break
+                
+            count += 1
+
+        print(f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
+
+        if count != self.num_random_test_cases:
+            return
+
+        self.success()
+        self.send_msg(f'{random.choice(self.CONGRATS)} 🌟', "Back to boring me to death...and I had so much hope for you.  Sigh.")
+
+        for line in self.suggested_solution_text:
+            self.send_msg(f'Suggested Solution', line)
+
