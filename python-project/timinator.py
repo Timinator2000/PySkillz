@@ -46,7 +46,7 @@ class Exercise():
         self.suggested_solution_text = suggested_solution_text.strip().split('\n')
         self.user_solution = user_solution
 
-        self.success_channel = f'{random.choice(CONGRATS)} random.choice(CONGRATS_EMOJIS)'
+        self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
         self.success_message = ''
         
         
