@@ -48,7 +48,7 @@ class NumSpaces(timinator.Exercise):
         
         
     def generate_random_test_case(self):
-        return [''.join(random.choice('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(randint(0, 50))]
+        return [''.join([random.choice('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(randint(0, 50))])]
 
 
 if __name__ == "__main__":
