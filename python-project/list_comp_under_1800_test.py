@@ -50,8 +50,6 @@ class Under1800(timinator.Exercise):
             [{v:w for v, w in Under1800.VEHICLES.items() if 1490 > w or w > 2210}]
         ]
 
-        timinator.Exercise.PRINT_TEST_CASES = True
-        
         
     def solution(self, vehicle_weights: dict[str, int]) -> list:
         return sorted(vehicle.upper() for vehicle, weight in vehicle_weights.items() if weight < 1800)
