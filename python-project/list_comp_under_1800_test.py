@@ -44,10 +44,10 @@ class Under1800(timinator.Exercise):
         
         self.fixed_test_cases = [
             [{}],
-            [{v:Under1800.VEHICLES[v] for v, w in Under1800.VEHICLES.values() if w < 1800}],
-            [{v:Under1800.VEHICLES[v] for v, w in Under1800.VEHICLES.values() if w > 1800}],
-            [{v:Under1800.VEHICLES[v] for v, w in Under1800.VEHICLES.values() if 1490 < w < 2210}],
-            [{v:Under1800.VEHICLES[v] for v, w in Under1800.VEHICLES.values() if 1490 > w or w > 2210}]
+            [{v:w for v, w in Under1800.VEHICLES.items() if w < 1800}],
+            [{v:w for v, w in Under1800.VEHICLES.items() if w > 1800}],
+            [{v:w for v, w in Under1800.VEHICLES.items() if 1490 < w < 2210}],
+            [{v:w for v, w in Under1800.VEHICLES.items() if 1490 > w or w > 2210}]
         ]
 
         timinator.Exercise.PRINT_TEST_CASES = True
