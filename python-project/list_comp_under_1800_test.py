@@ -61,7 +61,8 @@ class Under1800(timinator.Exercise):
         
         
     def generate_random_test_case(self):
-        return [{v:Under1800.VEHICLES[v] for v in random.sample(Under1800.VEHICLES.keys(), random.randint(0, len(Under1800.VEHICLES))]
+        sample = {v:Under1800.VEHICLES[v] for v in random.sample(Under1800.VEHICLES.keys(), random.randint(0, len(Under1800.VEHICLES)))}
+        return [sample]
 
 
 if __name__ == "__main__":
