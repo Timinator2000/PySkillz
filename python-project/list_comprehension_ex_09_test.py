@@ -21,7 +21,7 @@ success_message += 'The debate over one space versus two spaces after a period '
                    'has been largely settled in favor of one space in modern writing, ' + \
                    'but the choice depends on context and style guidelines.\n' + \
                    '\n' + \
-                   'However, if you prefer to hid your age...' + \
+                   'However...\n' + \
                    '\n' + \
                    'Using two spaces after a period can hint at someone\'s age, as it was ' + \
                    'standard in the typewriter era, common among those born before the 1980s. ' + \
