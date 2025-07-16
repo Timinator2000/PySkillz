@@ -128,8 +128,8 @@ class Exercise():
             print('BEFORE')
             print(test_case)
             print(*test_case)
-            print(*test_case)
-            print(*test_case)
+            print(type(*test_case))
+            print(len(*test_case))
                     
         expected_answer = self.solution(*test_case)
         user_answer =self.user_solution(*test_case)
