@@ -39,7 +39,7 @@ class NumSpaces(timinator.Exercise):
         ]
         
         
-    def solution(a_string: str) -> int:
+    def solution(self, a_string: str) -> int:
         return sum(c == ' ' for c in a_string)
     
     
