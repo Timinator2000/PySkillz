@@ -1,6 +1,6 @@
 import random
 import timinator
-from list_comprehension_ex_09 import num_spaces
+from list_comp_num_spaces import num_spaces
 
 
 suggested_solution_text = """
