@@ -125,7 +125,10 @@ class Exercise():
         
     def run_test_case(self, test_case):
         if PRINT_TEST_CASES:
+            print('BEFORE')
             print(test_case)
+            print(*test_case)
+            print(*test_case)
             print(*test_case)
                     
         expected_answer = self.solution(*test_case)
