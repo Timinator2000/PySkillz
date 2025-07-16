@@ -6,7 +6,7 @@ from list_comp_under_1800 import under_1800
 suggested_solution_text = """
 
 def under_1800(vehicle_weights: dict[str, int]) -> list:
-    return sorted(vehicle.upper() for vehicle, weight in vehicle_weights if weight < 1800)
+    return sorted(vehicle.upper() for vehicle, weight in vehicle_weights.items() if weight < 1800)
 
 """
 
@@ -54,7 +54,7 @@ class Under1800(timinator.Exercise):
         
         
     def solution(self, vehicle_weights: dict[str, int]) -> list:
-        return sorted(vehicle.upper() for vehicle, weight in vehicle_weights if weight < 1800)
+        return sorted(vehicle.upper() for vehicle, weight in vehicle_weights.items() if weight < 1800)
     
     
     def display_test_case(self, test_case) -> None:
