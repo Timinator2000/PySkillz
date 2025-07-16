@@ -49,7 +49,7 @@ class Under1800(timinator.Exercise):
             [{v:Under1800.VEHICLES[v] for v, w in Under1800.VEHICLES if 1490 < w < 2210}]
         ]
 
-      timinator.Exercise.PRINT_TEST_CASES = True
+        timinator.Exercise.PRINT_TEST_CASES = True
         
         
     def solution(self, vehicle_weights: dict) -> list:
