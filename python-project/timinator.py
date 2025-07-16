@@ -1,5 +1,7 @@
 import random
 
+PRINT_TEST_CASES = True
+
 CONGRATS = ['Kudos!',
             'Well Done!',
             'Bravo!',
@@ -122,6 +124,9 @@ class Exercise():
         
         
     def run_test_case(self, test_case):
+        if PRINT_TEST_CASES:
+            print(test_case)
+                    
         expected_answer = self.solution(*test_case)
         user_answer =self.user_solution(*test_case)
 
