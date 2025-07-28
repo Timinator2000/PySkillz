@@ -39,10 +39,6 @@ class RemoveOdds(timinator.Exercise):
         ]
         
         
-    def solution(self, a_list: list[int]) -> list:
-        return [i for i in a_list if i % 2 == 0]
-    
-    
     def display_test_case(self, test_case) -> None:
         self.send_msg(self.bug_channel, f'   a_list = {test_case[0]}')
         
