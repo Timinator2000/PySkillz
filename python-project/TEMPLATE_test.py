@@ -20,8 +20,9 @@ You message can go here. A multi-line string will be printed line by line.
 """
 
 # -------------------------------------------------------------
-# To add a paragraph to your success message, use the following 
-# format to keep the text easy to read here in the script.
+# To add a paragraph with automatic wrapping to your success 
+# message, use the following format to keep the text easy to 
+# read here in the script.
 # -------------------------------------------------------------
 
 success_message += ''
