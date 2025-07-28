@@ -43,7 +43,8 @@ class NumSpaces(timinator.Exercise):
     
     
     def display_test_case(self, test_case) -> None:
-        self.send_msg(self.bug_channel, f'   a_string = {test_case[0]}')
+        data = f'{[test_case[0]}'[1:-1]
+        self.send_msg(self.bug_channel, f'   a_string = {data}')
         
         
     def generate_random_test_case(self):
