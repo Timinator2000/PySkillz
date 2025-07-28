@@ -1,14 +1,9 @@
 import random
 import timinator
-from list_comp_remove_odds import remove_odds
 
-
-suggested_solution_text = """
-
-def remove_odds(a_list: list[int]) -> list[int]:
-    return [i for i in a_list if i % 2 == 0]
-
-"""
+section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+exec(f'from {exercise_name} import {exercise_name} as user_solution')
+exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 
 success_message = """
@@ -31,11 +26,10 @@ class RemoveOdds(timinator.Exercise):
     
     def __init__(self):
         
-        super().__init__(remove_odds)
-        self.suggested_solution_text = suggested_solution_text
+        super().__init__(user_solution, suggested_solution, f'{section}{exercise_name}_solution.py')
         self.success_message = success_message
         self.num_random_test_cases = 10
-        
+
         self.fixed_test_cases = [
             [[1, 3, 5, 7, 9]],
             [[2, 4, 6, 8, 10]],
