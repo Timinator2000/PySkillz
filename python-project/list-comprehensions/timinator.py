@@ -71,7 +71,7 @@ class Exercise():
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
 
 
-        section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+        section, exercise_name = get_section_and_exercise_names(__file__)
         exec(f'from {exercise_name} import {exercise_name} as self.user_solution')
         # exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
