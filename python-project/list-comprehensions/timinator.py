@@ -48,7 +48,7 @@ BUG_EMOJIS = '🐞🐛🪲🦗😔😢😧'
 
 
 def get_section_and_exercise_names(file):
-    m = re.search(r"(?P<section>\w+/)(?P<exercise>\w+)_test.py", file)
+    m = re.search(r"(?P<section>[\w\-]+/)(?P<exercise>\w+)_test.py", file)
     if m is not None:
         return m.group('section'), m.group('exercise')
 
