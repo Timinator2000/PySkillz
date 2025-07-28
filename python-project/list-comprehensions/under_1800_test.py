@@ -2,6 +2,10 @@ import random
 import timinator
 from under_1800 import under_1800
 
+section, ex_name = timinator.get_folder_and_exercise_names(__file__)
+print(f'section={section}')
+print(f'exercise name = {ex_name}')
+        
 
 suggested_solution_text = """
 
@@ -50,10 +54,6 @@ class Under1800(timinator.Exercise):
             [{v:w for v, w in Under1800.VEHICLES.items() if 1490 > w or w > 2210}]
         ]
 
-        section, ex_name = timinator.get_section_and_exercise_name(__file__)
-        print(f'section={section}')
-        print(f'exercise name = {ex_name}')
-        
     def solution(self, vehicle_weights: dict[str, int]) -> list:
         return sorted(v.upper() for v, w in vehicle_weights.items() if w < 1800)
     
