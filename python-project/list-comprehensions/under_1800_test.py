@@ -1,11 +1,12 @@
 import random
 import timinator
-from under_1800 import under_1800
+# from under_1800 import under_1800
 
 section, ex_name = timinator.get_folder_and_exercise_names(__file__)
 print(f'section={section}')
 print(f'exercise name = {ex_name}')
         
+exec(f'from {exercise_name} import {exercise_name}'}
 
 suggested_solution_text = """
 
