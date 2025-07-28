@@ -58,14 +58,15 @@ class Exercise():
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
     
-    def __init__(self, user_solution, suggested_solution):
+    def __init__(self, user_solution, suggested_solution, solution_path):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
         self.user_solution = user_solution
         self.suggested_solution = suggested_solution
-
-        self.suggested_solution_text = ''
         self.success_message = ''
+
+        with open(solution_path, 'r') as f:
+            self.suggested_solution_text = f.read()
 
         self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
@@ -116,11 +117,6 @@ class Exercise():
         return string
     
     
-    # def solution(self):
-    #     print('THIS METHOD MUST BE OVERRIDDEN')
-    #     return None
-
-
     def display_test_case(self, test_case):
         print('THIS METHOD MUST BE OVERRIDDEN')
         return None
