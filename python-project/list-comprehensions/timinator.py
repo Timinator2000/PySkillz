@@ -2,6 +2,8 @@
 
 import random
 import re
+from copy import deepcopy
+
 
 CONGRATS = ['Kudos!',
             'Well Done!',
@@ -127,50 +129,62 @@ class Exercise():
     def generate_random_test_case(self):
         print('THIS METHOD MUST BE OVERRIDDEN')
         return None
-        
-        
-    def run_test_case(self, test_case):
-        if Exercise.PRINT_TEST_CASES:
-            print(test_case)
-                    
-        expected_answer = self.suggested_solution(*test_case)
-        user_answer =self.user_solution(*test_case)
+
+
+    def check_answer_format(self, test_case):
+        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        user_answer =self.user_solution(*deepcopy(test_case))
 
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
-        if expected_answer_format != user_answer_format:
+        if expected_answer_format == user_answer_format:
+            return True
 
-            self.fail()
-            self.send_msg(self.bug_channel, 'Incorrect Data Types:')
-            self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
-            self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
-            self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
-            self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
-            self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, 'Input:')
-            self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+        self.fail()
+        self.send_msg(self.bug_channel, 'Incorrect Data Types:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
+        self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
+        self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, 'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
             
-            return False
+        return False
+
         
-        if expected_answer != user_answer:
+    def check_answer(self, test_case):
+        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        user_answer =self.user_solution(*deepcopy(test_case))
 
-            self.fail()
-            self.send_msg(self.bug_channel, f'Incorrect Answer:')
-            self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
-            self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
-            self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'Input:')
-            self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+        if expected_answer == user_answer:
+            return True
+
+        self.fail()
+        self.send_msg(self.bug_channel, f'Incorrect Answer:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+        self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
             
-            return False
+        return False
 
-        return True
+
+    def run_test_case(self, test_case):
+        if Exercise.PRINT_TEST_CASES:
+            print(test_case)
+
+        if not self.check_answer_format(test_case)
+               return False
+
+        return self.check_answer(test_case)
 
         
     def run(self):
