@@ -65,8 +65,8 @@ class Exercise():
 
     def get_folder_and_exercise_names(self, file):
         m = re.search(r"(?P<folder>\w+/)(?P<exercise>\w+)_test.py", file)
-            if m is not None:
-                return m.group('folder'), m.group('exercise')
+        if m is not None:
+            return m.group('folder'), m.group('exercise')
 
             
     def send_multiline_text(self, channel, msg):
