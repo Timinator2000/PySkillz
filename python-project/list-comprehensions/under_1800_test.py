@@ -5,13 +5,6 @@ section, exercise_name = timinator.get_section_and_exercise_names(__file__)
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
-# suggested_solution_text = """
-
-# def under_1800(vehicle_weights: dict[str, int]) -> list:
-#     return sorted(v.upper() for v, w in vehicle_weights.items() if w < 1800)
-
-# """
-
 
 success_message = """
 
@@ -30,7 +23,6 @@ success_message += 'Fun fact: The BelAZ 75710, made in Belarus, is the world\'s 
                    'Imagine changing a flat on that!'
 
 
-
 class Under1800(timinator.Exercise):
 
     VEHICLES = {'Sedan': 1500,      'SUV': 2000,          'Pickup': 2500,              'Minivan': 1600, 
@@ -39,12 +31,8 @@ class Under1800(timinator.Exercise):
     
     def __init__(self):
         
-        super().__init__(user_solution, suggested_solution)
-        # self.suggested_solution_text = suggested_solution_text
+        super().__init__(user_solution, suggested_solution, f'{section}{exercise_name}_solution.py')
         self.success_message = success_message
-        with open(f'{section}{exercise_name}_solution.py', 'r') as f:
-            self.suggested_solution_text = f.read()
-            
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
@@ -55,10 +43,7 @@ class Under1800(timinator.Exercise):
             [{v:w for v, w in Under1800.VEHICLES.items() if 1490 > w or w > 2210}]
         ]
 
-    def solution(self, vehicle_weights: dict[str, int]) -> list:
-        return sorted(v.upper() for v, w in vehicle_weights.items() if w < 1800)
-    
-    
+  
     def display_test_case(self, test_case) -> None:
         self.send_msg(self.bug_channel, f'   vehicle_weights = {test_case[0]}')
         
