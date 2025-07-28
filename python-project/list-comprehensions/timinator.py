@@ -71,10 +71,6 @@ class Exercise():
         self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
 
-        self.section, self.exercise_name = get_section_and_exercise_names(__file__)
-        print(self.section)
-        print(self.exercise_name)
-                
 
     def send_multiline_text(self, channel, msg):
         for line in msg.strip().split('\n'):
