@@ -1,16 +1,16 @@
 import random
 import timinator
 
-# section, exercise_name = timinator.get_section_and_exercise_names(__file__)
-# exec(f'from {exercise_name} import {exercise_name} as user_solution')
-# exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
+section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+exec(f'from {exercise_name} import {exercise_name} as user_solution')
+exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
-suggested_solution_text = """
+# suggested_solution_text = """
 
-def under_1800(vehicle_weights: dict[str, int]) -> list:
-    return sorted(v.upper() for v, w in vehicle_weights.items() if w < 1800)
+# def under_1800(vehicle_weights: dict[str, int]) -> list:
+#     return sorted(v.upper() for v, w in vehicle_weights.items() if w < 1800)
 
-"""
+# """
 
 
 success_message = """
@@ -39,10 +39,12 @@ class Under1800(timinator.Exercise):
     
     def __init__(self):
         
-        # super().__init__(user_solution)
-        super().__init__()
-        self.suggested_solution_text = suggested_solution_text
+        super().__init__(user_solution, suggested_solution)
+        # self.suggested_solution_text = suggested_solution_text
         self.success_message = success_message
+        with open(f'{exercise_name}_solution.py', 'r') as f:
+            self.suggested_solution_text = f.read()
+            
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
