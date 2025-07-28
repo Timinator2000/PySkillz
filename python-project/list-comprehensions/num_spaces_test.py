@@ -1,14 +1,9 @@
 import random
 import timinator
-from list_comp_num_spaces import num_spaces
 
-
-suggested_solution_text = """
-
-def num_spaces(a_string: str) -> int:
-    return sum(c == ' ' for c in a_string)
-
-"""
+section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+exec(f'from {exercise_name} import {exercise_name} as user_solution')
+exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 
 success_message = """
@@ -34,8 +29,7 @@ class NumSpaces(timinator.Exercise):
     
     def __init__(self):
         
-        super().__init__(num_spaces)
-        self.suggested_solution_text = suggested_solution_text
+        super().__init__(user_solution, suggested_solution, f'{section}{exercise_name}_solution.py')
         self.success_message = success_message
         self.num_random_test_cases = 10
         
@@ -46,10 +40,6 @@ class NumSpaces(timinator.Exercise):
             ['This exercise is quite easy, right?'],
             ['abc']
         ]
-        
-        
-    def solution(self, a_string: str) -> int:
-        return sum(c == ' ' for c in a_string)
     
     
     def display_test_case(self, test_case) -> None:
