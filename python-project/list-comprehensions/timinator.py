@@ -181,7 +181,7 @@ class Exercise():
         if Exercise.PRINT_TEST_CASES:
             print(test_case)
 
-        if not self.check_answer_format(test_case)
+        if not self.check_answer_format(test_case):
                return False
 
         return self.check_answer(test_case)
