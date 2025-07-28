@@ -133,7 +133,7 @@ class Exercise():
 
     def check_answer_format(self, test_case):
         expected_answer = self.suggested_solution(*deepcopy(test_case))
-        user_answer =self.user_solution(*deepcopy(test_case))
+        user_answer = self.user_solution(*deepcopy(test_case))
 
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
@@ -159,7 +159,7 @@ class Exercise():
         
     def check_answer(self, test_case):
         expected_answer = self.suggested_solution(*deepcopy(test_case))
-        user_answer =self.user_solution(*deepcopy(test_case))
+        user_answer = self.user_solution(*deepcopy(test_case))
 
         if expected_answer == user_answer:
             return True
