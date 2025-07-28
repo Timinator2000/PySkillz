@@ -46,6 +46,13 @@ BUG = ['Oops!',
 
 BUG_EMOJIS = '🐞🐛🪲🦗😔😢😧'
 
+
+def get_folder_and_exercise_names(file):
+    m = re.search(r"(?P<folder>\w+/)(?P<exercise>\w+)_test.py", file)
+    if m is not None:
+        return m.group('folder'), m.group('exercise')
+
+            
 class Exercise():
     
     PRINT_TEST_CASES = False
@@ -63,12 +70,6 @@ class Exercise():
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
 
 
-    def get_folder_and_exercise_names(self, file):
-        m = re.search(r"(?P<folder>\w+/)(?P<exercise>\w+)_test.py", file)
-        if m is not None:
-            return m.group('folder'), m.group('exercise')
-
-            
     def send_multiline_text(self, channel, msg):
         for line in msg.strip().split('\n'):
             self.send_msg(channel, line)
