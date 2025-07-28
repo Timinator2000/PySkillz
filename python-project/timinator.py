@@ -154,6 +154,9 @@ class Exercise():
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
             self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+            self.send_msg(self.bug_channel, f'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
             
             return False
 
