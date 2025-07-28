@@ -58,16 +58,22 @@ class Exercise():
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
     
-    def __init__(self, user_solution):
+    # def __init__(self, user_solution):
+    def __init__(self):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
-        self.user_solution = user_solution
+        # self.user_solution = user_solution
 
         self.suggested_solution_text = ''
         self.success_message = ''
 
         self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
+
+
+        section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+        exec(f'from {exercise_name} import {exercise_name} as self.user_solution')
+        # exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 
     def send_multiline_text(self, channel, msg):
