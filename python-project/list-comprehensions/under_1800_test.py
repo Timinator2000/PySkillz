@@ -42,7 +42,7 @@ class Under1800(timinator.Exercise):
         super().__init__(user_solution, suggested_solution)
         # self.suggested_solution_text = suggested_solution_text
         self.success_message = success_message
-        with open(f'{exercise_name}_solution.py', 'r') as f:
+        with open(f'{section}{exercise_name}_solution.py', 'r') as f:
             self.suggested_solution_text = f.read()
             
         self.num_random_test_cases = 10
