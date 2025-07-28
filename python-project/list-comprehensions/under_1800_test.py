@@ -1,4 +1,7 @@
 import random
+import sys
+
+sys.path.append('/')
 import timinator
 
 section, exercise_name = timinator.get_section_and_exercise_names(__file__)
