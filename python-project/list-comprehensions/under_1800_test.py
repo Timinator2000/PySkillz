@@ -6,7 +6,7 @@ section, exercise_name = timinator.get_folder_and_exercise_names(__file__)
 print(f'section={section}')
 print(f'exercise name = {exercise_name}')
         
-exec(f'from {exercise_name} import {exercise_name}'}
+exec(f'from {exercise_name} import {exercise_name}')
 
 suggested_solution_text = """
 
