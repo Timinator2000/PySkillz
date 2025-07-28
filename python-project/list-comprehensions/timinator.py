@@ -58,22 +58,17 @@ class Exercise():
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
     
-    # def __init__(self, user_solution):
-    def __init__(self):
+    def __init__(self, user_solution, suggested_solution):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
-        # self.user_solution = user_solution
+        self.user_solution = user_solution
+        self.suggested_solution = suggested_solution
 
         self.suggested_solution_text = ''
         self.success_message = ''
 
         self.success_channel = f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}'
         self.bug_channel = f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}'
-
-
-        section, exercise_name = get_section_and_exercise_names(__file__)
-        exec(f'from {exercise_name} import {exercise_name} as self.user_solution')
-        # exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 
     def send_multiline_text(self, channel, msg):
@@ -121,9 +116,9 @@ class Exercise():
         return string
     
     
-    def solution(self):
-        print('THIS METHOD MUST BE OVERRIDDEN')
-        return None
+    # def solution(self):
+    #     print('THIS METHOD MUST BE OVERRIDDEN')
+    #     return None
 
 
     def display_test_case(self, test_case):
@@ -140,7 +135,7 @@ class Exercise():
         if Exercise.PRINT_TEST_CASES:
             print(test_case)
                     
-        expected_answer = self.solution(*test_case)
+        expected_answer = self.suggested_solution(*test_case)
         user_answer =self.user_solution(*test_case)
 
         expected_answer_format = self.data_type(expected_answer)
@@ -150,13 +145,16 @@ class Exercise():
 
             self.fail()
             self.send_msg(self.bug_channel, 'Incorrect Data Types:')
-            self.display_test_case(test_case)
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
             self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
             self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, 'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
             
             return False
         
