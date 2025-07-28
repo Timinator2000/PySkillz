@@ -1,7 +1,7 @@
 import random
 import timinator
 
-section, exercise_name = timinator.get_folder_and_exercise_names(__file__)
+section, exercise_name = timinator.get_section_and_exercise_names(__file__)
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
