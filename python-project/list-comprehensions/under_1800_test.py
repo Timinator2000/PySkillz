@@ -1,12 +1,9 @@
 import random
 import timinator
-# from under_1800 import under_1800
 
 section, exercise_name = timinator.get_folder_and_exercise_names(__file__)
-print(f'section={section}')
-print(f'exercise name = {exercise_name}')
-        
-exec(f'from {exercise_name} import {exercise_name}')
+exec(f'from {exercise_name} import {exercise_name} as user_solution')
+exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 suggested_solution_text = """
 
@@ -42,7 +39,7 @@ class Under1800(timinator.Exercise):
     
     def __init__(self):
         
-        super().__init__(under_1800)
+        super().__init__(user_solution)
         self.suggested_solution_text = suggested_solution_text
         self.success_message = success_message
         self.num_random_test_cases = 10
