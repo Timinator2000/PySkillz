@@ -30,7 +30,7 @@ success_message += ''
 success_message += ''
 
 
-class {{Exercise Name}}(timinator.Exercise):
+class {{Exercise Name Goes Here}}(timinator.Exercise):
     
     def __init__(self):
         
@@ -72,5 +72,5 @@ class {{Exercise Name}}(timinator.Exercise):
 
 
 if __name__ == "__main__":
-    exercise = {{Exercise Name}}()
+    exercise = {{Exercise Name Goes Here}}()
     exercise.run()
