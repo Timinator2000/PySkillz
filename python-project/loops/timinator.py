@@ -221,9 +221,25 @@ class Exercise():
 
 class PrintBasedExercise(Exercise):
 
+    def __init__(self, user_solution, suggested_solution, solution_path):
+        super().__init__(self, user_solution, suggested_solution, solution_path)
+        self.print_output = []
+                
+        self.old_print = print
+        print = self.new_print(*args)
+
+
+    def print(self, *args):
+        self.print_output.append(' '.join(str(arg) for arg in args))
+
     def check_answer_format(self, test_case):
-        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        self.suggested_solution(*deepcopy(test_case))
+        expected_answer = deepcopy(self.print_output)
+        self.print_output.clear
+        
         user_answer = self.user_solution(*deepcopy(test_case))
+        user_answer = deepcopy(self.print_output)
+        self.print_output.clear
 
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
@@ -248,8 +264,13 @@ class PrintBasedExercise(Exercise):
 
         
     def check_answer(self, test_case):
-        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        self.suggested_solution(*deepcopy(test_case))
+        expected_answer = deepcopy(self.print_output)
+        self.print_output.clear
+        
         user_answer = self.user_solution(*deepcopy(test_case))
+        user_answer = deepcopy(self.print_output)
+        self.print_output.clear
 
         if expected_answer == user_answer:
             return True
