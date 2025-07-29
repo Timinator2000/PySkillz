@@ -284,20 +284,27 @@ class PrintBasedExercise(Exercise):
         
             self.send_msg(self.bug_channel, 'First Failed Test Case:')
             self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'Your Output:\n')
+            self.send_msg(self.bug_channel, f'Your Output:')
+            self.send_msg(self.bug_channel, '')
 
             expected_answer_length = len(expected_answer)
             user_answer_length = len(user_answer)
             for i in range(max(expected_answer_length, user_answer_length)):
                 if i == expected_answer_length:
-                    msg = f'\nYour answer should have ended right where it is. The following '
-                    msg += f'{user_answer_length - i} lines should not have been printed.\n'
+                    too_many = user_answer_length - i
+                    msg = f'Your answer should have ended right where it is. The following '
+                    msg += f'{too_many} line{"s" if too_many > 1 else ""} should not have been printed.'
+                    self.send_msg(self.bug_channel, '')
                     self.send_msg(self.bug_channel, msg)
+                    self.send_msg(self.bug_channel, '')
 
                 if i == user_answer_length:
-                    msg = f'\nYour answer is correct so far, but you are missing the following '
-                    msg += f'{expected_answer_length - i} lines.\n'
+                    missing = expected_answer_length - i
+                    msg = f'Your answer is correct so far, but you are missing the following '
+                    msg += f'{missing} line' + 's.'[missing == 1:]
+                    self.send_msg(self.bug_channel, '')
                     self.send_msg(self.bug_channel, msg)
+                    self.send_msg(self.bug_channel, '')
             
                 expected_line = '' if i >= expected_answer_length else expected_answer[i]
                 user_line = '' if i >= user_answer_length else user_answer[i]
