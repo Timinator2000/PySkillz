@@ -237,9 +237,9 @@ class PrintBasedExercise(Exercise):
     def swap_printer(self):
         self.test_case_printing = not self.test_case_printing
         if self.test_case_printing:
-            builtins.print = self.normal_print
-        else:
             builtins.print = self.new_print
+        else:
+            builtins.print = self.normal_print
 
             
     def new_print(self, *args):
