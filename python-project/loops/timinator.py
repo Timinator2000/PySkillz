@@ -153,7 +153,7 @@ class Exercise():
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, 'Input:')
             self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+            self.display_test_case(self.first_failed_test_case)
 
         elif expected_answer != user_answer:
         
@@ -164,7 +164,7 @@ class Exercise():
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'Input:')
             self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+            self.display_test_case(self.first_failed_test_case)
             
             
     def generate_answer(self, solution, test_case):
@@ -201,7 +201,7 @@ class Exercise():
             if self.run_test_case(test_case):
                 count += 1
 
-        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases} fixed test cases solved correctly.')
+        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
         
         count = 0
         for _ in range(self.num_random_test_cases):
@@ -212,7 +212,7 @@ class Exercise():
 
         if self.first_failed_test_case:
             self.fail()
-            self.display_failed_test_case()
+            self.display_first_failed_test_case()
             return
                 
         self.success()
@@ -278,7 +278,7 @@ class PrintBasedExercise(Exercise):
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, 'Input:')
             self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+            self.display_test_case(self.first_failed_test_case)
 
         elif expected_answer != user_answer:
         
@@ -289,4 +289,4 @@ class PrintBasedExercise(Exercise):
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'Input:')
             self.send_msg(self.bug_channel, '')
-            self.display_test_case(test_case)
+            self.display_test_case(self.first_failed_test_case)
