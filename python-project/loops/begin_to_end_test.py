@@ -7,8 +7,9 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 
 
 success_message = '"This is not the end. It is not even the beginning of the end. '
-success_message += 'But it is, perhaps, the end of the beginning."\n'
-success_message += '\n     —— Winston Churchill'
+success_message += 'But it is, perhaps, the end of the beginning."'
+success_message += '\n\n'
+success_message += '     —— Winston Churchill'
 
 
 class BeginToEnd(timinator_tools.PrintBasedExercise):
