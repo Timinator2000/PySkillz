@@ -251,7 +251,7 @@ class PrintBasedExercise(Exercise):
         if file==sys.stderr:
             self.normal_print(*args, sep=sep, end=end, file=file, flush=flush)
         else:
-            string = end.join(str(arg for arg in args))
+            string = end.join(str(arg) for arg in args)
             self.output_buffer.extend(string.split('\n'))
 
             
