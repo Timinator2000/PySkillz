@@ -196,10 +196,12 @@ class Exercise():
                 break
                 
             count += 1
-            
-        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
+
+        word = 'case' if count == 1 else 'cases'
+        self.send_msg('Standard Output', f'{count} fixed test {word} solved correctly.')
         
         if count != len(self.fixed_test_cases):
+            self.send_msg('Standard Output', f'FAILURE on fixed test case {count + 1}.')
             return
         
         count = 0
@@ -209,9 +211,11 @@ class Exercise():
                 
             count += 1
 
-        self.send_msg('Standard Output', f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
+        word = 'case' if count == 1 else 'cases'
+        self.send_msg('Standard Output', f'{count} random test {word} solved correctly.')
 
         if count != self.num_random_test_cases:
+            self.send_msg('Standard Output', f'FAILURE on random test case {count + 1}.')
             return
 
         self.success()
