@@ -249,7 +249,7 @@ class PrintBasedExercise(Exercise):
             
     def new_print(self, *args, sep=' ', end='\n', file=sys.stdout, flush=False):
         if file==sys.stderr:
-            self.normal_print(args, sep=sep, end=end, file=file, flush=flush)
+            self.normal_print(*args, sep=sep, end=end, file=file, flush=flush)
         else:
             string = end.join(str(arg for arg in args))
             self.output_buffer.extend(string.split('\n'))
