@@ -226,19 +226,29 @@ class PrintBasedExercise(Exercise):
         super().__init__(user_solution, suggested_solution, solution_path)
         self.print_output = []
                 
-    #     self.old_print = builtins.print
-    #     builtins.print = self.new_print
+        self.normal_print = builtins.print
+        self.test_case_printing = False
 
 
-    # def __del__(self):
-    #     builtins.print = self.old_print
-                
+    def __del__(self):
+        builtins.print = self.normal_print
 
-    # def new_print(self, *args):
-    #     self.print_output.append(' '.join(str(arg) for arg in args))
+
+    def swap_printer(self):
+        self.normal_printing = not self.normal_printing
+        if self.normal_printing:
+            builtins.print = self.normal_print
+        else:
+            builtins.print = self.new_print
+
+            
+    def new_print(self, *args):
+        self.print_output.append(' '.join(str(arg) for arg in args))
 
             
     def check_answer_format(self, test_case):
+        self.swap_printer()
+                
         self.suggested_solution(*deepcopy(test_case))
         expected_answer = deepcopy(self.print_output)
         self.print_output.clear
@@ -247,6 +257,8 @@ class PrintBasedExercise(Exercise):
         user_answer = deepcopy(self.print_output)
         self.print_output.clear
 
+        self.swap_printer()
+                
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
