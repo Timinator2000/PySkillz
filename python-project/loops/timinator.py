@@ -226,16 +226,16 @@ class PrintBasedExercise(Exercise):
         super().__init__(user_solution, suggested_solution, solution_path)
         self.print_output = []
                 
-        self.old_print = builtins.print
-        builtins.print = self.new_print
+    #     self.old_print = builtins.print
+    #     builtins.print = self.new_print
 
 
-    def __del__(self):
-        builtins.print = self.old_print
+    # def __del__(self):
+    #     builtins.print = self.old_print
                 
 
-    def new_print(self, *args):
-        self.print_output.append(' '.join(str(arg) for arg in args))
+    # def new_print(self, *args):
+    #     self.print_output.append(' '.join(str(arg) for arg in args))
 
             
     def check_answer_format(self, test_case):
