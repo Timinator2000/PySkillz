@@ -312,8 +312,8 @@ class PrintBasedExercise(Exercise):
                 if user_line:
                     self.send_msg(self.bug_channel, user_line)
                     if expected_line and expected_line != user_line:
-                        msg = f'There is a problem with line {i+1} of your output. It '
-                        msg += f'should have been...'
+                        msg = f'There is a problem with the most recent line '
+                        msg += f'of your output. It should have been...'
                         self.send_msg(self.bug_channel, '')
                         self.send_msg(self.bug_channel, msg)
                         self.send_msg(self.bug_channel, '')
