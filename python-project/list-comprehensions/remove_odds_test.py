@@ -28,7 +28,7 @@ class RemoveOdds(timinator.Exercise):
         
         super().__init__(user_solution, suggested_solution, f'{section}{exercise_name}_solution.py')
         self.success_message = success_message
-        self.num_random_test_cases = 10
+        self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
             [[1, 3, 5, 7, 9]],
