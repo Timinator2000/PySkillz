@@ -1,4 +1,4 @@
-# Last Edited: July 28, 2025
+# Last Edited: July 28, 2025 7:22pm MDT
 
 import random
 import re
@@ -216,3 +216,52 @@ class Exercise():
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(f'Suggested Solution ✅', self.suggested_solution_text)
+
+
+
+class PrintBasedExercise(Exercise):
+
+    def check_answer_format(self, test_case):
+        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        user_answer = self.user_solution(*deepcopy(test_case))
+
+        expected_answer_format = self.data_type(expected_answer)
+        user_answer_format = self.data_type(user_answer)
+
+        if expected_answer_format == user_answer_format:
+            return True
+
+        self.fail()
+        self.send_msg(self.bug_channel, 'Incorrect Data Types:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
+        self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
+        self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, 'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
+            
+        return False
+
+        
+    def check_answer(self, test_case):
+        expected_answer = self.suggested_solution(*deepcopy(test_case))
+        user_answer = self.user_solution(*deepcopy(test_case))
+
+        if expected_answer == user_answer:
+            return True
+
+        self.fail()
+        self.send_msg(self.bug_channel, f'Incorrect Answer:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+        self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
+            
+        return False
