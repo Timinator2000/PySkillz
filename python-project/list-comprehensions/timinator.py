@@ -1,8 +1,9 @@
-# Last Edited: July 28, 2025
+# Last Edited: July 29, 2025 9:02am MDT
 
 import random
 import re
 from copy import deepcopy
+import builtins
 
 
 CONGRATS = ['Kudos!',
@@ -195,10 +196,12 @@ class Exercise():
                 break
                 
             count += 1
-            
-        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases)} fixed test cases solved correctly.')
+
+        word = 'case' if count == 1 else 'cases'
+        self.send_msg('Standard Output', f'{count} fixed test {word} solved correctly.')
         
         if count != len(self.fixed_test_cases):
+            self.send_msg('Standard Output', f'FAILURE on fixed test case {count + 1}.')
             return
         
         count = 0
@@ -208,11 +211,101 @@ class Exercise():
                 
             count += 1
 
-        self.send_msg('Standard Output', f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
+        word = 'case' if count == 1 else 'cases'
+        self.send_msg('Standard Output', f'{count} random test {word} solved correctly.')
 
         if count != self.num_random_test_cases:
+            self.send_msg('Standard Output', f'FAILURE on random test case {count + 1}.')
             return
 
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(f'Suggested Solution ✅', self.suggested_solution_text)
+
+
+
+class PrintBasedExercise(Exercise):
+
+    def __init__(self, user_solution, suggested_solution, solution_path):
+        super().__init__(user_solution, suggested_solution, solution_path)
+        self.print_output = []
+                
+        self.normal_print = builtins.print
+        self.test_case_printing = False
+
+
+    def __del__(self):
+        builtins.print = self.normal_print
+
+
+    def swap_printer(self):
+        self.test_case_printing = not self.test_case_printing
+        if self.test_case_printing:
+            builtins.print = self.new_print
+        else:
+            builtins.print = self.normal_print
+
+            
+    def new_print(self, *args):
+        self.print_output.append(' '.join(str(arg) for arg in args))
+
+            
+    def check_answer_format(self, test_case):
+        self.swap_printer()
+                
+        self.suggested_solution(*deepcopy(test_case))
+        expected_answer = deepcopy(self.print_output)
+        self.print_output.clear()
+        
+        user_answer = self.user_solution(*deepcopy(test_case))
+        user_answer = deepcopy(self.print_output)
+        self.print_output.clear()
+
+        self.swap_printer()
+                
+        expected_answer_format = self.data_type(expected_answer)
+        user_answer_format = self.data_type(user_answer)
+
+        if len(expected_answer_format) == len(user_answer_format):
+            return True
+
+        self.fail()
+        self.send_msg(self.bug_channel, 'Incorrect number of lines printed:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer = {len(expected_answer_format)} lines printed.')
+        self.send_msg(self.bug_channel, f'   Your answer     = {len(user_answer)} lines printed.')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, 'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
+            
+        return False
+
+        
+    def check_answer(self, test_case):
+        self.swap_printer()
+
+        self.suggested_solution(*deepcopy(test_case))
+        expected_answer = deepcopy(self.print_output)
+        self.print_output.clear()
+        
+        user_answer = self.user_solution(*deepcopy(test_case))
+        user_answer = deepcopy(self.print_output)
+        self.print_output.clear()
+
+        self.swap_printer()
+
+        if expected_answer == user_answer:
+            return True
+
+        self.fail()
+        self.send_msg(self.bug_channel, f'Incorrect Answer:')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+        self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+        self.send_msg(self.bug_channel, '')
+        self.send_msg(self.bug_channel, f'Input:')
+        self.send_msg(self.bug_channel, '')
+        self.display_test_case(test_case)
+            
+        return False
