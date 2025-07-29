@@ -227,14 +227,14 @@ class PrintBasedExercise(Exercise):
         self.print_output = []
                 
         self.old_print = builtins.print
-        builtins.print = self.new_print(*args)
+        builtins.print = self.new_print
 
 
     def __del__(self):
         builtins.print = self.old_print
                 
 
-    def print(self, *args):
+    def new_print(self, *args):
         self.print_output.append(' '.join(str(arg) for arg in args))
 
             
