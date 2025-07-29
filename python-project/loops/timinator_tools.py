@@ -284,8 +284,34 @@ class PrintBasedExercise(Exercise):
         
             self.send_msg(self.bug_channel, 'First Failed Test Case:')
             self.send_msg(self.bug_channel, '')
-            self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
-            self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+            self.send_msg(self.bug_channel, f'Your Output:\n')
+
+            expected_answer_length = len(expected_answer)
+            user_answer_length = len(user_answer)
+            for i in range(max(expected_answer_length, user_answer_length)):
+                if i == expected_answer_length:
+                    msg = f'\nYour answer should have ended right where it is. The following '
+                    msg += f'{user_answer_length - i} lines should not have been printed.\n'
+                    self.send_msg(self.bug_channel, msg)
+
+                if i == user_answer_length:
+                    msg = f'\nYour answer is correct so far, but you are missing the following '
+                    msg += f'{expected_answer_length - i} lines.\n'
+                    self.send_msg(self.bug_channel, msg)
+            
+                expected_line = '' if i >= expected_answer_length else expected_answer[i]
+                user_line = '' if i >= user_answer_length else user_answer[i]
+
+                if user_line:
+                    self.send_msg(self.bug_channel, user_line)
+                    if expected_line and expected_line != user_line:
+                        msg = f'\nThere is a problem with line {i+1} of your output. It '
+                        msg += f'should have been...\n\n{expected_output}'
+                        self.send_msg(self.bug_channel, msg)
+                        break
+                else:
+                    self.send_msg(self.bug_channel, expected_line)
+                            
             self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'Input:')
             self.send_msg(self.bug_channel, '')
