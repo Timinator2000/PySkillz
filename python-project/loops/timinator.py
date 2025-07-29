@@ -1,4 +1,4 @@
-# Last Edited: July 28, 2025 7:22pm MDT
+# Last Edited: July 28, 2025 7:41pm MDT
 
 import random
 import re
@@ -222,7 +222,7 @@ class Exercise():
 class PrintBasedExercise(Exercise):
 
     def __init__(self, user_solution, suggested_solution, solution_path):
-        super().__init__(self, user_solution, suggested_solution, solution_path)
+        super().__init__(user_solution, suggested_solution, solution_path)
         self.print_output = []
                 
         self.old_print = print
@@ -232,6 +232,7 @@ class PrintBasedExercise(Exercise):
     def print(self, *args):
         self.print_output.append(' '.join(str(arg) for arg in args))
 
+            
     def check_answer_format(self, test_case):
         self.suggested_solution(*deepcopy(test_case))
         expected_answer = deepcopy(self.print_output)
