@@ -306,7 +306,7 @@ class PrintBasedExercise(Exercise):
                     self.send_msg(self.bug_channel, user_line)
                     if expected_line and expected_line != user_line:
                         msg = f'\nThere is a problem with line {i+1} of your output. It '
-                        msg += f'should have been...\n\n{expected_output}'
+                        msg += f'should have been...\n\n{expected_line}'
                         self.send_msg(self.bug_channel, msg)
                         break
                 else:
