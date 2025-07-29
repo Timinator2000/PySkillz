@@ -43,7 +43,7 @@ class BeginToEnd(timinator_tools.PrintBasedExercise):
         
         
     def generate_random_test_case(self):
-        return [random.randint(-10, 10), random.randint(-10, 10)]
+        return [random.randint(-20, 10), random.randint(0, 30)]
 
 
 if __name__ == "__main__":
