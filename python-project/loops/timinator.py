@@ -70,6 +70,7 @@ class Exercise():
         self.user_solution = user_solution
         self.suggested_solution = suggested_solution
         self.success_message = ''
+        self.first_failed_test_case = None
 
         with open(solution_path, 'r') as f:
             self.suggested_solution_text = f.read()
@@ -133,92 +134,87 @@ class Exercise():
         return None
 
 
-    def check_answer_format(self, test_case):
-        expected_answer = self.suggested_solution(*deepcopy(test_case))
-        user_answer = self.user_solution(*deepcopy(test_case))
-
+    def display_first_failed_test_case(self):
+        expected_answer = self.generate_answer(self.suggested_solution, self.first_failed_test_case)
+        user_answer = self.generate_answer(self.user_solution, self.first_failed_test_case)
+            
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
-        if expected_answer_format == user_answer_format:
-            return True
+        if expected_answer_format != user_answer_format:
 
-        self.fail()
-        self.send_msg(self.bug_channel, 'Incorrect Data Types:')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
-        self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
-        self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, 'Input:')
-        self.send_msg(self.bug_channel, '')
-        self.display_test_case(test_case)
-            
-        return False
+            self.send_msg(self.bug_channel, 'First Failed Test Case: Incorrect Data Types:')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
+            self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
+            self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, 'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
 
+        elif expected_answer != user_answer:
         
-    def check_answer(self, test_case):
-        expected_answer = self.suggested_solution(*deepcopy(test_case))
-        user_answer = self.user_solution(*deepcopy(test_case))
-
-        if expected_answer == user_answer:
-            return True
-
-        self.fail()
-        self.send_msg(self.bug_channel, f'Incorrect Answer:')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
-        self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'Input:')
-        self.send_msg(self.bug_channel, '')
-        self.display_test_case(test_case)
+            self.send_msg(self.bug_channel, 'First Failed Test Case: Incorrect Answer:')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+            self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
             
-        return False
+            
+    def generate_answer(self, solution, test_case):
+        return solution(*deepcopy(test_case))
 
-
+                
     def run_test_case(self, test_case):
         if Exercise.PRINT_TEST_CASES:
             print(test_case)
 
-        if not self.check_answer_format(test_case):
-               return False
+        expected_answer = self.generate_answer(self.suggested_solution, test_case)
+        user_answer = self.generate_answer(self.user_solution, test_case)
+            
+        expected_answer_format = self.data_type(expected_answer)
+        user_answer_format = self.data_type(user_answer)
 
-        return self.check_answer(test_case)
+        if expected_answer_format != user_answer_format:
+            if not self.first_failed_test_case:
+                self.first_failed_test_case = test_case
+            return False
 
+        if expected_answer != user_answer:
+            if not self.first_failed_test_case:
+                self.first_failed_test_case = test_case
+            return False
+
+        return True
+                
         
     def run(self):
         
         count = 0
         for test_case in self.fixed_test_cases:
-            if not self.run_test_case(test_case):
-                break
-                
-            count += 1
+            if self.run_test_case(test_case):
+                count += 1
 
-        word = 'case' if count == 1 else 'cases'
-        self.send_msg('Standard Output', f'{count} fixed test {word} solved correctly.')
-        
-        if count != len(self.fixed_test_cases):
-            self.send_msg('Standard Output', f'FAILURE on fixed test case {count + 1}.')
-            return
+        self.send_msg('Standard Output', f'{count} of {len(self.fixed_test_cases} fixed test cases solved correctly.')
         
         count = 0
         for _ in range(self.num_random_test_cases):
-            if not self.run_test_case(self.generate_random_test_case()):
-                break
+            if self.run_test_case(self.generate_random_test_case()):
+                count += 1
                 
-            count += 1
+        self.send_msg('Standard Output', f'{count} of {self.num_random_test_cases} random test cases solved correctly.')
 
-        word = 'case' if count == 1 else 'cases'
-        self.send_msg('Standard Output', f'{count} random test {word} solved correctly.')
-
-        if count != self.num_random_test_cases:
-            self.send_msg('Standard Output', f'FAILURE on random test case {count + 1}.')
+        if self.first_failed_test_case:
+            self.fail()
+            self.display_failed_test_case()
             return
-
+                
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(f'Suggested Solution ✅', self.suggested_solution_text)
@@ -254,63 +250,43 @@ class PrintBasedExercise(Exercise):
             string = end.join(str(arg) for arg in args)
             self.output_buffer.extend(string.split('\n'))
 
-            
-    def check_answer_format(self, test_case):
+    def generate_answer(self, solution, test_case):
         self.swap_printer()
-                
-        self.suggested_solution(*deepcopy(test_case))
-        expected_answer = deepcopy(self.output_buffer)
+        solution(*deepcopy(test_case))
+        answer = deepcopy(self.output_buffer)
         self.output_buffer.clear()
-        
-        user_answer = self.user_solution(*deepcopy(test_case))
-        user_answer = deepcopy(self.output_buffer)
-        self.output_buffer.clear()
+        self.swap_printer()
+        return answer
 
-        self.swap_printer()
-                
+            
+    def display_first_failed_test_case(self):
+        expected_answer = self.generate_answer(self.suggested_solution, self.first_failed_test_case)
+        user_answer = self.generate_answer(self.user_solution, self.first_failed_test_case)
+            
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
-        if len(expected_answer_format) == len(user_answer_format):
-            return True
+        if expected_answer_format != user_answer_format:
 
-        self.fail()
-        self.send_msg(self.bug_channel, 'Incorrect number of lines printed:')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Expected answer = {len(expected_answer_format)} lines printed.')
-        self.send_msg(self.bug_channel, f'   Your answer     = {len(user_answer)} lines printed.')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, 'Input:')
-        self.send_msg(self.bug_channel, '')
-        self.display_test_case(test_case)
-            
-        return False
+            self.send_msg(self.bug_channel, 'First Failed Test Case: Incorrect Data Types:')
+            self.send_msg(self.bug_channel, '    I DOUBT THIS COULD REALLY HAPPEN')
+            self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
+            self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
+            self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, 'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
 
+        elif expected_answer != user_answer:
         
-    def check_answer(self, test_case):
-        self.swap_printer()
-
-        self.suggested_solution(*deepcopy(test_case))
-        expected_answer = deepcopy(self.output_buffer)
-        self.output_buffer.clear()
-        
-        user_answer = self.user_solution(*deepcopy(test_case))
-        user_answer = deepcopy(self.output_buffer)
-        self.output_buffer.clear()
-
-        self.swap_printer()
-
-        if expected_answer == user_answer:
-            return True
-
-        self.fail()
-        self.send_msg(self.bug_channel, f'Incorrect Answer:')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
-        self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'Input:')
-        self.send_msg(self.bug_channel, '')
-        self.display_test_case(test_case)
-            
-        return False
+            self.send_msg(self.bug_channel, 'First Failed Test Case: Incorrect Answer:')
+            self.send_msg(self.bug_channel, '   NOW THIS IS WHAT I NEED TO CODE')
+            self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
+            self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
+            self.send_msg(self.bug_channel, '')
+            self.send_msg(self.bug_channel, f'Input:')
+            self.send_msg(self.bug_channel, '')
+            self.display_test_case(test_case)
