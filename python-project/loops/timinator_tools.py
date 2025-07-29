@@ -282,8 +282,8 @@ class PrintBasedExercise(Exercise):
 
         elif expected_answer != user_answer:
         
-            self.send_msg(self.bug_channel, 'First Failed Test Case: Incorrect Answer:')
-            self.send_msg(self.bug_channel, '   NOW THIS IS WHAT I NEED TO CODE')
+            self.send_msg(self.bug_channel, 'First Failed Test Case:')
+            self.send_msg(self.bug_channel, '')
             self.send_msg(self.bug_channel, f'   Expected answer = {expected_answer}')
             self.send_msg(self.bug_channel, f'   Your answer     = {user_answer}')
             self.send_msg(self.bug_channel, '')
