@@ -36,8 +36,6 @@ class BeginToEnd(timinator.PrintBasedExercise):
             [0, 4]
         ]
 
-    timinator.Exercise.PRINT_TEST_CASES = True
-    
         
     def display_test_case(self, test_case) -> None:
         begin, end = test_case
