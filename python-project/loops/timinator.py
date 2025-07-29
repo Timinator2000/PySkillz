@@ -262,17 +262,14 @@ class PrintBasedExercise(Exercise):
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
-        if expected_answer_format == user_answer_format:
+        if len(expected_answer_format) == len(user_answer_format):
             return True
 
         self.fail()
-        self.send_msg(self.bug_channel, 'Incorrect Data Types:')
+        self.send_msg(self.bug_channel, 'Incorrect number of lines printed:')
         self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Expected answer format = {expected_answer_format}')
-        self.send_msg(self.bug_channel, f'   Expected answer        = {expected_answer}')
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'   Your answer format = {user_answer_format}')
-        self.send_msg(self.bug_channel, f'   Your answer        = {user_answer}')
+        self.send_msg(self.bug_channel, f'   Expected answer = {len(expected_answer_format)} lines printed.')
+        self.send_msg(self.bug_channel, f'   Your answer     = {len(user_answer)} lines printed.')
         self.send_msg(self.bug_channel, '')
         self.send_msg(self.bug_channel, 'Input:')
         self.send_msg(self.bug_channel, '')
@@ -282,6 +279,8 @@ class PrintBasedExercise(Exercise):
 
         
     def check_answer(self, test_case):
+        self.swap_printer()
+
         self.suggested_solution(*deepcopy(test_case))
         expected_answer = deepcopy(self.print_output)
         self.print_output.clear
@@ -289,6 +288,8 @@ class PrintBasedExercise(Exercise):
         user_answer = self.user_solution(*deepcopy(test_case))
         user_answer = deepcopy(self.print_output)
         self.print_output.clear
+
+        self.swap_printer()
 
         if expected_answer == user_answer:
             return True
