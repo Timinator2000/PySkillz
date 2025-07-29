@@ -1,9 +1,10 @@
-# Last Edited: July 29, 2025 9:02am MDT
+# Last Edited: July 29, 2025 Afternoon
 
 import random
 import re
 from copy import deepcopy
 import builtins
+import sys
 
 
 CONGRATS = ['Kudos!',
@@ -228,7 +229,7 @@ class PrintBasedExercise(Exercise):
 
     def __init__(self, user_solution, suggested_solution, solution_path):
         super().__init__(user_solution, suggested_solution, solution_path)
-        self.print_output = []
+        self.output_buffer = []
                 
         self.normal_print = builtins.print
         self.test_case_printing = False
@@ -246,20 +247,24 @@ class PrintBasedExercise(Exercise):
             builtins.print = self.normal_print
 
             
-    def new_print(self, *args):
-        self.print_output.append(' '.join(str(arg) for arg in args))
+    def new_print(self, *args, sep=' ', end='\n', file=sys.stdout, flush=False):
+        if file=sys.stderr:
+            self.normal_print(args, sep=sep, end=end, file=file, flush=flush)
+        else:
+            string = end.join(str(arg for arg in args))
+            self.output_buffer.extend(string.split('\n'))
 
             
     def check_answer_format(self, test_case):
         self.swap_printer()
                 
         self.suggested_solution(*deepcopy(test_case))
-        expected_answer = deepcopy(self.print_output)
-        self.print_output.clear()
+        expected_answer = deepcopy(self.output_buffer)
+        self.output_buffer.clear()
         
         user_answer = self.user_solution(*deepcopy(test_case))
-        user_answer = deepcopy(self.print_output)
-        self.print_output.clear()
+        user_answer = deepcopy(self.output_buffer)
+        self.output_buffer.clear()
 
         self.swap_printer()
                 
@@ -286,12 +291,12 @@ class PrintBasedExercise(Exercise):
         self.swap_printer()
 
         self.suggested_solution(*deepcopy(test_case))
-        expected_answer = deepcopy(self.print_output)
-        self.print_output.clear()
+        expected_answer = deepcopy(self.output_buffer)
+        self.output_buffer.clear()
         
         user_answer = self.user_solution(*deepcopy(test_case))
-        user_answer = deepcopy(self.print_output)
-        self.print_output.clear()
+        user_answer = deepcopy(self.output_buffer)
+        self.output_buffer.clear()
 
         self.swap_printer()
 
