@@ -3,6 +3,7 @@
 import random
 import re
 from copy import deepcopy
+import builtins
 
 
 CONGRATS = ['Kudos!',
@@ -225,9 +226,13 @@ class PrintBasedExercise(Exercise):
         super().__init__(user_solution, suggested_solution, solution_path)
         self.print_output = []
                 
-        self.old_print = print
-        print = self.new_print(*args)
+        self.old_print = builtins.print
+        builtins.print = self.new_print(*args)
 
+
+    def __del__(self):
+        builtins.print = self.old_print
+                
 
     def print(self, *args):
         self.print_output.append(' '.join(str(arg) for arg in args))
