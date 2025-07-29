@@ -25,7 +25,7 @@ class BeginToEnd(timinator_tools.PrintBasedExercise):
             [-3, 0],
             [-4, 4],
             [5, -1],
-            [0, 10]
+            [0, 9]
         ]
 
         
