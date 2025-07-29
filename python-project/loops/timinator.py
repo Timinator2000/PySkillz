@@ -251,11 +251,11 @@ class PrintBasedExercise(Exercise):
                 
         self.suggested_solution(*deepcopy(test_case))
         expected_answer = deepcopy(self.print_output)
-        self.print_output.clear
+        self.print_output.clear()
         
         user_answer = self.user_solution(*deepcopy(test_case))
         user_answer = deepcopy(self.print_output)
-        self.print_output.clear
+        self.print_output.clear()
 
         self.swap_printer()
                 
@@ -283,11 +283,11 @@ class PrintBasedExercise(Exercise):
 
         self.suggested_solution(*deepcopy(test_case))
         expected_answer = deepcopy(self.print_output)
-        self.print_output.clear
+        self.print_output.clear()
         
         user_answer = self.user_solution(*deepcopy(test_case))
         user_answer = deepcopy(self.print_output)
-        self.print_output.clear
+        self.print_output.clear()
 
         self.swap_printer()
 
