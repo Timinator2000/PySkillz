@@ -105,10 +105,7 @@ class Exercise():
         if len(element_types) == 1:
             return f'[{element_types.pop()}]'
 
-        if len(element_types) == 0:
-            return f'[]'
-        
-        return ''
+        return '[]'
     
     
     def data_type(self, data) -> str:
