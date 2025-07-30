@@ -1,6 +1,6 @@
 # Exercise #7: Under 1800
 
-Create a function that takes a Python dictionary of vehicle types (keys) and their weights (values) in kilograms. Using a list comprehension, return a list of the types of vehicles with weight below 1800 kilograms. In the list, make the types all upper case and sort the list in ascending order.
+Create a function that takes a Python dictionary of vehicle types (keys) and their weights (values) in kilograms. Using a list comprehension, return a list of the types of vehicles with weight below 1800 kilograms. In the list, make the types all upper case and sort the list in ascending order. 
 
 @[Under 1800.]({"stubs": ["list-comprehensions/under_1800.py"], "command": "python3 list-comprehensions/under_1800_test.py"})
 
