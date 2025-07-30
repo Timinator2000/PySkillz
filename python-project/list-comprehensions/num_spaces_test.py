@@ -1,7 +1,7 @@
 import random
-import timinator
+import timinator_tools
 
-section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+section, exercise_name = timinator_tools.get_section_and_exercise_names(__file__)
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
@@ -25,7 +25,7 @@ success_message += 'The debate over one space versus two spaces after a period '
 
 
 
-class NumSpaces(timinator.Exercise):
+class NumSpaces(timinator_tools.Exercise):
     
     def __init__(self):
         
