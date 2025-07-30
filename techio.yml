@@ -6,15 +6,15 @@ plan:
     plan:
       - title: Debugging
         statement: Under Construction.md
-  - title: Loops
-    plan:
-      - title: Exercises
-        statement: 05 - loops/loops.md
-  - title: List Comprehensions
-    description: This is the list comprehension lesson description.
-    plan:
-      - title: Exercises
-        statement: 08 - list comprehensions/list comprehension.md
+  # - title: Loops
+  #   plan:
+  #     - title: Exercises
+  #       statement: 05 - loops/loops.md
+  # - title: List Comprehensions
+  #   description: This is the list comprehension lesson description.
+  #   plan:
+  #     - title: Exercises
+  #       statement: 08 - list comprehensions/list comprehension.md
 
 projects:
   python:
