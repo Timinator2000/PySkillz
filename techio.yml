@@ -20,7 +20,7 @@ plan:
 
 projects:
   python:
-    root: /python-project
+    root: /py-project
     runner: 
       name: python
       version: '3'
