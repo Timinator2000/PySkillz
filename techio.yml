@@ -9,16 +9,18 @@ plan:
   - title: Loops
     plan:
       - title: Exercises
-        statement: 05 - loops/loops.md
+        statement: Under Construction.md
+        # statement: 05 - loops/loops.md
   - title: List Comprehensions
     description: This is the list comprehension lesson description.
     plan:
       - title: Exercises
-        statement: 08 - list comprehensions/list comprehension.md
+        statement: Under Construction.md
+        # statement: 08 - list comprehensions/list comprehension.md
 
-projects:
-  python:
-    root: /python-project
-    runner: 
-      name: python
-      version: '3'
+# projects:
+#   python:
+#     root: /python-project
+#     runner: 
+#       name: python
+#       version: '3'
