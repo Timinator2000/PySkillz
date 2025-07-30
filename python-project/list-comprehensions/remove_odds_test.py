@@ -1,7 +1,7 @@
 import random
-import timinator
+import timinator_tools
 
-section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+section, exercise_name = timinator_tools.get_section_and_exercise_names(__file__)
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
@@ -22,7 +22,7 @@ success_message += 'numbers from 1 to 10 is 25, which is a perfect square!'
 
 
 
-class RemoveOdds(timinator.Exercise):
+class RemoveOdds(timinator_tools.Exercise):
     
     def __init__(self):
         
