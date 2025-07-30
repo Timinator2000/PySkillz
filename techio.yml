@@ -18,9 +18,9 @@ plan:
         statement: Under Construction.md
         # statement: 08 - list comprehensions/list comprehension.md
 
-# projects:
-#   python:
-#     root: /python-project
-#     runner: 
-#       name: python
-#       version: '3'
+projects:
+  python:
+    root: /python-project
+    runner: 
+      name: python
+      version: '3'
