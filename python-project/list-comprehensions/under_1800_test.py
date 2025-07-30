@@ -1,4 +1,4 @@
-import random
+import random 
 import timinator_tools
 
 section, exercise_name = timinator_tools.get_section_and_exercise_names(__file__)
