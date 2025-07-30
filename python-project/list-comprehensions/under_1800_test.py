@@ -1,7 +1,7 @@
 import random
-import timinator
+import timinator_tools
 
-section, exercise_name = timinator.get_section_and_exercise_names(__file__)
+section, exercise_name = timinator_tools.get_section_and_exercise_names(__file__)
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
@@ -23,7 +23,7 @@ success_message += 'Fun fact: The BelAZ 75710, made in Belarus, is the world\'s 
                    'Imagine changing a flat on that!'
 
 
-class Under1800(timinator.Exercise):
+class Under1800(timinator_tools.Exercise):
 
     VEHICLES = {'Sedan': 1500,      'SUV': 2000,          'Pickup': 2500,              'Minivan': 1600, 
                 'Van': 2400,        'Semi': 13600,        'Bicycle': 7,                'Motorcycle': 110, 
