@@ -21,4 +21,4 @@ projects:
     root: /python-project
     runner: 
       name: python
-      version:
+      version: '3'
