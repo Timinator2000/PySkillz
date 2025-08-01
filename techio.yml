@@ -16,7 +16,7 @@ plan:
         statement: 08 - list comprehensions/list comprehension.md
 projects:
   python:
-    buildCommand: prune --all
+    # buildCommand: prune --all
     # buildCommand: pip install --upgrade pip; pip install numpy matplotlib Pillow; pip install scipy numba soundfile sounddevice; apt-get -y update ; apt-get -y install libsndfile1-dev libportaudio2 libasound-dev
     root: /python-project
     runner: 
