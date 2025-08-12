@@ -23,3 +23,9 @@ Create a function that prints all numbers between, and including the two numbers
 
 [Start to Finish Sum]({"stubs": ["loops/start_to_finish_sum.py"], "command": "python3 loops/start_to_finish_sum_test.py"})
 
+
+# Exercise #5: Divisible by 5
+
+ Given a list of integers, iterate over the list and display the numbers which are divisible by 5. If you find a number greater than 150, stop the loop iteration immediately before printing anything more.
+
+[Divisible by 5]({"stubs": ["loops/divisible_by_5.py"], "command": "python3 loops/divisible_by_5_test.py"})
