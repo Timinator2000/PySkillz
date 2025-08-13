@@ -2,10 +2,10 @@ title: Python Skillzzz
 cover: PySkillz_3.png
 
 plan:
-  - title: Welcome
+  - title: Introduction
     plan:
-      - title: Debugging
-        statement: Under Construction.md
+      - title: welcome
+        statement: 01 - introduction/welcome.md
   - title: Loops
     plan:
       - title: Basic Loops
