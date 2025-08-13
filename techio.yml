@@ -8,8 +8,10 @@ plan:
         statement: Under Construction.md
   - title: Loops
     plan:
-      - title: Exercises
-        statement: 05 - loops/loops.md
+      - title: Basic Loops
+        statement: 05 - loops/loops-basic.md
+      - title: Nested Loops
+        statement: 05 - loops/loops-nested.md
   - title: List Comprehensions
     plan:
       - title: Exercises
