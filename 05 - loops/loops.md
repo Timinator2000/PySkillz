@@ -32,7 +32,7 @@ Create a function that prints all numbers between, and including the two numbers
 
 # NESTED LOOPS
 
-# Coordinate Grid
+# Exercise #1: Coordinate Grid
 
 Given a number `n`. Print all (row, col) coordinate pairs in a grid from (0, 0) to (`n`, `n`).
 
