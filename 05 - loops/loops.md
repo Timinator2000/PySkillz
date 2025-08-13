@@ -30,8 +30,25 @@ Create a function that prints all numbers between, and including the two numbers
 
 [Divisible by 5]({"stubs": ["loops/divisible_by_5.py"], "command": "python3 loops/divisible_by_5_test.py"})
 
+# NESTED LOOPS
 
+# Coordinate Grid
 
+Given a number `n`. Print all (row, col) coordinate pairs in a grid from (0, 0) to (`n`, `n`).
+
+__Example:__
+
+`n` = 2
+
+Expected Output:
+
+```
+(0,0) (0,1) (0,2)
+(1,0) (1,1) (1,2)
+(2,0) (2,1) (2,2)
+```
+
+[Coordinate Grid({"stubs": ["loops/coordinate_grid.py"], "command": "python3 loops/coordinate_grid_test.py"})
 
 *************
 
@@ -59,17 +76,7 @@ Edit
 # *****
 Challenge: Make the triangle right-aligned instead of left-aligned.
 
-3. Coordinate Grid
-Print all (x, y) coordinate pairs in a grid from (0, 0) to (4, 4).
 
-python
-Copy
-Edit
-# Example output:
-# (0,0) (0,1) (0,2) (0,3) (0,4)
-# (1,0) (1,1) (1,2) (1,3) (1,4)
-# ...
-Extension: Skip pairs where x == y.
 
 4. Chessboard Pattern
 Generate an 8×8 grid where cells alternate between "B" (black) and "W" (white).
