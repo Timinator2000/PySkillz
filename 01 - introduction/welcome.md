@@ -1,3 +1,5 @@
+![PySkillz](PySkillzBanner.png)
+
 # Exercise #1: Hello, World!
 
 Print "Hello, World!".
