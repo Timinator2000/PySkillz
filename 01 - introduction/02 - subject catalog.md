@@ -1,1 +1,0 @@
-# PySkillz Subject Catalog
