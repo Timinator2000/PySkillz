@@ -5,13 +5,13 @@ plan:
   - title: Introduction
     plan:
       - title: welcome
-        statement: 01 - introduction/welcome.md
+        statement: 01 - introduction/01 - welcome.md
       - title: Topic Catalog
-        statement: 02 - introduction/topic catalog.md
+        statement: 01 - introduction/02 - topic catalog.md
       - title: Create a new Exercise
-        statement: 03 - introduction/create a new exercise.md
+        statement: 01 - introduction/03 - create a new exercise.md
       - title: welcome
-        statement: 04 - introduction/create a new topic.md
+        statement: 01 - introduction/04 - create a new topic.md
   - title: Loops
     plan:
       - title: Basic Loops
