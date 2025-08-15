@@ -8,9 +8,9 @@ plan:
         statement: 01 - introduction/01 - welcome.md
       - title: Topic Catalog
         statement: 01 - introduction/02 - topic catalog.md
-      - title: Create a new Exercise
+      - title: Create a New Exercise
         statement: 01 - introduction/03 - create a new exercise.md
-      - title: welcome
+      - title: Create a New Topic
         statement: 01 - introduction/04 - create a new topic.md
   - title: Loops
     plan:
