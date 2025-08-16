@@ -38,4 +38,4 @@ On the next page, you’ll find a list of all the topics covered in this playgro
 
 ************
 
-[![PySkillz](../graphics/PySkillzLogoLongFinalSmaller.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
+[![PySkillz](../graphics/PySkillzLogoLongFinalSmallest.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
