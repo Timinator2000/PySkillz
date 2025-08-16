@@ -1,5 +1,7 @@
 ![PySkillz](../graphics/PySkillzBanner.png)
 
+<BR>
+
 This playground is all about exercises—lots of them. If you want to get good at writing Python code, the key is practice, and the best way to practice is by working through problems. You won’t find long tutorials or step-by-step lessons here—there’s already plenty of great material online for that. Instead, what you’ll find is a collection of exercises designed to help you sharpen your Python skillz.
 
 The main goal here is to help you get super comfortable with Python’s syntax. Think of these exercises like practicing your free throws before playing a real basketball game. Once typing out loops, conditions, and functions feels natural, solving bigger puzzles becomes way less intimidating. That way, when you move on to sites like [CodinGame](https://www.codingame.com), you can focus on strategy and problem-solving instead of worrying about the little details of Python.
