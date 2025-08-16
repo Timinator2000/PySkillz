@@ -1,4 +1,4 @@
-![PySkillz](/graphics/PySkillzBanner.png)
+![PySkillz](Python-Skills/graphics/PySkillzBanner.png)
 
 # Exercise #1: Hello, World!
 
