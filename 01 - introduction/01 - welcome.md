@@ -17,7 +17,7 @@ Create a function that takes two integers and returns their sum.
 
 
 |:-----:|:----|
-|![PySkillz](../graphics/PySkillzLogoSmall.png)|PySkillz is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).|
+|![PySkillz](../graphics/PySkillzLogoSmallerYet.png)|PySkillz is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).|
 
 ![Creative Commons](../graphics/CreativeCommons.png)
 
