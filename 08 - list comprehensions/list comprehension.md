@@ -15,3 +15,8 @@ Given a list of numbers, use a list comprehension to remove the odd numbers.
 Create a function that takes a string and uses a list comprehension to return the number of spaces in the string.
 
 [Count the Spaces]({"stubs": ["list-comprehensions/num_spaces.py"], "command": "python3 list-comprehensions/num_spaces_test.py"})
+
+************
+
+[![PySkillz](../graphics/PySkillzLogoSmallest.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
+
