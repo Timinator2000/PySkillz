@@ -30,8 +30,9 @@ Create a function that prints all numbers between, and including the two numbers
 
 [Divisible by 5]({"stubs": ["loops-basic/divisible_by_5.py"], "command": "python3 loops-basic/divisible_by_5_test.py"})
 
+<BR>
+
 ************
 
-[![PySkillz](../graphics/PySkillzLogoSmallest.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
-
+[![PySkillz Home](../graphics/PySkillzFooter.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
 
