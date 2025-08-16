@@ -4,7 +4,7 @@ cover: graphics/PySkillzLogo.png
 plan:
   - title: Introduction
     plan:
-      - title: welcome
+      - title: Welcome
         statement: 01 - introduction/01 - welcome.md
       - title: Topic Catalog
         statement: 01 - introduction/02 - topic catalog.md
