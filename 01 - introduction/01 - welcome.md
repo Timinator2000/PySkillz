@@ -15,9 +15,5 @@ Create a function that takes two integers and returns their sum.
 
 ************
 
-
-PySkillz is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
-
-![PySkillz](../graphics/PySkillzLogoSmallest.png) ![Creative Commons](../graphics/CreativeCommons.png)
-
+![PySkillz](../graphics/PySkillzLogoSmallerYet.png)
 
