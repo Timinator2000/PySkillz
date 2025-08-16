@@ -1,5 +1,7 @@
 # Create a New Exercise
 
+Some text here.
+
 <BR>
 
 ************
