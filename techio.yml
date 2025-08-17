@@ -6,8 +6,8 @@ plan:
     plan:
       - title: Welcome
         statement: 01 - introduction/01 - welcome.md
-      - title: Topic Catalog
-        statement: 01 - introduction/02 - topic catalog.md
+      - title: Skillz Catalog
+        statement: 01 - introduction/02 - skillz catalog.md
       - title: Create a New Exercise
         statement: 01 - introduction/03 - create a new exercise.md
       - title: Create a New Topic
