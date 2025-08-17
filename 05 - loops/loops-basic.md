@@ -34,5 +34,5 @@ Create a function that prints all numbers between, and including the two numbers
 
 ************
 
-[![PySkillz Home](../graphics/PySkillzFooter.png)](https://www.codingame.com/profile/2df7157da821f39bbf6b36efae1568142907334/playgrounds)
+[![PySkillz Home](../graphics/PySkillzFooter.png)](skillz-catalog)
 
