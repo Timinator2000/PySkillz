@@ -5,4 +5,4 @@
 
 ************
 
-[![PySkillz Home](../graphics/PySkillzFooter.png)](welcome)
+[![PySkillz Home](../graphics/PySkillzFooter.png)](skillz-catalog)
