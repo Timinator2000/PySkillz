@@ -40,4 +40,4 @@ On the next page, you’ll find a list of all the topics covered in this playgro
 
 ************
 
-[![PySkillz Home](../graphics/PySkillzFooter.png)](welcome)
+[![PySkillz Home](../graphics/PySkillzFooter.png)](skillz-catalog)
