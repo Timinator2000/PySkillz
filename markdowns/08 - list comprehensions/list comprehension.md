@@ -20,4 +20,4 @@ Create a function that takes a string and uses a list comprehension to return th
 
 ************
 
-[![Skillz Catalog](../graphics/PySkillzFooter.png)](skillz-catalog)
+[![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
