@@ -28,13 +28,13 @@ plan:
         statement: markdowns/90 - making contributions/03 - create a new exercise.md
       - title: Create a New Topic
         statement: markdowns/90 - making contributions/04 - create a new topic.md
-# projects:
-#   python:
-#     # buildCommand: prune --all
-#     # buildCommand: pip install --upgrade pip; pip install numpy matplotlib Pillow; pip install scipy numba soundfile sounddevice; apt-get -y update ; apt-get -y install libsndfile1-dev libportaudio2 libasound-dev
-#     root: /python-project
-#     runner: 
-#       name: python
-#       version: '3'
-#     #   buildCommand: |
-#     #     pip install numpy
+projects:
+  python:
+    # buildCommand: prune --all
+    # buildCommand: pip install --upgrade pip; pip install numpy matplotlib Pillow; pip install scipy numba soundfile sounddevice; apt-get -y update ; apt-get -y install libsndfile1-dev libportaudio2 libasound-dev
+    root: /python-project
+    runner: 
+      name: python
+      version: '3'
+    #   buildCommand: |
+    #     pip install numpy
