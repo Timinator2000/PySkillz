@@ -21,7 +21,7 @@ plan:
   - title: List Comprehensions
     plan:
       - title: Making Contributions
-        statement: markdowns/90 - making contributions/01 - overview.md
+        statement: markdowns/90 - making contributions/01 - getting started.md
       - title: Create a New Topic
         statement: markdowns/90 - making contributions/02 - project structure.md
       - title: Create a New Exercise
