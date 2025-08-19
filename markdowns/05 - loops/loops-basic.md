@@ -34,5 +34,5 @@ Create a function that prints all numbers between, and including the two numbers
 
 ************
 
-[![Skillz Catalog](../graphics/PySkillzFooter.png)](skillz-catalog)
+[![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
 
