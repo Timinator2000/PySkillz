@@ -74,4 +74,4 @@ Extension: Center-align the numbers to make the triangle look neat.
 
 ************
 
-[![Skillz Catalog](../graphics/PySkillzFooter.png)](skillz-catalog)
+[![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
