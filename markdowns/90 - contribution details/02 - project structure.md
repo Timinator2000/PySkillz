@@ -1,4 +1,4 @@
-# Getting Set Up for Success
+# Project Structure
 
 Some text here.
 
