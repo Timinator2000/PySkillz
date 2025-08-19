@@ -1,6 +1,9 @@
-# Getting Set Up for Success
+# Making Contributions to PySkillz
 
 Some text here.
+
+# Fork the GitHub Repository
+
 
 <BR>
 
