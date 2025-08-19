@@ -1,4 +1,4 @@
-![PySkillz](../graphics/PySkillzBanner.png)
+![PySkillz](../../graphics/PySkillzBanner.png)
 
 <BR>
 
@@ -40,4 +40,4 @@ On the next page, you’ll find a list of all the topics covered in this playgro
 
 ************
 
-[![Skillz Catalog](../graphics/PySkillzFooter.png)](skillz-catalog)
+[![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
