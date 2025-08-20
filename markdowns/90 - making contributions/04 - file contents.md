@@ -5,12 +5,12 @@
 # exercise_name.py
 
 ```python
-def exercise(a: int, b: int) -> int:
+def exercise_name(a: int, b: int) -> int:
     return # Your code goes here.
 ```
 
 ```python
-def exercise() -> None:
+def exercise_name() -> None:
     # Your code goes here.
     
     # Write an answer using print
@@ -21,12 +21,12 @@ def exercise() -> None:
 # exercise_name_solution.py
 
 ```python
-def exercise(a: int, b: int) -> int:
+def exercise_name(a: int, b: int) -> int:
     return a + b
 ```
 
 ```python
-def exercise(a: int, b: int) -> None:
+def exercise_name(a: int, b: int) -> None:
     print(a + b)
 ```
 
