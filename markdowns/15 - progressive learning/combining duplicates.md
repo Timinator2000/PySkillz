@@ -1,0 +1,1 @@
+while there are duplicate numbers in a list, combine them into a single number and append that single number to the list. Return the final list, sorted from smallest to largest. The final list should not have any duplicates.
