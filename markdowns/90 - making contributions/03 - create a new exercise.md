@@ -3,7 +3,7 @@
 Three files must be organized into a single folder to create a new exercise:
 
 | Filename | Description |
-|:---------|:------------|
+|:---------:|:------------|
 | exercise_name.py | This is the code block presented to the user to solve. |
 | exercise_name_solution.py | This is the working solution to the exercise. The code in this file will be used by the grader to determine the expected output. This entire file will be displayed to the user as the suggested solution(s) after succesffuly solving completing the exercise. |
 | exercise_name_test.py | This code creates the exercise subclass that defines the specifics of this exercise. For instance, code that defines the static test cases and how to generate random test cases is located here. |
