@@ -58,7 +58,7 @@ When the exercise runs, you will see all the same output the user sees in the pl
 ```text
 Win🎉> Success Channel on Tech.io.
 Bug🐞> Bug Channel on Tech.io.
-Sol✅> Solution Channel on Tech.io.
+Sol✅> Suggested Solution Channel on Tech.io.
 StdOut> Standard Output Channel on Tech.io
 ```
 
