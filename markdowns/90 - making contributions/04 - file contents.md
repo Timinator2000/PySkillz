@@ -10,7 +10,7 @@ def exercise_name(a: int, b: int) -> int:
 ```
 
 ```python
-def exercise_name() -> None:
+def exercise_name(a: int, b: int) -> None:
     # Your code goes here.
     
     # Write an answer using print
