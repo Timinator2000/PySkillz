@@ -17,6 +17,10 @@ Three files must be organized into a single folder to create a new exercise:
 | exercise_name_solution.py | This is the working solution to the exercise. The code in this file will be used by the grader to determine the expected output. This entire file will be displayed to the user as the suggested solution(s) after succesffuly solving completing the exercise. |
 | exercise_name_test.py | This code creates the exercise subclass that defines the specifics of this exercise. For instance, code that defines the static test cases and how to generate random test cases is located here. |
 
+* exercise_name.py - The code block presented to the user to solve.
+* exercise_name_solution.py - Your working solution to the exercise. The code in this file is used by the grader to determine the expected output. This entire file is displayed to the user as the suggested solution(s) after succesfully completing the exercise.
+* exercise_name_test.py - The exercise subclass that defines the specifics of this exercise, including code that defines the static test cases and how to generate random test cases.
+
 These three files go inside a folder that is given the same name as the exercise. Naming conventions are important. The exercise architecture depends on these naming conventions to find the files needed to execute successfully.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📂 exercise_name<BR>
@@ -58,10 +62,10 @@ Because your GitHub branch is not connected to a playground, you need to test yo
 When the exercise runs, you will see all the same output the user sees in the playground. The formatting has been changed for terminal output, but all content remains the same. On Tech.io, all output is directed to a "channel" and Tech.io does a beautiful job of organizing and displaying the channels. In your terminal output, channels are indicated on each line of output similar to this:
 
 ```text
-Win🎉> Success channel in Tech.io.
-Bug🐞> Bug channel in Tech.io.
-Sol✅> Solution channel in Tech.io.
-StdOut> Standard Output channel in Tech.io
+Win🎉> Success Channel on Tech.io.
+Bug🐞> Bug Channel on Tech.io.
+Sol✅> Solution Channel on Tech.io.
+StdOut> Standard Output Channel on Tech.io
 ```
 
 The user can also print debug output to `sys.stderr`. The PySkillz playground uses Tech.io defaults for any debug output. It does not create a specific channel, nor is a channel specified when running locally.
