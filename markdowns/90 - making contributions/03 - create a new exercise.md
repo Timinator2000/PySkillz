@@ -38,6 +38,26 @@ Finally, the exercise_name folder must be placed inside a _topic group_ folder. 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 add_two_numbers_solution.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 add_two_numbers_test.py<BR>
 
+# Testing Your New Exercise
+
+Because your GitHub branch is not connected to a playground, you need to test your code locally using the following three steps.
+
+1. Inside timinator_tools.py located in the python-project folder, make sure RUNNING_ON_TECH_IO has been set to False
+2. Code a solution inside exercise_name.py just as if you were the user of the playground. Make sure these changes are saved.
+3. Run exercise_name_test.py.
+
+When the exercise runs, you will see all the same output the user will see in the playground. The formatting has been changed for terminal output, but all content remains the same. On Tech.io, all output is directed to a "channel" and Tech.io does a beautiful job of organizing and displaying the channels. In your terminal output, channels are indicated on each line of output similar to this:
+
+```text
+Win🎉> This is the success channel in Tech.io.
+Bug🐞> This is the bug channel in Tech.io.
+Sol✅> This is the solution channel in Tech.io.
+StdOut> This is the standard output channel in Tech.io
+```
+
+The user can also print debug output to `sys.stderr`. The PySkillz playground uses Tech.io defaults for any debug output. It does not create a specific channel, nor is a channel specified when running locally.
+
+On the next page, we'll explore the details of each of the three files that make up an exercise.
 
 ************
 
