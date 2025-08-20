@@ -1,19 +1,24 @@
 # Creating a New Exercise
 
-Three files must be organized into a single folder to create a new exercise:
+To create a new exercise, three files must be placed together in a single folder:
 
-* __exercise_name.py__
-  * The code block presented to the user to solve.
+* `exercise_name.py`
+  * The code block presented to the end-user to solve.
 
-* __exercise_name_solution.py__
-  * Your working solution to the exercise. The code in this file is used by the grader to determine the expected output. This entire file is displayed to the user as the suggested solution(s) after succesfully completing the exercise.
+* `exercise_name_solution.py`
+  * Your working solution to the exercise.
+    * The grader uses this file to determine the expected output.
+    * After the end-user successfully completes the exercise, this entire file is displayed as the suggested solution.
   
-* __exercise_name_test.py__
-  * The exercise subclass that defines the specifics of this exercise, including code that defines static test cases and the algorithm to generate random test cases.
+* `exercise_name_test.py`
+  * The exercise subclass that defines the specifics of this exercise, including:
+    *  Static test cases for validation.
+    *  The algorithm used to generate random test cases.
+    *  A success message display after the end-user completes the exercise.
 
 <BR>
 
-These three files go inside a folder that is given the same name as the exercise. Naming conventions are important. The exercise architecture depends on these naming conventions to find the files needed to execute successfully.
+These three files must be placed inside a folder named after the exercise itself. __Naming conventions are critical__ — the exercise architecture relies on these conventions to correctly locate the files it needs in order to execute successfully.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📂 exercise_name<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name.py<BR>
@@ -22,7 +27,7 @@ These three files go inside a folder that is given the same name as the exercise
 
 <BR>
 
-Consider the "Hello, World?" example. The following structure results from the steps above:
+Consider the “Hello, World!” example. Following the steps above, the folder and file structure looks like this:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📂 hello_world<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 hello_world.py<BR>
@@ -30,7 +35,11 @@ Consider the "Hello, World?" example. The following structure results from the s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 hello_world_test.py<BR>
 <BR>
 
-Finally, the exercise_name folder must be placed inside a _topic group_ folder. A topic group is a group of exercises that are all displayed on a single markdown page. Consider the PySkillz welcome page. This is a single markdown page with two exercises that introduce the reader to the two types of exercises - print-based exercises and exercises that return an answer. These two exercises are grouped into a topic group called welcome. The resulting structure looks like this:
+Finally, the `exercise_name` folder must be placed inside a __topic group__ folder. A topic group is a collection of exercises that are displayed together on a single markdown page.
+
+For example, consider the [PySkillz Welcome](welcome) page. This page introduces the two types of exercises—print-based exercises and exercises that return an answer. Both of these exercises are grouped into a topic group called `welcome`.
+
+The resulting structure looks like this:
 
 📂 python-project<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 welcome<BR>
