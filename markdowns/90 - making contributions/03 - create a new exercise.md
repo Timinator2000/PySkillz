@@ -4,6 +4,7 @@ Three files must be organized into a single folder to create a new exercise:
 
 
 : Table Caption {tbl-colwidths="[20,80]"}
+
 | Filename | Description |
 |:---------:|:------------------------------------------------------------------------------------------------|
 | exercise_name.py | This is the code block presented to the user to solve. |
