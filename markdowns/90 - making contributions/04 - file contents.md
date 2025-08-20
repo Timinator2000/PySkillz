@@ -59,8 +59,9 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 ###############################################################################################################
 # End Setup
 ###############################################################################################################
+```
 
-
+```
 success_message = """
 
 
@@ -69,8 +70,9 @@ success_message = """
 success_message += ''
 success_message += ''
 success_message += ''
+```
 
-
+```
 class ExerciseName(timinator_tools.Exercise):
 class ExerciseName(timinator_tools.PrintBasedExercise):
     
@@ -96,8 +98,9 @@ class ExerciseName(timinator_tools.PrintBasedExercise):
 
     def generate_random_test_case(self):
         return [random.randint(-100, 100), random.randint(-100, 100)]
+```
 
-
+```
 if __name__ == "__main__":
     exercise = ExerciseName()
     exercise.run()
