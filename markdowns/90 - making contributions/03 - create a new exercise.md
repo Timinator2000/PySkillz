@@ -8,10 +8,10 @@ Three files must be organized into a single folder to create a new exercise:
     table-layout: fixed; /* Ensures fixed column widths */
   }
   th:nth-child(1), td:nth-child(1) {
-    width: 20%; /* First column takes 20% */
+    width: 10%; /* First column takes 10% */
   }
   th:nth-child(2), td:nth-child(2) {
-    width: 80%; /* Second column takes 60% */
+    width: 90%; /* Second column takes 90% */
 </style>
 
 | Filename | Description |
