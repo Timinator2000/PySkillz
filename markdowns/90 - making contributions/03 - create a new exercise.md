@@ -11,6 +11,8 @@ Three files must be organized into a single folder to create a new exercise:
 * __exercise_name_test.py__
   * The exercise subclass that defines the specifics of this exercise, including code that defines static test cases and the algorithm to generate random test cases.
 
+<BR>
+
 These three files go inside a folder that is given the same name as the exercise. Naming conventions are important. The exercise architecture depends on these naming conventions to find the files needed to execute successfully.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📂 exercise_name<BR>
