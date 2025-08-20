@@ -22,12 +22,16 @@ plan:
     plan:
       - title: Making Contributions
         statement: markdowns/90 - making contributions/01 - getting started.md
-      - title: Create a New Topic
+      - title: Project Structure
         statement: markdowns/90 - making contributions/02 - project structure.md
-      - title: Create a New Exercise
+      - title: Creating a New Exercise
         statement: markdowns/90 - making contributions/03 - create a new exercise.md
-      - title: Create a New Topic
-        statement: markdowns/90 - making contributions/04 - create a new topic.md
+      - title: File Contents
+        statement: markdowns/90 - making contributions/04 - file contents.md
+      - title: Testing
+        statement: markdowns/90 - making contributions/05 - testing.md
+      - title: Creating a New Topic
+        statement: markdowns/90 - making contributions/10 - create a new topic.md
         
 # projects:
 #   python:
