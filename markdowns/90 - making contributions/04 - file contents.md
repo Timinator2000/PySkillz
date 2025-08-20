@@ -5,11 +5,11 @@
 # exercise_name.py
 
 ```python
-# Format for a normal exercise.
 def exercise(a: int, b: int) -> int:
     return # Your code goes here.
+```
 
-# Format for a print-based exercise.
+```
 def exercise() -> None:
     # Your code goes here.
     
@@ -21,11 +21,11 @@ def exercise() -> None:
 # exercise_name_solution.py
 
 ```python
-# Format of a normal exercise.
 def exercise(a: int, b: int) -> int:
     return a + b
+```
 
-# Format of a print-based exercise.
+```
 def exercise(a: int, b: int) -> None:
     print(a + b)
 ```
