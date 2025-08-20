@@ -1,4 +1,4 @@
-Exercise 1: Keep Halving Until Small
+# Keep Halving Until Small
 
 Description:
 Ask the user to enter a positive number. Keep dividing the number by 2 using a while loop until it becomes less than 1. Print each intermediate value.
@@ -20,7 +20,7 @@ You donâ€™t know in advance how many steps it will take; it depends on the userâ
 
 
 
-Exercise 16: Collatz Sequence
+# Collatz Sequence
 
 Description:
 Start with a positive integer n (e.g., n = 17). Use a while loop to generate the Collatz sequence:
