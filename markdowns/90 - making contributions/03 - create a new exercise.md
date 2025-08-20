@@ -35,9 +35,9 @@ Consider the “Hello, World!” example. Following the steps above, the folder 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 hello_world_test.py<BR>
 <BR>
 
-Finally, the `exercise_name` folder must be placed inside a __topic group__ folder. A topic group is a collection of exercises that are displayed together on a single markdown page.
+Finally, the `exercise_name` folder must be placed inside an __exercise group__ folder. A exercise group is a collection of exercises that are displayed together on a single markdown page.
 
-For example, consider the [PySkillz Welcome](welcome) page. This page introduces the two types of exercises—print-based exercises and exercises that return an answer. Both of these exercises are grouped into a topic group called `welcome`.
+For example, consider the [PySkillz Welcome](welcome) page. This page introduces the two types of exercises—print-based exercises and exercises that return an answer. Both of these exercises are grouped into a exercise group called `welcome`.
 
 The resulting structure looks like this:
 
