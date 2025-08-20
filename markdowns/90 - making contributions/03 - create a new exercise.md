@@ -2,18 +2,8 @@
 
 Three files must be organized into a single folder to create a new exercise:
 
-<style>
-  table {
-    width: 100%;
-/*     table-layout: fixed; /* Ensures fixed column widths */ */
-  }
-  th:nth-child(1), td:nth-child(1) {
-    width: 10%; /* First column takes 10% */
-  }
-  th:nth-child(2), td:nth-child(2) {
-    width: 90%; /* Second column takes 90% */
-</style>
 
+: Table Caption {tbl-colwidths="[20,80]"}
 | Filename | Description |
 |:---------:|:------------------------------------------------------------------------------------------------|
 | exercise_name.py | This is the code block presented to the user to solve. |
