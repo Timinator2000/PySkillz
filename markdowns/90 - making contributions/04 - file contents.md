@@ -1,6 +1,14 @@
 # Template Files
 
+Creating a new exercise from scratch is a quick and easy process, espciall considering the template files you can find in python-project folder:
 
+📂 python-project<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;📂 ----exercise_template----<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name.py<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_solution.py<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_test.py<BR>
+
+Let's take a look at the contest of each file and identify exactly what you need to change to get your new exercise up and running.
 
 # exercise_name.py
 
