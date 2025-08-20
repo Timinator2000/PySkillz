@@ -14,9 +14,10 @@ These three files go inside a folder that is given the same name as the exercise
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_solution.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_test.py<BR>
+
 <BR>
 
-Consider the "Hello, World?" example. The following structure is the end result of the steps above:
+Consider the "Hello, World?" example. The following structure results from the steps above:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📂 hello_world<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 hello_world.py<BR>
@@ -24,7 +25,7 @@ Consider the "Hello, World?" example. The following structure is the end result 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 hello_world_test.py<BR>
 <BR>
 
-Finally, the exercise_name folder must be placed inside a _topic group_ folder. A topic group is a group of exercises that will all be displayed on a single markdown page. Consider the PySkillz welcome page. This is a single markdown page with two exercises to introduce the reader to how exercises work in the playground. These two exercises are grouped into a topic group called welcome. The resulting structure looks like this:
+Finally, the exercise_name folder must be placed inside a _topic group_ folder. A topic group is a group of exercises that will all be displayed on a single markdown page. Consider the PySkillz welcome page. This is a single markdown page with two exercises that introduce the reader to the two types of exercises - print-based exercises and exercises that return an answer. These two exercises are grouped into a topic group called welcome. The resulting structure looks like this:
 
 📂 python-project<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 welcome<BR>
