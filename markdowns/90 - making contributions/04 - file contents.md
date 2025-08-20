@@ -75,7 +75,9 @@ success_message += ''
 ```python
 class ExerciseName(timinator_tools.Exercise):
 class ExerciseName(timinator_tools.PrintBasedExercise):
+```
     
+```python
     def __init__(self):
 
         super().__init__(user_solution, suggested_solution, solution_filename)
@@ -89,13 +91,15 @@ class ExerciseName(timinator_tools.PrintBasedExercise):
             [],
             []
         ]
+```
 
-
+```python
     def display_test_case(self, test_case) -> None:
         a, b = test_case
         self.send_msg(self.bug_channel, f'   a = {a}     b = {b}')
+```
 
-
+```python
     def generate_random_test_case(self):
         return [random.randint(-100, 100), random.randint(-100, 100)]
 ```
