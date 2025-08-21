@@ -44,32 +44,35 @@ def exercise_name(a: int, b: int) -> None:
 
 ```python
 ###############################################################################################################
-# Environment Setup - Everything in this section must not be changed.
+# Environment Setup - Do not change anything in this section.
 ###############################################################################################################
 
 import os
 import sys
 import random
 
-timinator_tools_directory = os.path.join(os.path.dirname(__file__), '..', '..')
-sys.path.insert(0, timinator_tools_directory)
+# Normalize path for current OS and split the path into directory and filename
+dir_path, filename = os.path.split(os.path.normpath(__file__))
+
+# Add tools directory to the operating system PATH
+python_project_path = dir_path[:dir_path.find('python-project') + len('python-project')]
+sys.path.insert(0, os.path.join(python_project_path, 'tools'))
 
 try:
     import timinator_tools
 
-except ImportError as e:
-    print(f'Import Error: timinator_tools.py needs to be located in the root python-project directory.')
+except ImportError:
+    print(f'Import Error: timinator_tools.py needs to be in the tools folder, one level deep from python-project.')
 
-section, exercise_name = timinator_tools.get_section_and_exercise_names(__file__)
-solution_filename = f'{section}{exercise_name}_solution.py'
+exercise_name = filename[:filename.find('_test.py')]
+solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
 
 exec(f'from {exercise_name} import {exercise_name} as user_solution')
 exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
 
 ###############################################################################################################
 # End Setup
-###############################################################################################################
-```
+###############################################################################################################```
 
 ```python
 success_message = """
