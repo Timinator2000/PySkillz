@@ -54,9 +54,8 @@ import random
 # Normalize path for current OS and split the path into directory and filename
 dir_path, filename = os.path.split(os.path.normpath(__file__))
 
-# Add tools directory to the operating system PATH
-python_project_path = dir_path[:dir_path.find('python-project') + len('python-project')]
-sys.path.insert(0, os.path.join(python_project_path, 'tools'))
+# Add tools directory to the OS PATH
+sys.path.insert(0, os.path.join(dir_path, '..', '..', 'tools'))
 
 try:
     import timinator_tools
@@ -72,7 +71,7 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 
 ###############################################################################################################
 # End Setup
-###############################################################################################################```
+###############################################################################################################
 ```
 
 ```python
