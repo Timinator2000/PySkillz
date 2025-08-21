@@ -106,7 +106,7 @@ success_message += ''
 success_message += ''
 ```
 
-Next, declare your exercise class by choosing one of the following lines. Each option specifies the exercise type your class will inherit from. Be sure to replace `ExerciseName` with the actual name of your exercise, matching the `exercise_name` format used for your files.
+Next, declare your exercise class by choosing one of the following lines. Each option specifies the exercise type your class will inherit from. Be sure to replace `ExerciseName` with the actual name of your exercise, matching the `exercise_name` wording used for your files.
 
 ```python
 class ExerciseName(timinator_tools.Exercise):
@@ -117,7 +117,7 @@ The first two lines of the class `__init__` constructor must remain unchanged. T
 
 On the third line, specify the number of random test cases your exercise should generate. Random test cases are not required but are highly encouraged — they are simple to create and add robustness to the testing strategy.
 
-Next, define a list of fixed test cases. Each test case is itself a list of arguments. The stub code below includes 5 empty test cases as placeholders, but you may use more or fewer. Replace each placeholder with the appropriate arguments.
+Next, define a list of fixed test cases. Each test case is itself a list of arguments. The stub code below includes 5 empty test cases as placeholders, but you may use more or fewer. Insert arguments into each test case placeholder.
 
 Remember: every test case must be a list of arguments, even if there is only one. For example:
 
