@@ -14,10 +14,17 @@ Let’s take a look at the contents of each file so we can pinpoint exactly what
 
 # exercise_name.py
 
+The contents of this file are shown to the user in the code window. Keep it very short.
+
+For exercises that take input parameters and return values (`timinator_tools.Exercise`), provide only a minimal function stub.
+
 ```python
 def exercise_name(a: int, b: int) -> int:
     return # Your code goes here.
 ```
+
+For exercises that take input and require the user to print an answer (`timinator_tools.PrintBasedExercise`), include a few extra comment lines.
+Since all `print` output is graded, remind users they can use `sys.stderr` for debug messages.
 
 ```python
 def exercise_name(a: int, b: int) -> None:
@@ -30,10 +37,16 @@ def exercise_name(a: int, b: int) -> None:
 
 # exercise_name_solution.py
 
+This file contains the suggested solution along with any alternates. The primary solution is used by the grader to check correctness. Once the user completes the exercise successfully, the full contents of this file are displayed.
+
+For `timinator_tools.Exercise`:
+
 ```python
 def exercise_name(a: int, b: int) -> int:
     return a + b
 ```
+
+For `timinator_tools.PrintBasedExercise`:
 
 ```python
 def exercise_name(a: int, b: int) -> None:
@@ -41,6 +54,10 @@ def exercise_name(a: int, b: int) -> None:
 ```
 
 # exercise_name_test.py
+
+This file contains the main exercise logic. Define your exercise subclass, create an instance of it, and run the exercise.
+
+The first section is reserved for setup and __must not be modified__. It imports the exercise framework from `timinator_tools.py`, the user’s solution from `exercise_name.py`, and the suggested solution from `exercise_name_solution.py`.
 
 ```python
 ###############################################################################################################
@@ -74,6 +91,10 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 ###############################################################################################################
 ```
 
+Next, define the message shown to the user when the exercise is completed successfully. Place this definition outside the class for easier formatting. A multiline string can be used to include elements like bullet points or even a short Q&A (e.g., a joke).
+
+For paragraphs that require automatic word wrapping, break the text into separate lines and concatenate them. This keeps the definition easy to read in the code while still displaying correctly to the user.
+
 ```python
 success_message = """
 
@@ -85,11 +106,25 @@ success_message += ''
 success_message += ''
 ```
 
+Next, declare your exercise class by choosing one of the following lines. Each option specifies the exercise type your class will inherit from. Be sure to replace `ExerciseName` with the actual name of your exercise, matching the `exercise_name` format used for your files.
+
 ```python
 class ExerciseName(timinator_tools.Exercise):
 class ExerciseName(timinator_tools.PrintBasedExercise):
 ```
-    
+
+The first two lines of the class `__init__` constructor must remain unchanged. They call the superclass constructor and initialize the success message you defined earlier.
+
+On the third line, specify the number of random test cases your exercise should generate. Random test cases are not required but are highly encouraged — they are simple to create and add robustness to the testing strategy.
+
+Next, define a list of fixed test cases. Each test case is itself a list of arguments. The stub code below includes 5 empty test cases as placeholders, but you may use more or fewer. Replace each placeholder with the appropriate arguments.
+
+Remember: every test case must be a list of arguments, even if there is only one. For example:
+
+* A single integer argument → `[5]`
+
+* A list of integers argument → `[[1, 2, 3]]`
+
 ```python
     def __init__(self):
 
@@ -106,16 +141,27 @@ class ExerciseName(timinator_tools.PrintBasedExercise):
         ]
 ```
 
+You must override the `display_test_case` method to format a test case for printing and send it to `bug_channel`. In the example below, the test case is unpacked into two variables (`a` and `b`), and their values are inserted into an f-string indented by 3 spaces.
+
+For more complex test cases, you may send multiple lines to `bug_channel` to make the output visually clear. Always use __3 spaces of indentation__ to maintain the visual standard across the playground.
+
 ```python
     def display_test_case(self, test_case) -> None:
         a, b = test_case
         self.send_msg(self.bug_channel, f'   a = {a}     b = {b}')
 ```
 
+If your exercise includes random test cases, override the generate_random_test_case method.
+In the example below, the method returns a list of two arguments, each a random number between -100 and 100.
+
+Remember: every test case must be a list of arguments, even if a test case only contains a single argument.
+
 ```python
     def generate_random_test_case(self):
         return [random.randint(-100, 100), random.randint(-100, 100)]
 ```
+
+Finally, replace `ExerciseName` below with the name of your new exercise class.
 
 ```python
 if __name__ == "__main__":
