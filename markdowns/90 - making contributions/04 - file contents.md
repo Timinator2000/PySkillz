@@ -123,7 +123,7 @@ Remember: every test case must be a list of arguments, even if there is only one
 
 * A single integer argument → `[5]`
 
-* A list of integers argument → `[[1, 2, 3]]`
+* A list of integers as the lone argument → `[[1, 2, 3]]`
 
 ```python
     def __init__(self):
