@@ -19,7 +19,6 @@ StdOut> Standard Output Channel on Tech.io
 
 The user can also print debug output to `sys.stderr`. The PySkillz playground uses Tech.io defaults for any debug output. It does not create a specific channel, nor is a channel specified when running locally.
 
-On the next page, we'll explore the details of each of the three files that make up an exercise.
 
 ************
 
