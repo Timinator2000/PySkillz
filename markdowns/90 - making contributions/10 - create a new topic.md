@@ -1,4 +1,4 @@
-# Create a New Topic
+# Placing Your Exercise in the Playground
 
 <BR>
 
