@@ -72,7 +72,7 @@ import random
 dir_path, filename = os.path.split(os.path.normpath(__file__))
 
 # Add tools directory to the OS PATH
-sys.path.insert(0, os.path.join(dir_path, '..', '..', 'tools'))
+sys.path.insert(0, os.path.join(dir_path, '..', '..', '----tools----'))
 
 try:
     import timinator_tools
