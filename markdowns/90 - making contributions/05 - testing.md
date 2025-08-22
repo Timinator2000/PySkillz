@@ -2,15 +2,15 @@
 
 Because your GitHub branch is not connected to a playground, you need to test your code locally using the following three steps.
 
-📂 python-project<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;📂 tools<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 timinator_tools.py<BR>
-
-1. Navigate to the tools directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`.
+1. Navigate to the `tools` directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`. The `tools` directory is directly under the `python-project` directory as shown below.
 
 2. Code a solution inside `exercise_name.py` just as if you were the playground user. Make sure your changes are saved.
 
 3. Run `exercise_name_test.py`.
+
+📂 python-project<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;📂 tools<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 timinator_tools.py<BR>
 
 When the exercise runs, you will see all the same output the user sees in the playground. The formatting has been changed for terminal output, but all content remains the same. On Tech.io, all output is directed to a "channel" and Tech.io does a beautiful job of organizing and displaying the channels. In your terminal output, channels are indicated on each line of output similar to this:
 
