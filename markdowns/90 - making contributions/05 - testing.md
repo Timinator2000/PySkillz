@@ -2,11 +2,11 @@
 
 Because your GitHub branch is not connected to a playground, you need to test your code locally using the following three steps.
 
-1. Navigate to the tools directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`.
-
 📂 python-project<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 tools<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 timinator_tools.py<BR>
+
+1. Navigate to the tools directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`.
 
 2. Code a solution inside `exercise_name.py` just as if you were the playground user. Make sure your changes are saved.
 
