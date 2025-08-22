@@ -141,9 +141,7 @@ Remember: every test case must be a list of arguments, even if there is only one
         ]
 ```
 
-You must override the `display_test_case` method to format a test case for printing and send it to `bug_channel`. In the example below, the test case is unpacked into two variables (`a` and `b`), and their values are inserted into an f-string indented by 3 spaces.
-
-For more complex test cases, you may send multiple lines to `bug_channel` to make the output visually clear. Always use __3 spaces of indentation__ to maintain the visual standard across the playground.
+You must override the `test_case_to_string` method to format a test case for printing. In the example below, the test case is unpacked into two variables (`a` and `b`), and their values are inserted into an f-string. A new line is inserted between the two arguments to print each on a separate line.
 
 ```python
     def test_case_to_string(self, test_case) -> str:
@@ -151,13 +149,15 @@ For more complex test cases, you may send multiple lines to `bug_channel` to mak
         return f'a = {a}' + '\n' + f'b = {b}'
 ```
 
+You have plenty of flexibility in how you format a test case for output. Just keep in mind that the main goal is to make the output easy to read and understand.
+
 If your exercise includes random test cases, override the generate_random_test_case method.
 In the example below, the method returns a list of two arguments, each a random number between -100 and 100.
 
 Remember: every test case must be a list of arguments, even if a test case only contains a single argument.
 
 ```python
-    def generate_random_test_case(self):
+    def generate_random_test_case(self) -> list:
         return [random.randint(-100, 100), random.randint(-100, 100)]
 ```
 
