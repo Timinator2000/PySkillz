@@ -16,7 +16,7 @@ Let’s take a look at the contents of each file so we can pinpoint exactly what
 
 The contents of this file are shown to the user in the code window. Keep it very short.
 
-For exercises that take input parameters and return values (`timinator_tools.Exercise`), provide only a minimal function stub.
+For exercises that have input parameters and return values (`timinator_tools.Exercise`), provide only a minimal function stub.
 
 ```python
 def exercise_name(a: int, b: int) -> int:
@@ -93,7 +93,7 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 
 Next, define the message shown to the user when the exercise is completed successfully. Place this definition outside the class for easier formatting. A multiline string can be used to include elements like bullet points or even a short Q&A (e.g., a joke).
 
-For paragraphs that require automatic word wrapping, break the text into separate lines and concatenate them. This keeps the definition easy to read in the code while still displaying correctly to the user.
+For paragraphs that require automatic word wrapping, break the text into separate lines and concatenate them. This keeps the text easy to read in the code while still displaying correctly to the user.
 
 ```python
 success_message = """
@@ -117,7 +117,7 @@ The first two lines of the class `__init__` constructor must remain unchanged. T
 
 On the third line, specify the number of random test cases your exercise should generate. Random test cases are not required but are highly encouraged — they are simple to create and add robustness to the testing strategy.
 
-Next, define a list of fixed test cases. Each test case is itself a list of arguments. The stub code below includes 5 empty test cases as placeholders, but you may use more or fewer. Insert arguments into each test case placeholder.
+Next, define a list of fixed test cases. Each test case is itself a list of arguments. The stub code below includes 5 empty test cases as placeholders, but you may use more or less. Insert arguments into each test case placeholder.
 
 Remember: every test case must be a list of arguments, even if there is only one. For example:
 
@@ -151,8 +151,7 @@ You must override the `test_case_to_string` method to format a test case for pri
 
 You have plenty of flexibility in how you format a test case for output. Just keep in mind that the main goal is to make the output easy to read and understand.
 
-If your exercise includes random test cases, override the `generate_random_test_case` method.
-In the example below, the method returns a list of two arguments, each a random number between -100 and 100.
+If your exercise includes random test cases, override the `generate_random_test_case` method. In the example below, the method returns a list of two arguments, each a random number between -100 and 100.
 
 Remember: every test case must be a list of arguments, even if a test case only contains a single argument.
 
