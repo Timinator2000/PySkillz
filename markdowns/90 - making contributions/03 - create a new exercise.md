@@ -54,6 +54,8 @@ The resulting structure looks like this:
 
 On the next page, we'll explore the details of each of the three files that make up an exercise.
 
+<BR>
+
 ************
 
 [![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
