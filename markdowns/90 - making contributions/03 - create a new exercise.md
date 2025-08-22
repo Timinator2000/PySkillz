@@ -52,7 +52,7 @@ The resulting structure looks like this:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 add_two_numbers_test.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 add_two_numbers.py<BR>
 
-On the next page, we'll explore the details of each of the three files that make up an exercise.
+On the next page, we'll explore the details of each of the three Python files that make up an exercise.
 
 <BR>
 
