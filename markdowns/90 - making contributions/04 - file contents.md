@@ -146,9 +146,9 @@ You must override the `display_test_case` method to format a test case for print
 For more complex test cases, you may send multiple lines to `bug_channel` to make the output visually clear. Always use __3 spaces of indentation__ to maintain the visual standard across the playground.
 
 ```python
-    def display_test_case(self, test_case) -> None:
+    def test_case_to_string(self, test_case) -> str:
         a, b = test_case
-        self.send_msg(self.bug_channel, f'   a = {a}     b = {b}')
+        return f'a = {a}' + '\n' + f'b = {b}'
 ```
 
 If your exercise includes random test cases, override the generate_random_test_case method.
