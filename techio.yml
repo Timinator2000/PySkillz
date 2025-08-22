@@ -30,8 +30,8 @@ plan:
         statement: markdowns/90 - making contributions/04 - file contents.md
       - title: Testing
         statement: markdowns/90 - making contributions/05 - testing.md
-      - title: Creating a New Topic
-        statement: markdowns/90 - making contributions/10 - create a new topic.md
+      - title: Exercise Placement
+        statement: markdowns/90 - making contributions/10 - exercise placement.md
         
 # projects:
 #   python:
