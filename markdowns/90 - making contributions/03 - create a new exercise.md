@@ -2,9 +2,6 @@
 
 To create a new exercise, three files must be placed together in a single folder:
 
-* `exercise_name.py`
-  * The code block presented to the end-user to solve.
-
 * `exercise_name_solution.py`
   * Your working solution to the exercise.
     * The grader uses this file to determine the expected output.
@@ -15,6 +12,9 @@ To create a new exercise, three files must be placed together in a single folder
     *  Static test cases for validation.
     *  The algorithm used to generate random test cases.
     *  A success message display after the end-user completes the exercise.
+
+* `exercise_name.py`
+  * The code block presented to the end-user to solve.
 
 <BR>
 
