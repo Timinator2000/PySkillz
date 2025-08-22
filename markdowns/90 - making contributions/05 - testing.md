@@ -1,18 +1,18 @@
 # Testing Your New Exercise
 
-Because your GitHub branch is not connected to a playground, you need to test your code locally using the following three steps.
-
-1. Navigate to the `tools` directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`. The `tools` directory is directly under the `python-project` directory as shown below.
-
-2. Code a solution inside `exercise_name.py` just as if you were the playground user. Make sure your changes are saved.
-
-3. Run `exercise_name_test.py`.
+Since your GitHub branch isn’t linked to a playground, you’ll need to test your code locally. The directory structure shown below applies to step one.
 
 📂 python-project<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 tools<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 timinator_tools.py<BR>
 
-When the exercise runs, you will see all the same output the user sees in the playground. The formatting has been changed for terminal output, but all content remains the same. On Tech.io, all output is directed to a "channel" and Tech.io does a beautiful job of organizing and displaying the channels. In your terminal output, channels are indicated on each line of output similar to this:
+1. Go to the `tools` directory and set RUNNING_ON_TECH_IO to False inside `timinator_tools.py`.
+
+2. Code a solution in `exercise_name.py` just as a playground user would. Be sure to save your changes.
+
+3. Run `exercise_name_test.py`.
+
+When the exercise runs, you’ll see the same output that users see in the playground. The formatting is adjusted for terminal display, but the content is identical. On Tech.io, all output is sent to a “channel,” which Tech.io neatly organizes and presents. In your terminal, channels are shown on each output line, like this:
 
 ```text
 Win🎉> Success Channel on Tech.io.
@@ -21,8 +21,7 @@ Sol✅> Suggested Solution Channel on Tech.io.
 StdOut> Standard Output Channel on Tech.io
 ```
 
-The user can also print debug output to `sys.stderr`. The PySkillz playground uses Tech.io defaults for any debug output. It does not create a specific channel, nor is a channel specified when running locally.
-
+Users can also print debug output to `sys.stderr`. The PySkillz playground follows Tech.io’s default behavior: debug output isn’t assigned to a dedicated channel. The same applies when running locally — no channel is specified for `sys.stderr` output.
 
 ************
 
