@@ -12,7 +12,7 @@ New to coding? You're not alone — and you're absolutely in the right place.
 
 This section is designed for absolute beginners, and it works hand-in-hand with two excellent learning resources:
 
-* _Coding for Kids_: Python by Adrienne B. Tacke
+* _Coding for Kids: Python_ by Adrienne B. Tacke
 
 * _Python Programming for the Humanities_ by Folgert Karsdorp
 
