@@ -21,7 +21,7 @@ Sol✅> Suggested Solution Channel on Tech.io.
 StdOut> Standard Output Channel on Tech.io
 ```
 
-Users can also print debug output to `sys.stderr`. The PySkillz playground follows Tech.io’s default behavior: debug output isn’t assigned to a dedicated channel. The same applies when running locally — no channel is specified for `sys.stderr` output.
+Users of the playground are encouraged to print debug output to `sys.stderr`. On Tech.io, any output sent to `sys.stderr` is captured in a dedicated "Standard Error" panel. When testing locally, this output will follow your development environment's default behavior.
 
 <BR>
 
