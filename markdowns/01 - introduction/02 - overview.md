@@ -12,9 +12,9 @@ New to coding? You're not alone — and you're absolutely in the right place.
 
 This section is designed for absolute beginners, and it works hand-in-hand with two excellent learning resources:
 
-* Coding for Kids: Python by Adrienne B. Tacke
+* _Coding for Kids_: Python by Adrienne B. Tacke
 
-* Python Programming for the Humanities by Folgert Karsdorp
+* _Python Programming for the Humanities_ by Folgert Karsdorp
 
 These resources do the heavy lifting when it comes to teaching you the core concepts of Python, step by step. PySkillz steps in to give you immediate, hands-on practice through bite-sized interactive exercises that match the material covered in each chapter or concept.
 
