@@ -6,7 +6,7 @@
 # Skill Building
 
 * [Loops](basic-loops)
-* [Nested Loops](nested_loops)
+* [Nested Loops](nested-loops)
 * While Loops
 * [List Comprehensions](exercises)
 
