@@ -4,7 +4,7 @@
 
 # Creating Your Exercise
 
-To create a new exercise, three files must be placed together the folder you just created:
+To create a new exercise, three files must be placed together in the folder you created above:
 
 * `exercise_name_solution.py`
   * Your working solution to the exercise.
