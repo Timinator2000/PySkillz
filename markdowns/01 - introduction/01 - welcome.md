@@ -34,7 +34,9 @@ For example, here's how my favorite AI explained the alternate solution shown ab
 
 # Before We Go Forward
 
-On the next page, you’ll find a list of all the topics covered in this playground, complete with links so you can easily jump around to whatever you want to practice. And before you dive in, be sure to check out the information at the end of this introduction about how you can contribute. It explains how to add new exercises to existing topics—or even create brand-new topics for the playground. This part is really important, because the more people who contribute, the bigger and better this resource becomes for everyone.
+On the next page, you’ll find a list of all the topics covered in this playground, complete with links so you can easily jump around to whatever you want to practice. 
+
+Before you dive in, be sure to check out the information about how you can [contribute to PySkillz](making-contributions). It explains how to add new exercises to existing topics—or even create brand-new topics for the playground. This part is really important, because the more people who contribute, the bigger and better this resource becomes for everyone.
 
 <BR>
 
