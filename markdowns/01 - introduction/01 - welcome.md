@@ -32,7 +32,7 @@ For example, here's how my favorite AI explained the alternate solution shown ab
 
 >The function `sum([a, b])` works because `sum` can add up all the numbers in a list. In this case, the list `[a, b]` only has two numbers, so `sum` just adds them together. It’s a longer way of writing `a + b`, but it shows how you can use Python’s built-in functions to do the same thing in different ways.
 
-# Before We Go Forward
+# Let's Go!!!
 
 On the next page, you’ll find a list of all the topics covered in this playground, complete with links so you can easily jump around to whatever you want to practice. 
 
