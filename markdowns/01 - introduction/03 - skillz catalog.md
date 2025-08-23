@@ -10,11 +10,11 @@
 * While Loops
 * [List Comprehensions](exercises)
 
-__Multi-Skill Exercises__
+# Multi-Skill Exercises
 
 coming soon...
 
-__Challenge Paths__
+# Challenge Paths
 
 coming soon...
 
