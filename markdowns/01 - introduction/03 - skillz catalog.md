@@ -1,7 +1,7 @@
 # For the Brand New Beginner
 
-* [_Coding for Kids: Python_](coding-for-kids) by Adrienne B. Tacke
-* [_Python Programming for the Humanities_](python-for-humanities) by Folgert Karsdorp
+* [Coding for Kids: Python](coding-for-kids) by Adrienne B. Tacke
+* [Python Programming for the Humanities](python-for-humanities) by Folgert Karsdorp
 
 # Skill Building
 
