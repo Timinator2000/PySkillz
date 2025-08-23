@@ -1,6 +1,10 @@
-# Creating a New Exercise
+# Placing Your Exercise
 
-To create a new exercise, three files must be placed together in a single folder:
+
+
+# Creating Your Exercise
+
+To create a new exercise, three files must be placed together the folder you just created:
 
 * `exercise_name_solution.py`
   * Your working solution to the exercise.
