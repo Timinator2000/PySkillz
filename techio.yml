@@ -6,8 +6,10 @@ plan:
     plan:
       - title: Welcome
         statement: markdowns/01 - introduction/01 - welcome.md
-      - title: Skillz Catalog
-        statement: markdowns/01 - introduction/02 - skillz catalog.md
+      - title: Overview
+        statement: markdowns/02 - introduction/02 - overview.md
+      - title: Topic Catalog
+        statement: markdowns/03 - introduction/02 - skillz catalog.md
   - title: Loops
     plan:
       - title: Basic Loops
