@@ -4,13 +4,13 @@ Creating a new exercise from scratch is quick and easy, especially with the temp
 
 📂 python-project<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 ----exercise_template----<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_solution.py<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name_test.py<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🗋 exercise_name.py<BR>
 
 <BR>
 
-Let’s take a look at the contents of each file (shortest to longest) so we can pinpoint exactly what needs to be changed to get your new exercise up and running.
+Let’s take a look at the contents of each file so we can pinpoint exactly what needs to be changed to get your new exercise up and running.
 
 # exercise_name.py
 
