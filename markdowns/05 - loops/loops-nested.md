@@ -14,7 +14,7 @@ Expected Output:
 (2,0) (2,1) (2,2)
 ```
 
-[Coordinate Grid({"stubs": ["loops-nested/coordinate_grid.py"], "command": "python3 loops-nested/coordinate_grid_test.py"})
+[Coordinate Grid]({"stubs": ["loops-nested/coordinate_grid/coordinate_grid.py"], "command": "python3 loops-nested/coordinate_grid/coordinate_grid_test.py"})
 
 *************
 
