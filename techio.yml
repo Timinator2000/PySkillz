@@ -20,7 +20,7 @@ plan:
     plan:
       - title: Exercises
         statement: markdowns/08 - list comprehensions/list comprehension.md
-  - title: List Comprehensions
+  - title: Making Contributions to PySkillz
     plan:
       - title: Making Contributions
         statement: markdowns/90 - making contributions/01 - getting started.md
