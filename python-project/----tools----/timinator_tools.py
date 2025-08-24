@@ -8,7 +8,7 @@ import os
 import random
 
 
-RUNNING_ON_TECH_IO = False
+RUNNING_ON_TECH_IO = True
 
 CONGRATS = ['Kudos!',
             'Well Done!',
