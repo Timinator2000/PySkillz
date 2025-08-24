@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.join(dir_path, '..', '..', '----tools----'))
 
 try:
     import timinator_tools
+    timinator_tools.check_for_tech_io(dir_path)
 
 except ImportError:
     print(f'Import Error: timinator_tools.py needs to be in the tools folder, one level deep from python-project.')

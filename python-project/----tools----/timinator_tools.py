@@ -1,14 +1,10 @@
 # Last Edited: August 13, 2025 10:15am MDT
 
-import re
 from copy import deepcopy
 import builtins
 import sys
-import os
 import random
 
-
-RUNNING_ON_TECH_IO = False
 
 CONGRATS = ['Kudos!',
             'Well Done!',
@@ -56,28 +52,8 @@ BUG = ['Oops!',
 BUG_EMOJIS = '🐞🐛🪲🦗😔😢😧'
 
 
-# def get_section_and_exercise_names(file):
-#     # if PLATFORM == GITHUB:
-#     #     m = re.search(r"(?P<section>[\w\-]+/)(?P<exercise>\w+)_test.py", file)
-#     #     if m is not None:
-#     #         return m.group('section'), m.group('exercise')
-
-#     # if PLATFORM in [PC, GITHUB]:
-
-#     # Normalize path for current OS
-#     normalized_path = os.path.normpath(file)
-
-#     # Split the path into directory and filename
-#     dir_path, filename = os.path.split(normalized_path)
-#     dir_path += os.path.sep
-
-#     # Extract the exercise name from the filename
-#     m = re.match(r"(?P<exercise>\w+)_test\.py$", filename)
-#     if m:
-#         exercise = m.group("exercise")
-#         return dir_path, exercise
-
-#     return None
+def check_for_tech_io(dir_path: str) -> None:
+    Exercise.RUNNING_ON_TECH_IO = dir_path.startswith('/project/target')
 
 
 class Channel():
@@ -87,12 +63,13 @@ class Channel():
         self.short_name = short_name
 
 
-    def name(self):
-        return self.full_name if RUNNING_ON_TECH_IO else self.short_name
+    def name(self, on_tech_io=True):
+        return self.full_name if on_tech_io else self.short_name
 
 
 class Exercise():
     
+    RUNNING_ON_TECH_IO = True
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
 
@@ -119,21 +96,21 @@ class Exercise():
 
         
     def send_msg(self, channel, msg):
-        if RUNNING_ON_TECH_IO:
+        if Exercise.RUNNING_ON_TECH_IO:
             print("TECHIO> message --channel \"{}\" \"{}\"".format(channel.name(), msg))
         else:
             if msg.startswith('> '):
                 msg = msg[2:]
-            print(f'{channel.name()}{msg}')
+            print(f'{channel.name(on_tech_io=False)}{msg}')
 
             
     def success(self):
-        if RUNNING_ON_TECH_IO:
+        if Exercise.RUNNING_ON_TECH_IO:
             print("TECHIO> success true")
 
             
     def fail(self):
-        if RUNNING_ON_TECH_IO:
+        if Exercise.RUNNING_ON_TECH_IO:
             print("TECHIO> success false")
 
             
