@@ -25,6 +25,7 @@ plan:
       - title: Exercises
         statement: markdowns/08 - list comprehensions/list comprehension.md
         
+        
 # projects:
 #   python:
 #     # buildCommand: prune --all
