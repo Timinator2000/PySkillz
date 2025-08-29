@@ -24,6 +24,10 @@ plan:
     plan:
       - title: Exercises
         statement: markdowns/08 - list comprehensions/list comprehension.md
+  - title: Working with Grids
+    plan:
+      - title: Work
+        statement: markdowns/2D Grids/grid class architecture.md
         
         
 # projects:
