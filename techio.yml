@@ -6,28 +6,28 @@ plan:
     plan:
       - title: Welcome
         statement: markdowns/01 - introduction/01 - welcome.md
-  #     - title: Overview
-  #       statement: markdowns/01 - introduction/02 - overview.md
-  #     - title: Topic Catalog
-  #       statement: markdowns/01 - introduction/03 - skillz catalog.md
-  # - title: Loops
-  #   plan:
-  #     - title: Basic Loops
-  #       statement: markdowns/05 - loops/loops-basic.md
-  #     - title: Nested Loops
-  #       statement: markdowns/05 - loops/loops-nested.md
-  # - title: Sets
-  #   plan:
-  #     - title: Basic Set Operations
-  #       statement: markdowns/04 - sets/basic set operations.md
-  # - title: List Comprehensions
-  #   plan:
-  #     - title: Exercises
-  #       statement: markdowns/08 - list comprehensions/list comprehension.md
-  # - title: Working with Grids
-  #   plan:
-  #     - title: Work
-  #       statement: markdowns/2D Grids/grid class architecture.md
+      - title: Overview
+        statement: markdowns/01 - introduction/02 - overview.md
+      - title: Topic Catalog
+        statement: markdowns/01 - introduction/03 - skillz catalog.md
+  - title: Loops
+    plan:
+      - title: Basic Loops
+        statement: markdowns/05 - loops/loops-basic.md
+      - title: Nested Loops
+        statement: markdowns/05 - loops/loops-nested.md
+  - title: Sets
+    plan:
+      - title: Basic Set Operations
+        statement: markdowns/04 - sets/basic set operations.md
+  - title: List Comprehensions
+    plan:
+      - title: Exercises
+        statement: markdowns/08 - list comprehensions/list comprehension.md
+  - title: Working with Grids
+    plan:
+      - title: Work
+        statement: markdowns/2D Grids/grid class architecture.md
         
         
 projects:
