@@ -299,8 +299,6 @@ class PrintBasedExercise(Exercise):
         num_expected_lines = len(expected_answer)
         num_user_lines = len(user_answer)
 
-        print(f'{num_user_lines=}')
-
         expected_lines_str = f'{num_expected_lines} line' + ('s' if num_expected_lines != 1 else '')
         user_lines_str = f'{num_user_lines} line' + ('s' if num_user_lines != 1 else '')
 

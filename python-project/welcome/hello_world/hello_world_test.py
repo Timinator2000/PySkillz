@@ -30,7 +30,7 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 ###############################################################################################################
 
 
-success_message = 'The "Hello, World" program is such a fixture in computer '
+success_message = 'The \"Hello, World\" program is such a fixture in computer '
 success_message += 'science that it\'s practically the rite of passage for learning '
 success_message += 'any new language — but it has a very specific origin.\n\n'
 
