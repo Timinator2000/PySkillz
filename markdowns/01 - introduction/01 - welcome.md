@@ -14,7 +14,7 @@ To demonstrate, let’s look at the all-time classic coding exercise: “Hello, 
 
 Create a function that prints "Hello, World!".
 
-[Hello World]({"stubs": ["welcome/hello_world/hello_world.py"], "command": "python3 welcome/hello_world/hello_world_test.py"})
+@[Hello World]({"stubs": ["welcome/hello_world/hello_world.py"], "command": "python3 welcome/hello_world/hello_world_test.py"})
 
 It’s also totally okay to ask for help! If you’re not sure what something means, feel free to ask ChatGPT, Grok, or your favorite AI website to explain it to you. Just one important rule: don’t ask the AI to do the exercise for you. That defeats the whole purpose. These problems aren’t meant to be super hard — they’re here to give you practice. Think of the AI as a teacher you can ask for hints or explanations, not a classmate who hands you the answers.
 
@@ -24,7 +24,7 @@ The second type of exercise is a little different. Instead of printing something
 
 Create a function that takes two integers and returns their sum.
 
-[Add Two Numbers]({"stubs": ["welcome/add_two_numbers/add_two_numbers.py"], "command": "python3 welcome/add_two_numbers/add_two_numbers_test.py"})
+@[Add Two Numbers]({"stubs": ["welcome/add_two_numbers/add_two_numbers.py"], "command": "python3 welcome/add_two_numbers/add_two_numbers_test.py"})
 
 When you solve the exercise correctly, a suggested solution will be shown. Often, it will also include one or more alternate solutions. It’s really important to take a moment to look at the alternate solutions. Sometimes they’ll show you new tricks or different ways of thinking about the same problem. If you don’t understand an alternate solution, copy it into your favorite AI teacher (ChatGPT, Grok, etc.) and ask for an explanation. That way, you’re not just practicing—you’re actually growing your Python toolbox.
 
