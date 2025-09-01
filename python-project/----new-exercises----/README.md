@@ -4,4 +4,4 @@
 
 2. Rename the new folder and each file inside the folder using the name of your new exercise.
 
-3. Follow instructions found in the PySkillz Contributor Manual.
+3. Follow instructions found in the PySkillz Contributor Manual - __LINK NEEDED__.
