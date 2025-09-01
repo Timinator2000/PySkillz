@@ -291,7 +291,7 @@ class PrintBasedExercise(Exercise):
         self.swap_printer()
         return answer
 
-            
+
     def display_first_failed_test_case(self) -> None:
         expected_answer = self.generate_answer(self.suggested_solution, self.first_failed_test_case)
         user_answer = self.generate_answer(self.user_solution, self.first_failed_test_case)
@@ -316,42 +316,49 @@ class PrintBasedExercise(Exercise):
 
             msg += '\n\n'
 
-            for i in range(max(num_expected_lines, num_user_lines)):
-                if i == num_expected_lines:
-                    too_many = num_user_lines - i
+            error_found = False
+            while user_answer and expected_answer:
+                user_line = user_answer.pop(0)
+                expected_line = expected_answer.pop(0)
+
+                msg += f'> {user_line}\n'
+                if user_line == expected_line:
+                    continue
+
+                error_found=True
+                msg += f'\nThere is a problem with the most recent line of output. '
+
+                trailing_spaces = False
+                if user_line.startswith(expected_line):
+                    remaining_output = user_line[len(expected_line):]
+                    if all(c.isspace() for c in remaining_output):
+                        msg += f'It appears you have unnecessary trailing spaces at the end '
+                        msg += f'of your output line.\n'
+                        trailing_spaces = True
+
+                if not trailing_spaces:
+                    msg += f'It should have been...\n\n'
+                    msg += f'> {expected_line}\n'
+
+                break
+
+            if not error_found:
+                if len(expected_answer) == 0:
+                    too_many = len(user_answer)
                     msg += f'\nYour answer should have ended with {expected_lines_str} printed. The following '
                     msg += f'{too_many} line{"s" if too_many > 1 else ""} should not have been printed.\n\n'
 
-                if i == num_user_lines:
-                    missing = num_expected_lines - i
+                    for line in user_answer:
+                        msg += f'> {line}\n'
+
+                if len(user_answer) == 0:
+                    missing = len(expected_answer)
                     msg += f'\nYour answer is correct so far, but you are missing the following '
                     msg += f'{missing} line' + 's.'[missing == 1:] + '\n\n'
-            
-                expected_line = '' if i >= num_expected_lines else expected_answer[i]
-                user_line = None if i >= num_user_lines else user_answer[i]
 
-                if user_line != None:
-                    msg += f'> {user_line}\n'
-                    if expected_line and expected_line != user_line:
+                    for line in expected_answer:
+                        msg += f'> {line}\n'
 
-                        trailing_spaces = False
-                        msg += f'\nThere is a problem with the most recent line of output. '
-                        if user_line.startswith(expected_line):
-                            remaining_output = user_line[len(expected_line):]
-                            if all(c.isspace() for c in remaining_output):
-                                msg += f'It appears you have unnecessary trailing spaces at the end '
-                                msg += f'of your output line.\n'
-                                trailing_spaces = True
-
-                        if not trailing_spaces:
-                            msg += f'It should have been...\n\n'
-                            msg += f'> {expected_line}\n'
-
-                        break
- 
-                else:
-                    msg += f'> {expected_line}\n'
-                            
         msg += f'\nInput:\n'
         self.send_multiline_text(self.bug_channel, msg)
         self.display_test_case(self.first_failed_test_case)
