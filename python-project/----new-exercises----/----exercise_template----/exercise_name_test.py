@@ -45,8 +45,7 @@ class ExerciseName(timinator_tools.PrintBasedExercise):
     
     def __init__(self):
 
-        super().__init__(user_solution, suggested_solution, solution_filename)
-        self.success_message = success_message
+        super().__init__(user_solution, suggested_solution, solution_filename, success_message)
         self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
