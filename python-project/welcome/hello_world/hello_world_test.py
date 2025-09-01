@@ -38,8 +38,8 @@ success_message += 'Somewhere between 1972 and 1974, the phrase first appeared i
 success_message += 'connection with the C programming language at Bell Labs. '
 success_message += 'Brian Kernighan, one of C\'s co-creators, used it in an internal '
 success_message += 'Bell Labs memo titled \'A Tutorial Introduction to the Language B\' '
-success_message += '(B was C\'s predecessor). 1978 - It was made famous by The C '
-success_message += 'Programming Language (the original K&R book by Kernighan and Ritchie).'
+success_message += '(B was C\'s predecessor). In 1978, it was made famous by \'The C '
+success_message += 'Programming Language\' (the original K&R book by Kernighan and Ritchie).'
 
 
 class HelloWorld(timinator_tools.PrintBasedExercise):
