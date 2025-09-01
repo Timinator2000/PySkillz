@@ -13,11 +13,11 @@ dir_path, filename = os.path.split(os.path.normpath(__file__))
 sys.path.insert(0, os.path.join(dir_path, '..', '..', '----tools----'))
 
 try:
-    import timinator_tools
-    timinator_tools.check_for_tech_io(dir_path)
+    import pyskillz_tools
+    pyskillz_tools.check_for_tech_io(dir_path)
 
 except ImportError:
-    print(f'Import Error: timinator_tools.py needs to be in the tools folder, one level deep from python-project.')
+    print(f'Import Error: pyskillz_tools.py needs to be in the tools folder, one level deep from python-project.')
 
 exercise_name = filename[:filename.find('_test.py')]
 solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
@@ -47,7 +47,7 @@ success_message += 'Fun fact: The BelAZ 75710, made in Belarus, is the world\'s 
                    'Imagine changing a flat on that!'
 
 
-class Under1800(timinator_tools.Exercise):
+class Under1800(pyskillz_tools.Exercise):
 
     VEHICLES = {'Sedan': 1500,      'SUV': 2000,          'Pickup': 2500,              'Minivan': 1600, 
                 'Van': 2400,        'Semi': 13600,        'Bicycle': 7,                'Motorcycle': 110, 
@@ -55,8 +55,7 @@ class Under1800(timinator_tools.Exercise):
     
     def __init__(self):
         
-        super().__init__(user_solution, suggested_solution, solution_filename)
-        self.success_message = success_message
+        super().__init__(user_solution, suggested_solution, solution_filename, success_message)
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
