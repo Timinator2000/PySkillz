@@ -13,11 +13,11 @@ dir_path, filename = os.path.split(os.path.normpath(__file__))
 sys.path.insert(0, os.path.join(dir_path, '..', '..', '----tools----'))
 
 try:
-    import timinator_tools
-    timinator_tools.check_for_tech_io(dir_path)
+    import pyskillz_tools
+    pyskillz_tools.check_for_tech_io(dir_path)
 
 except ImportError:
-    print(f'Import Error: timinator_tools.py needs to be in the tools folder, one level deep from python-project.')
+    print(f'Import Error: pyskillz_tools.py needs to be in the tools folder, one level deep from python-project.')
 
 exercise_name = filename[:filename.find('_test.py')]
 solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
@@ -42,7 +42,7 @@ success_message += '(B was C\'s predecessor). In 1978, it was made famous by \'T
 success_message += 'Programming Language\' (the original K&R book by Kernighan and Ritchie).'
 
 
-class HelloWorld(timinator_tools.PrintBasedExercise):
+class HelloWorld(pyskillz_tools.PrintBasedExercise):
     
     def __init__(self):
         
