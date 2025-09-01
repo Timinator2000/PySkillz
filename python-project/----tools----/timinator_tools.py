@@ -73,12 +73,12 @@ class Exercise():
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
 
-    def __init__(self, user_solution, suggested_solution, solution_path):
+    def __init__(self, user_solution, suggested_solution, solution_path, success_message):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
         self.user_solution = user_solution
         self.suggested_solution = suggested_solution
-        self.success_message = ''
+        self.success_message = success_message.strip()
         self.first_failed_test_case = None
 
         self.success_channel = Channel(f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}', 'Win🎉>')
@@ -91,7 +91,7 @@ class Exercise():
 
 
     def send_multiline_text(self, channel, msg):
-        for line in msg.strip().split('\n'):
+        for line in msg.split('\n'):
             self.send_msg(channel, line)
 
         
@@ -239,8 +239,8 @@ class Exercise():
 
 class PrintBasedExercise(Exercise):
 
-    def __init__(self, user_solution, suggested_solution, solution_path):
-        super().__init__(user_solution, suggested_solution, solution_path)
+    def __init__(self, user_solution, suggested_solution, solution_path, success_message):
+        super().__init__(user_solution, suggested_solution, solution_path, success_message)
         self.output_buffer = []
         self.output_buffer_new_line = True
 
@@ -352,7 +352,6 @@ class PrintBasedExercise(Exercise):
                 else:
                     msg += f'> {expected_line}\n'
                             
-        msg += f'\nInput:'
+        msg += f'\nInput:\n\n'
         self.send_multiline_text(self.bug_channel, msg)
-        self.send_msg(self.bug_channel, '')
         self.display_test_case(self.first_failed_test_case)
