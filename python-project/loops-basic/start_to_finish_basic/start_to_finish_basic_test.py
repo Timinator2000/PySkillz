@@ -32,7 +32,7 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 
 success_message = """
 
-Can you correct the follow quote and identify who said it?'
+Can you correct the follow quote and identify who said it?
 
 """
 

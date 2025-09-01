@@ -298,80 +298,61 @@ class PrintBasedExercise(Exercise):
 
         num_expected_lines = len(expected_answer)
         num_user_lines = len(user_answer)
+        verb = 'was' if num_expected_lines == 1 else 'were'
 
         expected_lines_str = f'{num_expected_lines} line' + ('s' if num_expected_lines != 1 else '')
         user_lines_str = f'{num_user_lines} line' + ('s' if num_user_lines != 1 else '')
 
+        msg = ''
         if num_user_lines == 0:
-            msg = f'You did not print anything. {len(expected_answer)} line'
-            msg += ['s of printed output were ', ' of printed output was '][num_expected_lines == 1] + 'expected.'
-            self.send_msg(self.bug_channel, msg)
+            msg += f'You did not print anything. {expected_lines_str} of printed output {verb} expected.\n'
 
         elif expected_answer != user_answer:
-        
-            self.send_msg(self.bug_channel, 'First Failed Test Case:')
-            self.send_msg(self.bug_channel, '')
+            msg += 'First Failed Test Case:\n\n'
 
-            msg = f'Your Output:'
+            msg += f'Your Output:'
             if num_expected_lines != num_user_lines:
-                verb = 'was' if expected_lines_str == 1 else 'were'
-                msg += f'   You printed {user_lines_str}.  {expected_lines_str} {verb} expected.'
-            
-            self.send_msg(self.bug_channel, msg)
-            self.send_msg(self.bug_channel, '')
+                msg += f'   You printed {user_lines_str}. {expected_lines_str} {verb} expected.'
 
-            expected_answer_length = len(expected_answer)
-            user_answer_length = len(user_answer)
-            for i in range(max(expected_answer_length, user_answer_length)):
-                if i == expected_answer_length:
-                    too_many = user_answer_length - i
-                    msg = f'Your answer should have ended with {expected_lines_str} printed. The following '
-                    msg += f'{too_many} line{"s" if too_many > 1 else ""} should not have been printed.'
-                    self.send_msg(self.bug_channel, '')
-                    self.send_msg(self.bug_channel, msg)
-                    self.send_msg(self.bug_channel, '')
+            msg += '\n\n'
 
-                if i == user_answer_length:
-                    missing = expected_answer_length - i
-                    msg = f'Your answer is correct so far, but you are missing the following '
-                    msg += f'{missing} line' + 's.'[missing == 1:]
-                    self.send_msg(self.bug_channel, '')
-                    self.send_msg(self.bug_channel, msg)
-                    self.send_msg(self.bug_channel, '')
+            for i in range(max(num_expected_lines, num_user_lines)):
+                if i == num_expected_lines:
+                    too_many = num_user_lines - i
+                    msg += f'\nYour answer should have ended with {expected_lines_str} printed. The following '
+                    msg += f'{too_many} line{"s" if too_many > 1 else ""} should not have been printed.\n\n'
+
+                if i == num_user_lines:
+                    missing = num_expected_lines - i
+                    msg += f'\nYour answer is correct so far, but you are missing the following '
+                    msg += f'{missing} line' + 's.'[missing == 1:] + '\n\n'
             
-                expected_line = '' if i >= expected_answer_length else expected_answer[i]
-                user_line = None if i >= user_answer_length else user_answer[i]
+                expected_line = '' if i >= num_expected_lines else expected_answer[i]
+                user_line = None if i >= num_user_lines else user_answer[i]
 
                 if user_line != None:
-                    self.send_msg(self.bug_channel, f'> {user_line}')
+                    msg += f'> {user_line}\n'
                     if expected_line and expected_line != user_line:
 
                         trailing_spaces = False
-                        msg = f'There is a problem with the most recent line of output. '
+                        msg += f'\nThere is a problem with the most recent line of output. '
                         if user_line.startswith(expected_line):
                             remaining_output = user_line[len(expected_line):]
                             if all(c.isspace() for c in remaining_output):
                                 msg += f'It appears you have unnecessary trailing spaces at the end '
-                                msg += f'of your output line.'
+                                msg += f'of your output line.\n'
                                 trailing_spaces = True
 
                         if not trailing_spaces:
-                            msg = f'There is a problem with the most recent line of output. '
-                            msg += f'It should have been...'
-                        
-                        self.send_msg(self.bug_channel, '')
-                        self.send_msg(self.bug_channel, msg)
-
-                        if not trailing_spaces:
-                            self.send_msg(self.bug_channel, '')
-                            self.send_msg(self.bug_channel, f'> {expected_line}')
+                            msg += f'It should have been...\n\n'
+                            msg += f'> {expected_line}\n'
 
                         break
  
                 else:
-                    self.send_msg(self.bug_channel, f'> {expected_line}')
+                    msg += f'> {expected_line}\n'
                             
-        self.send_msg(self.bug_channel, '')
-        self.send_msg(self.bug_channel, f'Input:')
+        msg += f'\nInput:'
+        self.send_multiline_text(self.bug_channel, msg)
         self.send_msg(self.bug_channel, '')
         self.display_test_case(self.first_failed_test_case)
