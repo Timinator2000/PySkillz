@@ -352,6 +352,6 @@ class PrintBasedExercise(Exercise):
                 else:
                     msg += f'> {expected_line}\n'
                             
-        msg += f'\nInput:\n\n'
+        msg += f'\nInput:\n'
         self.send_multiline_text(self.bug_channel, msg)
         self.display_test_case(self.first_failed_test_case)
