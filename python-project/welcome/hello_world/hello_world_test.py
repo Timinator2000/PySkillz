@@ -53,7 +53,7 @@ class HelloWorld(timinator_tools.PrintBasedExercise):
 
         
     def test_case_to_string(self, test_case) -> str:
-        return 'There is no input to this test case. You just need to print "Hello, World!"'
+        return 'There is no input to this test case. You just need to print \'Hello, World!\''
         
         
 if __name__ == "__main__":
