@@ -36,8 +36,8 @@ Can you correct the follow quote and identify who said it?
 
 """
 
-success_message += '"This is not the [finish]. It is not even the [start] of the [finish]. '
-success_message += 'But it is, perhaps, the [finish] of the [start]."'
+success_message += '“This is not the [finish]. It is not even the [start] of the [finish]. '
+success_message += 'But it is, perhaps, the [finish] of the [start].”'
 
 
 class StartToFinishBasic(pyskillz_tools.PrintBasedExercise):

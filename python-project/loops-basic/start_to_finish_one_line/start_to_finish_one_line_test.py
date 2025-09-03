@@ -35,8 +35,8 @@ Did you fix the quote in the previous question and identify who said it?
 
 """
 
-success_message += 'This is not the end. It is not even the beginning of the end. '
-success_message += 'But it is, perhaps, the end of the beginning.'
+success_message += '“This is not the end. It is not even the beginning of the end. '
+success_message += 'But it is, perhaps, the end of the beginning.”'
 success_message += '\n\n'
 success_message += '     —— Winston Churchill'
 

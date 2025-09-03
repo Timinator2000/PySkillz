@@ -42,7 +42,7 @@ success_message += 'in both cognitive and cultural factors. Our brains favor '
 success_message += 'patterns, and multiples of 5 (5, 10, 15, 20, etc.) create a '
 success_message += 'sense of rhythm and predictability. This stems from our base-10 number '
 success_message += 'system, likely influenced by having ten fingers, which makes 5 and 10 '
-success_message += 'intuitive benchmarks. Psychologically, numbers divisible by 5 feel "round" '
+success_message += 'intuitive benchmarks. Psychologically, numbers divisible by 5 feel “round” '
 success_message += 'or complete, reducing cognitive load when counting or calculating.'
 
 

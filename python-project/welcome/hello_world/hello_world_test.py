@@ -30,16 +30,16 @@ exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solutio
 ###############################################################################################################
 
 
-success_message = 'The \'Hello, World\' program is such a fixture in computer '
+success_message = 'The “Hello, World” program is such a fixture in computer '
 success_message += 'science that it\'s practically the rite of passage for learning '
 success_message += 'any new language — but it has a very specific origin.\n\n'
 
 success_message += 'Somewhere between 1972 and 1974, the phrase first appeared in '
 success_message += 'connection with the C programming language at Bell Labs. '
 success_message += 'Brian Kernighan, one of C\'s co-creators, used it in an internal '
-success_message += 'Bell Labs memo titled \'A Tutorial Introduction to the Language B\' '
-success_message += '(B was C\'s predecessor). In 1978, it was made famous by \'The C '
-success_message += 'Programming Language\' (the original K&R book by Kernighan and Ritchie).'
+success_message += 'Bell Labs memo titled “A Tutorial Introduction to the Language B” '
+success_message += '(B was C\'s predecessor). In 1978, it was made famous by “The C '
+success_message += 'Programming Language” (the original K&R book by Kernighan and Ritchie).'
 
 
 class HelloWorld(pyskillz_tools.PrintBasedExercise):
