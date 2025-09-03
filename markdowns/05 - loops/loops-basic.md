@@ -4,14 +4,14 @@ Create a function that prints all integers between, and including the two intege
 
 Example Input:
 
-```python
+```text
 start = 1
 finish = 5
 ```
 
 Expected Output:
 
-```python
+```text
 1
 2
 3
@@ -27,14 +27,14 @@ Create a function that prints all integers between, and including the two intege
 
 Example Input:
 
-```python
+```text
 start = 1
 finish = 5
 ```
 
 Expected Output:
 
-```python
+```text
 1 2 3 4 5
 ```
 
@@ -46,13 +46,13 @@ Given an integer `number` between 0 and 9 inclusive, print a triangle per the ex
 
 Example Input:
 
-```python
+```text
 number = 5
 ```
 
 Expected Output:
 
-```python
+```text
 1
 2 2
 3 3 3
@@ -68,14 +68,14 @@ Create a function that returns the sum of all integers between, and including, t
 
 Example Input:
 
-```python
+```text
 start = 1
 finish = 5
 ```
 
 Expected Return Value:
 
-```python
+```text
 15
 ```
 
@@ -89,13 +89,13 @@ Given a list of integers, iterate over the list and display the numbers which ar
 
 Example Input:
 
-```python
+```text
 a_list = [1, 2, 3, 4, 5, 6, 7, 145, 200, 300, 400]
 ```
 
 Expected Output:
 
-```python
+```text
 5
 145
 ```
