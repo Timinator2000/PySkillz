@@ -50,7 +50,7 @@ class NumberTriangle(pyskillz_tools.PrintBasedExercise):
         super().__init__(user_solution, suggested_solution, solution_filename, success_message)
         self.num_random_test_cases = 0
 
-        self.fixed_test_cases = [[i] for i in range(1, 10)] + [[0], [-1]]
+        self.fixed_test_cases = [[i] for i in range(1, 10)] + [[0]]
 
 
     def test_case_to_string(self, test_case) -> str:

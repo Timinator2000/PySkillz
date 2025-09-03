@@ -54,7 +54,7 @@ class DivisibleBy5(pyskillz_tools.PrintBasedExercise):
         self.num_random_test_cases = 1000
 
         self.fixed_test_cases = [
-                [[1, 2, 3, 4]],
+                [[1, 2, 3, 4, 5, 6, 7, 145, 200, 300, 400]],
                 [[5, 8, 10]],
                 [[180, 200, 201]],
                 [[35, 85, 150]],

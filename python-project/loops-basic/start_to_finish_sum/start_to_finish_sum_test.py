@@ -51,6 +51,7 @@ class StartToFinishSum(pyskillz_tools.Exercise):
         self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
+            [1, 5],
             [0, 4],
             [1, 1],
             [-4, 4],
