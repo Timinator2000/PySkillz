@@ -22,5 +22,11 @@ def number_triangle_alt2(number: int) -> None:
 
 # Alternate Solution #3
 def number_triangle_alt3(number: int) -> None:
+    for i in range(1, number + 1):
+        print(' '.join([str(i)] * i))
+
+
+# Alternate Solution #4
+def number_triangle_alt4(number: int) -> None:
     if number >= 1:
         print('\n'.join(' '.join(str(i) for _ in range(1, i + 1)) for i in range(1, number + 1)))
