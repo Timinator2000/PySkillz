@@ -2,7 +2,7 @@
 
 Create a function that prints all integers between, and including the two integers given.
 
-Example Input:
+Example:
 
 ```text
 start = 1
@@ -25,7 +25,7 @@ Expected Output:
 
 Create a function that prints all integers between, and including the two integers given, on a single line.
 
-Example Input:
+Example:
 
 ```text
 start = 1
@@ -44,7 +44,7 @@ Expected Output:
 
 Given an integer `number` between 0 and 9 inclusive, print a triangle per the example below.
 
-Example Input:
+Example:
 
 ```text
 number = 5
@@ -66,7 +66,7 @@ Expected Output:
 
 Create a function that returns the sum of all integers between, and including, the two integers given.
 
-Example Input:
+Example:
 
 ```text
 start = 1
@@ -87,7 +87,7 @@ Expected Return Value:
 
 Given a list of integers, iterate over the list and display the numbers which are divisible by 5. If you find a number greater than 150, stop the loop iteration immediately before printing anything more.
 
-Example Input:
+Example:
 
 ```text
 a_list = [1, 2, 3, 4, 5, 6, 7, 145, 200, 300, 400]
