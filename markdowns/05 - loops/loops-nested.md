@@ -1,10 +1,12 @@
 # Exercise #1: Coordinate Grid
 
-Given a number `n`. Print all (row, col) coordinate pairs in a grid from (0, 0) to (`n`, `n`).
+Given a number `n`. Print all `(row, col)` coordinate pairs in a grid from `(0, 0)` to `(n, n)`.
 
 __Example:__
 
-`n` = 2
+```
+n = 2
+```
 
 Expected Output:
 
