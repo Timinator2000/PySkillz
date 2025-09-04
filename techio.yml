@@ -16,18 +16,18 @@ plan:
         statement: markdowns/05 - loops/loops-basic.md
       - title: Nested Loops
         statement: markdowns/05 - loops/loops-nested.md
-  - title: Sets
-    plan:
-      - title: Basic Set Operations
-        statement: markdowns/04 - sets/basic set operations.md
-  - title: List Comprehensions
-    plan:
-      - title: Exercises
-        statement: markdowns/08 - list comprehensions/list comprehension.md
-  - title: Working with Grids
-    plan:
-      - title: Work
-        statement: markdowns/2D Grids/grid class architecture.md
+  # - title: Sets
+  #   plan:
+  #     - title: Basic Set Operations
+  #       statement: markdowns/04 - sets/basic set operations.md
+  # - title: List Comprehensions
+  #   plan:
+  #     - title: Exercises
+  #       statement: markdowns/08 - list comprehensions/list comprehension.md
+  # - title: Working with Grids
+  #   plan:
+  #     - title: Work
+  #       statement: markdowns/2D Grids/grid class architecture.md
         
         
 projects:
