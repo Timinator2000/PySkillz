@@ -57,7 +57,7 @@ class AddTwoNumbers(pyskillz_tools.Exercise):
 
     def test_case_to_string(self, test_case) -> str:
         a, b = test_case
-        return f'a = {a}' + '\n' + f'b = {b}'
+        return f'{a = }\n{b = }'
 
 
     def generate_random_test_case(self) -> list:

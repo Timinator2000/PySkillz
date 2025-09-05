@@ -62,7 +62,7 @@ class StartToFinishSum(pyskillz_tools.Exercise):
         
     def test_case_to_string(self, test_case) -> str:
         start, finish = test_case
-        return f'start = {start}\nfinish = {finish}'
+        return f'{start = }\n{finish = }'
         
         
     def generate_random_test_case(self) -> list:
