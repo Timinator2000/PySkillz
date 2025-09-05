@@ -64,7 +64,7 @@ Expected Output:
 
 # Exercise #4: Sum Numbers from Start to Finish
 
-Create a function that returns the sum of all integers between, and including, the two integers given.
+Create a function that returns the sum of all integers greater than or equal to `start` and less than or equal to `finish`.
 
 Example:
 
