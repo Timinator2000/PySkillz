@@ -1,4 +1,4 @@
-def hello_world() -> None:
+def hello_world():
     # Your code goes here.
     
     # Write an answer using print

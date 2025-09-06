@@ -1,7 +1,6 @@
-# Last Edited: Sept 6, 2025 10:10am
+# Last Edited: Sept 1, 2025 9:11am
 
 from copy import deepcopy
-from collections import namedtuple
 import builtins
 import sys
 import random
@@ -89,12 +88,6 @@ class Exercise():
 
         with open(solution_path, 'r') as f:
             self.suggested_solution_text = f.read()
-
-        builtins.input = self.input_not_supported
-
-
-    def input_not_supported(self):
-        print('This playground does not support input. This line of code is being skipped.')
 
 
     def send_multiline_text(self, channel, msg):
@@ -242,41 +235,6 @@ class Exercise():
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
 
-
-IOEvent = namedtuple('Event', ['kind', 'text', 'line_count'])
-Failure = namedtuple('Failure', ['test_case', 'user_io', 'expected_io'])
-
-
-class IOLog:
-
-    def __init__(self, strict=False):
-        self.events = []
-        self.strict = strict
-
-
-    def add_event(self, kind, text):
-        line_count = text.count('\n') + (0 if text.endswith('\n') else 1)
-
-        if not self.strict and kind == "print":
-
-            # collapse consecutive prints
-            if self.events and self.events[-1].kind == "print":
-                prev_event = self.events[-1]
-                combined_text = prev_event.text + text
-                combined_lines = prev_event.line_count + line_count
-                self.events[-1] = IOEvent(prev_event.kind, combined_text, combined_lines)
-                
-                return
-
-        self.events.append(IOEvent(kind, text, line_count))
-
-
-    def __eq__(self, other):
-        if not isinstance(other, IOLog):
-            return False
-
-        # Compare events
-        return self.events == other.events
 
 
 class PrintBasedExercise(Exercise):
