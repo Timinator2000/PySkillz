@@ -93,7 +93,7 @@ class Exercise():
         builtins.input = self.input_not_supported
 
 
-    def input_not_supported(self):
+    def input_not_supported(self, prompt=''):
         print('This playground does not support input. This line of code is being skipped.')
 
 
