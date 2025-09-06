@@ -1,7 +1,6 @@
-# Last Edited: Sept 6, 2025 10:10am
+# Last Edited: Sept 6, 2025 1:32pm
 
 from copy import deepcopy
-from collections import namedtuple
 import builtins
 import sys
 import random
@@ -91,10 +90,13 @@ class Exercise():
             self.suggested_solution_text = f.read()
 
         builtins.input = self.input_not_supported
+        self.input_not_supported_warning_issued = False
 
 
     def input_not_supported(self, prompt=''):
-        print('This playground does not support the input function. This line of code is being skipped.', file=sys.stderr, flush=True)
+        if not self.input_not_supported_warning_issued:
+            print('This playground does not support the input function. This line of code is being skipped.', file=sys.stderr, flush=True)
+            self.input_not_supported_warning_issued = True
 
 
     def send_multiline_text(self, channel, msg):
@@ -242,41 +244,6 @@ class Exercise():
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
 
-
-IOEvent = namedtuple('Event', ['kind', 'text', 'line_count'])
-Failure = namedtuple('Failure', ['test_case', 'user_io', 'expected_io'])
-
-
-class IOLog:
-
-    def __init__(self, strict=False):
-        self.events = []
-        self.strict = strict
-
-
-    def add_event(self, kind, text):
-        line_count = text.count('\n') + (0 if text.endswith('\n') else 1)
-
-        if not self.strict and kind == "print":
-
-            # collapse consecutive prints
-            if self.events and self.events[-1].kind == "print":
-                prev_event = self.events[-1]
-                combined_text = prev_event.text + text
-                combined_lines = prev_event.line_count + line_count
-                self.events[-1] = IOEvent(prev_event.kind, combined_text, combined_lines)
-                
-                return
-
-        self.events.append(IOEvent(kind, text, line_count))
-
-
-    def __eq__(self, other):
-        if not isinstance(other, IOLog):
-            return False
-
-        # Compare events
-        return self.events == other.events
 
 
 class PrintBasedExercise(Exercise):
