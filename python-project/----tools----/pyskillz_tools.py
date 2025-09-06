@@ -1,6 +1,7 @@
-# Last Edited: Sept 6, 2025 1:32pm
+# Last Edited: Sept 6, 2025 2:32pm
 
 from copy import deepcopy
+from collections import namedtuple
 import builtins
 import sys
 import random
@@ -245,65 +246,101 @@ class Exercise():
         self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
 
 
+IOEvent = namedtuple('Event', ['type', 'text', 'line_count'])
+Failure = namedtuple('Failure', ['test_case', 'user_io', 'expected_io'])
+
+
+# This was created in hopes of handling both input and output. As of Sept, 2025,
+# Tech.io playgrounds cannot accomodate input from the learner.
+class IOLog:
+
+    def __init__(self, strict=False):
+        self.events = []
+        self.strict = strict
+
+
+    def __len__(self):
+        return len([event for event in self.events if event.type=='print'])
+    
+
+    def reset(self):
+        self.events = []
+
+
+    def add_event(self, _type, text):
+        line_count = text.count('\n') + (0 if text.endswith('\n') else 1)
+
+        if not self.strict and _type == "print":
+
+            # collapse consecutive prints
+            if self.events and self.events[-1].type == "print":
+                prev_event = self.events[-1]
+                combined_text = prev_event.text + text
+                combined_lines = prev_event.line_count + line_count
+                self.events[-1] = IOEvent(prev_event.type, combined_text, combined_lines)
+                
+                return
+
+        self.events.append(IOEvent(_type, text, line_count))
+
+
+    def full_output(self):
+        string = ''.join([event.text for event in self.events if event.type == 'print'])
+        if string[-1] == '\n':
+            string = string[:-1]
+
+        return string
+
+
+    def __eq__(self, other):
+        if not isinstance(other, IOLog):
+            return False
+
+        # Compare events
+        return self.events == other.events
+
 
 class PrintBasedExercise(Exercise):
 
-    def __init__(self, user_solution, suggested_solution, solution_path, success_message):
+    def __init__(self, user_solution, suggested_solution, solution_path, success_message, strict=False):
         super().__init__(user_solution, suggested_solution, solution_path, success_message)
-        self.output_buffer = []
-        self.output_buffer_new_line = True
-
+        self.log = IOLog(strict)
         self.normal_print = builtins.print
-        self.test_case_printing = False
+        self.strict = strict
 
 
-    def __del__(self):
+    def logged_print(self, *args, **kwargs):
+        sep = kwargs.get('sep', ' ')
+        end = kwargs.get('end', '\n')
+        text = sep.join(map(str, args)) + end
+
+        if 'file' in kwargs and kwargs['file'] == sys.stderr:
+            self.normal_print(*args, **kwargs)
+        else:
+            self.log.add_event('print', text)
+
+
+    def generate_answer(self, solution, test_case) -> IOLog:
+        builtins.print = self.logged_print
+        self.log.reset()
+        solution(*deepcopy(test_case))
         builtins.print = self.normal_print
 
-
-    def reset_output_buffer(self):
-        self.output_buffer.clear()
-        self.output_buffer_new_line = True
-
-
-    def swap_printer(self):
-        self.test_case_printing = not self.test_case_printing
-        if self.test_case_printing:
-            builtins.print = self.new_print
-        else:
-            builtins.print = self.normal_print
-
-            
-    def new_print(self, *args, sep=' ', end='\n', file=sys.stdout, flush=False):
-        if file==sys.stderr:
-            self.normal_print(*args, sep=sep, end=end, file=file, flush=flush)
-        else:
-            string = sep.join(str(arg) for arg in args)
-            if not self.output_buffer_new_line:
-                string = self.output_buffer.pop() + string
-
-            string += end
-            if string[-1] == '\n':
-                self.output_buffer_new_line = True
-                string = string[:-1]
-            else:
-                self.output_buffer_new_line = False
-
-            self.output_buffer.extend(string.split('\n'))
-
-
-    def generate_answer(self, solution, test_case) -> list[str]:
-        self.swap_printer()
-        solution(*deepcopy(test_case))
-        answer = deepcopy(self.output_buffer)
-        self.reset_output_buffer()
-        self.swap_printer()
-        return answer
+        return deepcopy(self.log)
 
 
     def display_first_failed_test_case(self) -> None:
-        expected_answer = self.generate_answer(self.suggested_solution, self.first_failed_test_case)
-        user_answer = self.generate_answer(self.user_solution, self.first_failed_test_case)
+        expected_io_log = self.generate_answer(self.suggested_solution, self.first_failed_test_case)
+        user_io_log = self.generate_answer(self.user_solution, self.first_failed_test_case)
+
+        num_expected_calls_to_print = len(expected_io_log)
+        num_user_calls_to_print = len(user_io_log)
+
+        expected_answer_string = expected_io_log.full_output()
+        user_answer_string = user_io_log.full_output()
+
+        expected_answer = expected_answer_string.split('\n')
+        user_answer = user_answer_string.split('\n')
 
         num_expected_lines = len(expected_answer)
         num_user_lines = len(user_answer)
@@ -313,11 +350,20 @@ class PrintBasedExercise(Exercise):
         user_lines_str = f'{num_user_lines} line' + ('s' if num_user_lines != 1 else '')
 
         msg = ''
+        if num_user_calls_to_print > 0 and self.strict and num_expected_calls_to_print != num_user_calls_to_print:
+            word_expected = 'time' if num_expected_calls_to_print == 1 else 'times'
+            word_user = 'time' if num_user_calls_to_print == 1 else 'times'
+            
+            if expected_answer_string == user_answer_string:
+                msg += 'The text you output is correct. However...\n'
+            msg += f"Your code called 'print' {num_user_calls_to_print} {word_user}. "
+            msg += f"The grader called 'print' {num_expected_calls_to_print} {word_expected}.\n"
+
         if num_user_lines == 0:
             msg += f'You did not print anything. {expected_lines_str} of printed output {verb} expected.\n'
 
         elif expected_answer != user_answer:
-            msg += 'First Failed Test Case:\n\n'
+            msg += ('\n' if msg else '') + 'First Failed Test Case:\n\n'
 
             msg += f'Your Output:'
             if num_expected_lines != num_user_lines:
