@@ -94,7 +94,7 @@ class Exercise():
 
 
     def input_not_supported(self, prompt=''):
-        print('This playground does not support input. This line of code is being skipped.')
+        print('This playground does not support the input function. This line of code is being skipped.', file=sys.stderr, flush=True)
 
 
     def send_multiline_text(self, channel, msg):
