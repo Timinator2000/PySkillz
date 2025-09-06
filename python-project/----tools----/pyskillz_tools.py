@@ -276,7 +276,7 @@ class IOLog:
             if self.events and self.events[-1].type == "print":
                 prev_event = self.events[-1]
                 combined_text = prev_event.text + text
-                combined_lines = prev_event.line_count + line_count
+                combined_lines = combined_text.count('\n') + (0 if text.endswith('\n') else 1)
                 self.events[-1] = IOEvent(prev_event.type, combined_text, combined_lines)
                 
                 return
@@ -286,7 +286,7 @@ class IOLog:
 
     def full_output(self):
         string = ''.join([event.text for event in self.events if event.type == 'print'])
-        if string[-1] == '\n':
+        if string and string[-1] == '\n':
             string = string[:-1]
 
         return string
@@ -295,7 +295,7 @@ class IOLog:
     def __eq__(self, other):
         if not isinstance(other, IOLog):
             return False
-
+        
         # Compare events
         return self.events == other.events
 
