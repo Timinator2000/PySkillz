@@ -7,6 +7,7 @@ import sys
 import os
 import random
 import importlib
+import ast
 
 
 CONGRATS = ['Kudos!',
@@ -95,9 +96,14 @@ class Exercise():
         module = importlib.import_module(exercise_name + '_solution')
         self.suggested_solution = getattr(module, exercise_name)
 
+        # Count the number of statements in the user_solution
+        user_solution_filename = os.path.join(dir_path, f'{exercise_name}.py')
+        self.user_statement_count = self.count_statements(user_solution_filename)
+        self.max_statement_count = 10_000_000
+
         # Read all of exercise_name_solution.py into the suggested solution text.
-        solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
-        with open(solution_filename, 'r') as f:
+        suggested_solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
+        with open(suggested_solution_filename, 'r') as f:
             self.suggested_solution_text = f.read()
 
         # Redirect stdin since Tech.io playgrounds do not support stdin.
@@ -133,6 +139,25 @@ class Exercise():
     def fail(self):
         if Exercise.RUNNING_ON_TECH_IO:
             print("TECHIO> success false")
+
+
+    def count_statements(self, filename):
+        with open(filename, "r", encoding="utf-8") as f:
+            tree = ast.parse(f.read(), filename)
+
+        count = 0
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Expr):
+                # Expr nodes that are just string literals = docstrings or string-only
+                if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
+                    continue  # skip
+            if isinstance(node, ast.stmt):
+                count += 1
+
+        print(f'Submitted solution has {count} statements.', file=sys.stderr, flush=True)
+
+        return count
+
 
             
     def container_element_types(self, container) -> str:
@@ -292,8 +317,6 @@ class IOLog:
                 
                 return
             
-        print(f'{text=}', file=sys.stderr, flush=True)
-
         self.events.append(IOEvent(_type, text, line_count))
 
 

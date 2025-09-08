@@ -1,5 +1,4 @@
 def hello_world():
-    return
     # Your code goes here.
     
     # Write an answer using print
