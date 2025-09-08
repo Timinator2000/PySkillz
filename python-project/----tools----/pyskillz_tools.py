@@ -291,6 +291,8 @@ class IOLog:
                 self.events[-1] = IOEvent(prev_event.type, combined_text, combined_lines)
                 
                 return
+            
+        print(f'{text=}', file=sys.stderr, flush=True)
 
         self.events.append(IOEvent(_type, text, line_count))
 
@@ -350,8 +352,8 @@ class PrintBasedExercise(Exercise):
         expected_answer_string = expected_io_log.full_output()
         user_answer_string = user_io_log.full_output()
 
-        expected_answer = expected_answer_string.split('\n')
-        user_answer = user_answer_string.split('\n')
+        expected_answer = [] if not expected_answer_string else expected_answer_string.split('\n')
+        user_answer = [] if not user_answer_string else user_answer_string.split('\n')
 
         num_expected_lines = len(expected_answer)
         num_user_lines = len(user_answer)

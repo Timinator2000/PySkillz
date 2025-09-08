@@ -6,16 +6,18 @@ plan:
     plan:
       - title: Welcome
         statement: markdowns/01 - introduction/01 - welcome.md
-      - title: Overview
-        statement: markdowns/01 - introduction/02 - overview.md
-      - title: Topic Catalog
-        statement: markdowns/01 - introduction/03 - skillz catalog.md
-  - title: Loops
-    plan:
-      - title: Basic Loops
-        statement: markdowns/05 - loops/loops-basic.md
-      - title: Nested Loops
-        statement: markdowns/05 - loops/loops-nested.md
+      - title: Testing
+        statement: markdowns/01 - introduction/testing.md
+  #     - title: Overview
+  #       statement: markdowns/01 - introduction/02 - overview.md
+  #     - title: Topic Catalog
+  #       statement: markdowns/01 - introduction/03 - skillz catalog.md
+  # - title: Loops
+  #   plan:
+  #     - title: Basic Loops
+  #       statement: markdowns/05 - loops/loops-basic.md
+  #     - title: Nested Loops
+  #       statement: markdowns/05 - loops/loops-nested.md
   # - title: Sets
   #   plan:
   #     - title: Basic Set Operations
