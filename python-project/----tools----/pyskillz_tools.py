@@ -4,7 +4,9 @@ from copy import deepcopy
 from collections import namedtuple
 import builtins
 import sys
+import os
 import random
+import importlib
 
 
 CONGRATS = ['Kudos!',
@@ -53,10 +55,6 @@ BUG = ['Oops!',
 BUG_EMOJIS = '🐞🐛🪲🦗😔😢😧'
 
 
-def check_for_tech_io(dir_path: str) -> None:
-    Exercise.RUNNING_ON_TECH_IO = dir_path.startswith('/project/target')
-
-
 class Channel():
 
     def __init__(self, full_name, short_name):
@@ -70,15 +68,13 @@ class Channel():
 
 class Exercise():
     
-    RUNNING_ON_TECH_IO = True
+    RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
 
-    def __init__(self, user_solution, suggested_solution, solution_path, success_message):
+    def __init__(self, exercise_path, success_message):
         self.fixed_test_cases = []
         self.num_random_test_cases = 0
-        self.user_solution = user_solution
-        self.suggested_solution = suggested_solution
         self.success_message = success_message.strip()
         self.first_failed_test_case = None
 
@@ -87,9 +83,24 @@ class Exercise():
         self.solution_channel = Channel('Suggested Solution ✅', 'Sol✅>')
         self.std_out_channel = Channel('Standard Output', 'StdOut>')
 
-        with open(solution_path, 'r') as f:
+        # Strip the exercise_name out of the full exercise path passed in as an argument.
+        dir_path, filename = os.path.split(os.path.normpath(exercise_path))
+        exercise_name = filename[:filename.find('_test.py')]
+
+        # Import the user solution from exercise_name.py
+        module = importlib.import_module(exercise_name)
+        self.user_solution = getattr(module, exercise_name)
+
+        # Import the suggested solution from exercise_name_solution.py
+        module = importlib.import_module(exercise_name + '_solution')
+        self.suggested_solution = getattr(module, exercise_name)
+
+        # Read all of exercise_name_solution.py into the suggested solution text.
+        solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
+        with open(solution_filename, 'r') as f:
             self.suggested_solution_text = f.read()
 
+        # Redirect stdin since Tech.io playgrounds do not support stdin.
         builtins.input = self.input_not_supported
         self.input_not_supported_warning_issued = False
 
@@ -302,8 +313,8 @@ class IOLog:
 
 class PrintBasedExercise(Exercise):
 
-    def __init__(self, user_solution, suggested_solution, solution_path, success_message, strict=False):
-        super().__init__(user_solution, suggested_solution, solution_path, success_message)
+    def __init__(self, exercise_path, success_message, strict=False):
+        super().__init__(exercise_path, success_message)
         self.log = IOLog(strict)
         self.normal_print = builtins.print
         self.strict = strict
