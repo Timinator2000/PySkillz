@@ -1,6 +1,6 @@
 # Code Analyzer
 
-@[Enter Your Code Here]({"stubs": ["----tools----/code_analyzer/code_analyzer.py"], "command": "python3 ----tools----/code_analyzer/code_analyzer_test.py"})
+@[Enter Your Code Here]({"stubs": ["tools/code_analyzer/code_analyzer.py"], "command": "python3 tools/code_analyzer/code_analyzer_test.py"})
 
 
 # Exercise #1: Hello, World! - LIMITED TO 2 LINES OF CODE
