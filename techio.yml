@@ -30,6 +30,14 @@ plan:
   #   plan:
   #     - title: Work
   #       statement: markdowns/2D Grids/grid class architecture.md
+  - title: Appendix A - Counting Lines of Code
+    plan:
+      - title: Counting Statements vs LOC
+        statement: markdowns/90 - counting statements/01 - counting statements.md
+      - title: Quiz
+        statement: markdowns/90 - counting statements/02 - counting statements quiz.md
+      - title: Analyze Your Code
+        statement: markdowns/90 - counting statements/03 - analyze your code.md
         
         
 projects:

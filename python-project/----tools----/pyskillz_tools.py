@@ -1,7 +1,7 @@
 # Last Edited: Sept 6, 2025 2:57pm
 
 from copy import deepcopy
-from collections import namedtuple
+from collections import namedtuple, Counter
 import builtins
 import sys
 import os
@@ -67,44 +67,22 @@ class Channel():
         return self.full_name if on_tech_io else self.short_name
 
 
-class Exercise():
-    
-    RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
-    PRINT_TEST_CASES = False
-    CONTAINERS = ['list', 'tuple', 'set']
+class TechioObject():
 
-    def __init__(self, exercise_path, success_message):
-        self.fixed_test_cases = []
-        self.num_random_test_cases = 0
-        self.success_message = success_message.strip()
-        self.first_failed_test_case = None
+    RUNNING_ON_TECH_IO = __file__.startswith('/project/target')
+    # RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
 
-        self.success_channel = Channel(f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}', 'Win🎉>')
-        self.bug_channel = Channel(f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}', 'Bug🐞>')
-        self.solution_channel = Channel('Suggested Solution ✅', 'Sol✅>')
-        self.std_out_channel = Channel('Standard Output', 'StdOut>')
+    def __init__(self, exercise_path):
+        self.code_summary_channel = Channel(f'Code Summary 🤔', 'Sum🤔>')
+        self.code_details_channel = Channel(f'Code Details 🤔', 'Det🤔>')
 
         # Strip the exercise_name out of the full exercise path passed in as an argument.
-        dir_path, filename = os.path.split(os.path.normpath(exercise_path))
-        exercise_name = filename[:filename.find('_test.py')]
+        self.dir_path, filename = os.path.split(os.path.normpath(exercise_path))
+        self.exercise_name = filename[:filename.find('_test.py')]
 
-        # Import the user solution from exercise_name.py
-        module = importlib.import_module(exercise_name)
-        self.user_solution = getattr(module, exercise_name)
-
-        # Import the suggested solution from exercise_name_solution.py
-        module = importlib.import_module(exercise_name + '_solution')
-        self.suggested_solution = getattr(module, exercise_name)
-
-        # Count the number of statements in the user_solution
-        user_solution_filename = os.path.join(dir_path, f'{exercise_name}.py')
-        self.user_statement_count = self.count_statements(user_solution_filename)
-        self.max_statement_count = 10_000_000
-
-        # Read all of exercise_name_solution.py into the suggested solution text.
-        suggested_solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
-        with open(suggested_solution_filename, 'r') as f:
-            self.suggested_solution_text = f.read()
+        # Analyze the code in the learner window.
+        filename = os.path.join(self.dir_path, f'{self.exercise_name}.py')
+        self.code_analysis = self.analyze_code(filename)
 
         # Redirect stdin since Tech.io playgrounds do not support stdin.
         builtins.input = self.input_not_supported
@@ -123,7 +101,7 @@ class Exercise():
 
         
     def send_msg(self, channel, msg):
-        if Exercise.RUNNING_ON_TECH_IO:
+        if TechioObject.RUNNING_ON_TECH_IO:
             print("TECHIO> message --channel \"{}\" \"{}\"".format(channel.name(), msg))
         else:
             if msg.startswith('> '):
@@ -132,34 +110,181 @@ class Exercise():
 
             
     def success(self):
-        if Exercise.RUNNING_ON_TECH_IO:
+        if TechioObject.RUNNING_ON_TECH_IO:
             print("TECHIO> success true")
 
             
     def fail(self):
-        if Exercise.RUNNING_ON_TECH_IO:
+        if TechioObject.RUNNING_ON_TECH_IO:
             print("TECHIO> success false")
 
 
-    def count_statements(self, filename):
+    def analyze_code(self, filename: str) -> dict:
         with open(filename, "r", encoding="utf-8") as f:
-            tree = ast.parse(f.read(), filename)
+            source = f.read()
 
-        count = 0
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Expr):
-                # Expr nodes that are just string literals = docstrings or string-only
-                if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
-                    continue  # skip
+        tree = ast.parse(source, filename)
+        categories = []
+
+        def walk_node(node, depth=0):
+            # Skip docstrings
+            if isinstance(node, ast.Expr) and isinstance(getattr(node, 'value', None), ast.Constant):
+                if isinstance(node.value.value, str):
+                    categories.append((node, "docstring/string literal", False, depth))
+                    return
+
+            # Skip imports
+            if isinstance(node, (ast.Import, ast.ImportFrom)):
+                categories.append((node, "import", False, depth))
+                return
+
+            # Count statements
             if isinstance(node, ast.stmt):
-                count += 1
+                categories.append((node, type(node).__name__, True, depth))
 
-        print(f'Submitted solution has {count} statements.', file=sys.stderr, flush=True)
+            # Recurse into statement bodies
+            for attr in ('body', 'orelse', 'finalbody', 'handlers', 'decorator_list', 'cases'):
+                if hasattr(node, attr):
+                    child_nodes = getattr(node, attr)
+                    if not isinstance(child_nodes, list):
+                        child_nodes = [child_nodes]
+                    for child in child_nodes:
+                        if isinstance(child, ast.ExceptHandler):
+                            walk_node(child, depth + 1)
+                        elif isinstance(child, ast.match_case):
+                            for stmt in child.body:
+                                walk_node(stmt, depth + 1)
+                        else:
+                            walk_node(child, depth + 1)
 
-        return count
+        walk_node(tree, depth=0)
+
+        total_count = sum(1 for _, _, keep, _ in categories if keep)
+        kept = Counter(cat for _, cat, keep, _ in categories if keep)
+        skipped = Counter(cat for _, cat, keep, _ in categories if not keep)
+
+        # Line counts
+        lines = source.splitlines()
+        total_lines = len(lines)
+        non_blank_lines = sum(1 for line in lines if line.strip())
+        comment_lines = sum(1 for line in lines if line.strip().startswith("#"))
+        effective_code_lines = non_blank_lines - comment_lines
+
+        return {
+            "filename": filename,
+            "source": source,
+            "categories": categories,  # list of (node, category, keep, depth)
+            "total_count": total_count,
+            "kept": kept,
+            "skipped": skipped,
+            "total_lines": total_lines,
+            "non_blank_lines": non_blank_lines,
+            "comment_lines": comment_lines,
+            "effective_code_lines": effective_code_lines,
+        }
 
 
-            
+    def print_analysis(self, summary):
+        filename = summary["filename"]
+        source = summary["source"]
+        categories = summary["categories"]
+        total_count = summary["total_count"]
+        kept = summary["kept"]
+        skipped = summary["skipped"]
+        total_lines = summary["total_lines"]
+        non_blank_lines = summary["non_blank_lines"]
+        comment_lines = summary["comment_lines"]
+        effective_code_lines = summary["effective_code_lines"]
+
+        print(f"\nAnalysis of {filename}")
+        print("=" * (12 + len(filename)))
+        print(f"Total lines in file: {total_lines}")
+        print(f"Non-blank lines in file: {non_blank_lines}")
+        print(f"Comment lines in file: {comment_lines}")
+        print(f"Effective code lines: {effective_code_lines}")
+
+        print("\nSummary of statement categories")
+        print("--------------------------------")
+        print("Statements kept (counted):")
+        for cat, n in kept.items():
+            print(f"  {cat}: {n}")
+        if not kept:
+            print("  (none)")
+
+        print("\nStatements skipped:")
+        for cat, n in skipped.items():
+            print(f"  {cat}: {n}")
+        if not skipped:
+            print("  (none)")
+
+        print("\nSummary totals:")
+        print(f"  Total statements found: {len(categories)}")
+        print(f"  Counted statements: {total_count}")
+        print(f"  Skipped statements: {len(categories) - total_count}")
+        print(f"\nFinal statement count: {total_count}\n")
+
+        print("Detailed statement breakdown (nested)")
+        print("-------------------------------------")
+        for node, cat, keep, depth in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
+            lineno = getattr(node, "lineno", None)
+            lineinfo = f"line {lineno}" if lineno is not None else "no line"
+            status = "COUNTED" if keep else "SKIPPED"
+
+            snippet = ""
+            if lineno is not None:
+                try:
+                    snippet = source.splitlines()[lineno - 1].strip()
+                except IndexError:
+                    snippet = "<source unavailable>"
+
+            indent = "    " * depth
+            print(f"{indent}{lineinfo:>8} | {cat:<25} | {status:<7} | {snippet}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python analyze_code.py <filename>")
+        sys.exit(1)
+
+    summary = analyze_code(sys.argv[1])
+    print_analysis(summary)
+
+
+class Exercise(TechioObject):
+    
+    PRINT_TEST_CASES = False
+    CONTAINERS = ['list', 'tuple', 'set']
+
+    def __init__(self, exercise_path, success_message):
+        super().__init__(exercise_path)
+        self.fixed_test_cases = []
+        self.num_random_test_cases = 0
+        self.success_message = success_message.strip()
+        self.first_failed_test_case = None
+
+        self.success_channel = Channel(f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}', 'Win🎉>')
+        self.bug_channel = Channel(f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}', 'Bug🐞>')
+        self.solution_channel = Channel('Suggested Solution ✅', 'Sol✅>')
+        self.std_out_channel = Channel('Standard Output', 'StdOut>')
+
+        # Import the user solution from exercise_name.py
+        module = importlib.import_module(self.exercise_name)
+        self.user_solution = getattr(module, self.exercise_name)
+
+        # Import the suggested solution from exercise_name_solution.py
+        module = importlib.import_module(self.exercise_name + '_solution')
+        self.suggested_solution = getattr(module, self.exercise_name)
+
+        # Self defaults for code size parameters to be tested.
+        self.max_statement_count = 10_000_000
+        self.max_lines_of_code = 10_000_000
+
+        # Read all of exercise_name_solution.py into the suggested solution text.
+        suggested_solution_filename = os.path.join(self.dir_path, f'{self.exercise_name}_solution.py')
+        with open(suggested_solution_filename, 'r') as f:
+            self.suggested_solution_text = f.read()
+
+
     def container_element_types(self, container) -> str:
         element_types = {self.data_type(element) for element in container}
         
@@ -283,10 +408,8 @@ class Exercise():
 
 
 IOEvent = namedtuple('Event', ['type', 'text', 'line_count'])
-Failure = namedtuple('Failure', ['test_case', 'user_io', 'expected_io'])
 
-
-# This was created in hopes of handling both input and output. As of Sept, 2025,
+# This was created in hopes of handling both input and output. As of Sept 2025,
 # Tech.io playgrounds cannot accomodate input from the learner.
 class IOLog:
 
