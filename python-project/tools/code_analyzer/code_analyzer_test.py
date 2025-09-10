@@ -32,7 +32,7 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
     def run(self):
         summary = self.code_analysis
         summary_channel = pyskillz_tools.Channel(f'Code Summary 🤔', 'Sum🤔>')
-        details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🤔', 'Det🤔>')
+        details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🔍', 'Det🔍>')
 
         filename = summary["filename"]
         source = summary["source"]
