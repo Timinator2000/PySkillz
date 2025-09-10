@@ -27,161 +27,71 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
 
     def __init__(self):
         super().__init__(__file__)
-    
+
 
     def run(self):
-        self.print_analysis(self.code_analysis)
+        summary = self.code_analysis
+        summary_channel = pyskillz_tools.Channel(f'Code Summary 🤔', 'Sum🤔>')
+        details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🤔', 'Det🤔>')
+
+        filename = summary["filename"]
+        source = summary["source"]
+        categories = summary["categories"]
+        total_count = summary["total_count"]
+        kept = summary["kept"]
+        skipped = summary["skipped"]
+        total_lines = summary["total_lines"]
+        non_blank_lines = summary["non_blank_lines"]
+        comment_lines = summary["comment_lines"]
+        effective_code_lines = summary["effective_code_lines"]
+
+        self.send_msg(summary_channel, f"Total lines: {total_lines}")
+        self.send_msg(summary_channel, f"Non-blank lines: {non_blank_lines}")
+        self.send_msg(summary_channel, f"Comment lines: {comment_lines}")
+        self.send_msg(summary_channel, f"Effective code: {effective_code_lines}")
+
+        self.send_msg(summary_channel, '')
+        self.send_msg(summary_channel, "Summary of statement categories")
+        self.send_msg(summary_channel, "--------------------------------")
+        self.send_msg(summary_channel, "Statements kept (counted):")
+        for cat, n in kept.items():
+            self.send_msg(summary_channel, f"  {cat}: {n}")
+        if not kept:
+            self.send_msg(summary_channel, "  (none)")
+
+        self.send_msg(summary_channel, '')
+        self.send_msg(summary_channel, "Statements skipped:")
+        for cat, n in skipped.items():
+            self.send_msg(summary_channel, f"  {cat}: {n}")
+        if not skipped:
+            self.send_msg(summary_channel, "  (none)")
+
+        self.send_msg(summary_channel, '')
+        self.send_msg(summary_channel, "Summary totals:")
+        self.send_msg(summary_channel, f"  Total statements found: {len(categories)}")
+        self.send_msg(summary_channel, f"  Counted statements: {total_count}")
+        self.send_msg(summary_channel, f"  Skipped statements: {len(categories) - total_count}")
+        self.send_msg(summary_channel, '')
+        self.send_msg(summary_channel, f"Final statement count: {total_count}")
+
+        self.send_msg(details_channel, "Detailed statement breakdown (nested)")
+        self.send_msg(details_channel, "-------------------------------------")
+        for node, cat, keep, depth in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
+            lineno = getattr(node, "lineno", None)
+            lineinfo = f"line {lineno}" if lineno is not None else "no line"
+            status = "COUNTED" if keep else "SKIPPED"
+
+            snippet = ""
+            if lineno is not None:
+                try:
+                    snippet = source.splitlines()[lineno - 1].strip()
+                except IndexError:
+                    snippet = "<source unavailable>"
+
+            indent = "    " * depth
+            self.send_msg(details_channel, f"{indent}{lineinfo:>8} | {cat:<25} | {status:<7} | {snippet}")
 
 
 if __name__ == "__main__":
     analyzer = CodeAnalyzer()
     analyzer.run()
-
-
-
-"""
-
-Perfect 👍 — we can structure the output in **two sections**:
-
-1. **Summary** — just like before: grouped by type, counts of kept vs skipped.
-2. **Detailed listing** — each statement with its line number, type, and snippet of code, along with whether it was counted or skipped.
-
-Here’s the updated script:
-
-```python
-import ast
-import sys
-import textwrap
-from collections import Counter
-
-def analyze_code(filename: str):
-    with open(filename, "r", encoding="utf-8") as f:
-        source = f.read()
-
-    tree = ast.parse(source, filename)
-    categories = []
-    
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Expr):
-            # Skip docstrings and string-only expressions
-            if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
-                categories.append((node, "docstring/string literal", False))
-                continue
-        
-        if isinstance(node, (ast.Import, ast.ImportFrom)):
-            categories.append((node, "import", False))
-            continue
-        
-        if isinstance(node, ast.stmt):
-            categories.append((node, type(node).__name__, True))
-    
-    # Count categories
-    total_count = sum(1 for _, _, keep in categories if keep)
-    kept = Counter(cat for _, cat, keep in categories if keep)
-    skipped = Counter(cat for _, cat, keep in categories if not keep)
-
-    # Print summary
-    print(f"\nAnalysis of {filename}")
-    print("=" * (12 + len(filename)))
-    print("\nSummary of statement categories")
-    print("--------------------------------")
-    print("Statements kept (counted):")
-    for cat, n in kept.items():
-        print(f"  {cat}: {n}")
-    if not kept:
-        print("  (none)")
-
-    print("\nStatements skipped:")
-    for cat, n in skipped.items():
-        print(f"  {cat}: {n}")
-    if not skipped:
-        print("  (none)")
-
-    print("\nSummary totals:")
-    print(f"  Total statements found: {len(categories)}")
-    print(f"  Counted statements: {total_count}")
-    print(f"  Skipped statements: {len(categories) - total_count}")
-    print(f"\nFinal statement count: {total_count}\n")
-
-    # Detailed breakdown
-    print("Detailed statement breakdown")
-    print("-----------------------------")
-    for node, cat, keep in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
-        lineno = getattr(node, "lineno", None)
-        lineinfo = f"line {lineno}" if lineno is not None else "no line"
-        status = "COUNTED" if keep else "SKIPPED"
-        
-        # Try to extract source line(s)
-        snippet = ""
-        if lineno is not None:
-            try:
-                snippet = source.splitlines()[lineno - 1].strip()
-            except IndexError:
-                snippet = "<source unavailable>"
-        
-        print(f"{lineinfo:>8} | {cat:<25} | {status:<7} | {snippet}")
-
-    return total_count
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python analyze_code.py <filename>")
-        sys.exit(1)
-    analyze_code(sys.argv[1])
-```
-
----
-
-### Example Run
-
-For the same `student.py`:
-
-```python
-import math
-
-def square(x):
-    "Return x squared"
-    return x * x
-
-print(square(5))
-```
-
-Output:
-
-```
-Analysis of student.py
-======================
-
-Summary of statement categories
---------------------------------
-Statements kept (counted):
-  FunctionDef: 1
-  Return: 1
-  Expr: 1
-
-Statements skipped:
-  import: 1
-  docstring/string literal: 1
-
-Summary totals:
-  Total statements found: 5
-  Counted statements: 3
-  Skipped statements: 2
-
-Final statement count: 3
-
-Detailed statement breakdown
------------------------------
-   line 1 | import                   | SKIPPED | import math
-   line 3 | FunctionDef              | COUNTED | def square(x):
-   line 4 | docstring/string literal | SKIPPED | "Return x squared"
-   line 5 | Return                   | COUNTED | return x * x
-   line 7 | Expr                     | COUNTED | print(square(5))
-```
-
----
-
-👉 Do you want me to also group the **detailed breakdown** under “kept” vs “skipped” subsections for easier readability, or should it stay as one timeline ordered by line numbers?
-
-
-"""

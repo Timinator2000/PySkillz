@@ -1,4 +1,4 @@
-# Last Edited: Sept 6, 2025 2:57pm
+# Last Edited: Sept 10, 2025 4:30am
 
 from copy import deepcopy
 from collections import namedtuple, Counter
@@ -73,8 +73,6 @@ class TechioObject():
     # RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
 
     def __init__(self, exercise_path):
-        self.code_summary_channel = Channel(f'Code Summary 🤔', 'Sum🤔>')
-        self.code_details_channel = Channel(f'Code Details 🤔', 'Det🤔>')
 
         # Strip the exercise_name out of the full exercise path passed in as an argument.
         self.dir_path, filename = os.path.split(os.path.normpath(exercise_path))
@@ -182,72 +180,6 @@ class TechioObject():
             "comment_lines": comment_lines,
             "effective_code_lines": effective_code_lines,
         }
-
-
-    def print_analysis(self, summary):
-        filename = summary["filename"]
-        source = summary["source"]
-        categories = summary["categories"]
-        total_count = summary["total_count"]
-        kept = summary["kept"]
-        skipped = summary["skipped"]
-        total_lines = summary["total_lines"]
-        non_blank_lines = summary["non_blank_lines"]
-        comment_lines = summary["comment_lines"]
-        effective_code_lines = summary["effective_code_lines"]
-
-        print(f"\nAnalysis of {filename}")
-        print("=" * (12 + len(filename)))
-        print(f"Total lines in file: {total_lines}")
-        print(f"Non-blank lines in file: {non_blank_lines}")
-        print(f"Comment lines in file: {comment_lines}")
-        print(f"Effective code lines: {effective_code_lines}")
-
-        print("\nSummary of statement categories")
-        print("--------------------------------")
-        print("Statements kept (counted):")
-        for cat, n in kept.items():
-            print(f"  {cat}: {n}")
-        if not kept:
-            print("  (none)")
-
-        print("\nStatements skipped:")
-        for cat, n in skipped.items():
-            print(f"  {cat}: {n}")
-        if not skipped:
-            print("  (none)")
-
-        print("\nSummary totals:")
-        print(f"  Total statements found: {len(categories)}")
-        print(f"  Counted statements: {total_count}")
-        print(f"  Skipped statements: {len(categories) - total_count}")
-        print(f"\nFinal statement count: {total_count}\n")
-
-        print("Detailed statement breakdown (nested)")
-        print("-------------------------------------")
-        for node, cat, keep, depth in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
-            lineno = getattr(node, "lineno", None)
-            lineinfo = f"line {lineno}" if lineno is not None else "no line"
-            status = "COUNTED" if keep else "SKIPPED"
-
-            snippet = ""
-            if lineno is not None:
-                try:
-                    snippet = source.splitlines()[lineno - 1].strip()
-                except IndexError:
-                    snippet = "<source unavailable>"
-
-            indent = "    " * depth
-            print(f"{indent}{lineinfo:>8} | {cat:<25} | {status:<7} | {snippet}")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python analyze_code.py <filename>")
-        sys.exit(1)
-
-    summary = analyze_code(sys.argv[1])
-    print_analysis(summary)
 
 
 class Exercise(TechioObject):
