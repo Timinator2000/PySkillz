@@ -59,7 +59,7 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
         self.send_msg(summary_channel, "---------------- ----------------")
         self.send_msg(summary_channel, "Statements Kept (Counted):")
         
-        length = 0 if not skipped else max(len(key) for key in kept)
+        length = 0 if not kept else max(len(key) for key in kept)
         for cat, n in kept.items():
             self.send_msg(summary_channel, f"  {cat:{length}} : {n}")
         if not kept:
