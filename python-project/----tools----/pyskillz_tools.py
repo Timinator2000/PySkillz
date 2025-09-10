@@ -338,11 +338,14 @@ class Exercise(TechioObject):
             self.display_first_failed_test_case()
             return
                 
-        eror_msg = self.check_additonal_solution_criteria():
+        error_msg = self.check_additonal_solution_criteria()
         if error_msg:
             self.fail()
 
-            msg = 'You have passed all test cases. However, your code needs'
+            msg = 'You have passed all test cases. However, your '
+            msg += 'code does not meet all the required criteria.\n\n' + error_msg
+            self.send_multiline_text(self.success_channel, msg)
+            return
 
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
