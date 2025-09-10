@@ -31,6 +31,7 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
 
     def run(self):
         summary = self.code_analysis
+        money_channel = pyskillz_tools.Channel(f'Show Me the Money $', '$$$🤔>')
         summary_channel = pyskillz_tools.Channel(f'Code Summary 🤔', 'Sum🤔>')
         details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🔍', 'Det🔍>')
 
@@ -45,36 +46,43 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
         comment_lines = summary["comment_lines"]
         effective_code_lines = summary["effective_code_lines"]
 
-        self.send_msg(summary_channel, f"Total lines: {total_lines}")
-        self.send_msg(summary_channel, f"Non-blank lines: {non_blank_lines}")
-        self.send_msg(summary_channel, f"Comment lines: {comment_lines}")
-        self.send_msg(summary_channel, f"Effective code: {effective_code_lines}")
+        self.send_msg(money_channel, f"Lines of Code : {effective_code_lines}")
+        self.send_msg(money_channel, f"Statements    : {total_count}")
+
+        self.send_msg(summary_channel, f"Total Lines     : {total_lines}")
+        self.send_msg(summary_channel, f"Non-Blank Lines : {non_blank_lines}")
+        self.send_msg(summary_channel, f"Comment Lines   : {comment_lines}")
+        self.send_msg(summary_channel, f"Effective Code  : {effective_code_lines}")
 
         self.send_msg(summary_channel, '')
-        self.send_msg(summary_channel, "Summary of statement categories")
-        self.send_msg(summary_channel, "--------------------------------")
-        self.send_msg(summary_channel, "Statements kept (counted):")
+        self.send_msg(summary_channel, "Summary of Statement Categories")
+        self.send_msg(summary_channel, "---------------- ----------------")
+        self.send_msg(summary_channel, "Statements Kept (Counted):")
+        
+        length = max(len(key) for key in kept)
         for cat, n in kept.items():
-            self.send_msg(summary_channel, f"  {cat}: {n}")
+            self.send_msg(summary_channel, f"  {cat:{length}} : {n}")
         if not kept:
             self.send_msg(summary_channel, "  (none)")
 
         self.send_msg(summary_channel, '')
-        self.send_msg(summary_channel, "Statements skipped:")
+        self.send_msg(summary_channel, "Statements sKipped:")
+
+        length = max(len(key) for key in skipped)
         for cat, n in skipped.items():
-            self.send_msg(summary_channel, f"  {cat}: {n}")
+            self.send_msg(summary_channel, f"  {cat:{length}} : {n}")
         if not skipped:
             self.send_msg(summary_channel, "  (none)")
 
         self.send_msg(summary_channel, '')
-        self.send_msg(summary_channel, "Summary totals:")
-        self.send_msg(summary_channel, f"  Total statements found: {len(categories)}")
-        self.send_msg(summary_channel, f"  Counted statements: {total_count}")
-        self.send_msg(summary_channel, f"  Skipped statements: {len(categories) - total_count}")
+        self.send_msg(summary_channel, "Summary Totals:")
+        self.send_msg(summary_channel, f"  Total Statements Found : {len(categories)}")
+        self.send_msg(summary_channel, f"  Counted Statements     : {total_count}")
+        self.send_msg(summary_channel, f"  Skipped Statements     : {len(categories) - total_count}")
         self.send_msg(summary_channel, '')
-        self.send_msg(summary_channel, f"Final statement count: {total_count}")
+        self.send_msg(summary_channel, f"Final Statement Count    : {total_count}")
 
-        self.send_msg(details_channel, "Detailed statement breakdown (nested)")
+        self.send_msg(details_channel, "Detailed Statement Breakdown (Nested)")
         self.send_msg(details_channel, "-------------------------------------")
         for node, cat, keep, depth in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
             lineno = getattr(node, "lineno", None)

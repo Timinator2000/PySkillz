@@ -6,24 +6,17 @@ import os
 import sys
 import random
 
-# Normalize path for current OS and split the path into directory and filename
-dir_path, filename = os.path.split(os.path.normpath(__file__))
+# Normalize path for current OS. Split the path into directory and filename.
+dir_path, _ = os.path.split(os.path.normpath(__file__))
 
 # Add tools directory to the OS PATH
 sys.path.insert(0, os.path.join(dir_path, '..', '..', '----tools----'))
 
 try:
     import pyskillz_tools
-    pyskillz_tools.check_for_tech_io(dir_path)
 
 except ImportError:
-    print(f'Import Error: pyskillz_tools.py needs to be in the tools folder, one level deep from python-project.')
-
-exercise_name = filename[:filename.find('_test.py')]
-solution_filename = os.path.join(dir_path, f'{exercise_name}_solution.py')
-
-exec(f'from {exercise_name} import {exercise_name} as user_solution')
-exec(f'from {exercise_name}_solution import {exercise_name} as suggested_solution')
+    print(f'Import Error: pyskillz_tools.py needs to be in the “----tools----” folder, one level deep from python-project.')
 
 ###############################################################################################################
 # End Setup
@@ -45,8 +38,15 @@ class ExerciseName(pyskillz_tools.PrintBasedExercise):
     
     def __init__(self):
 
-        super().__init__(user_solution, suggested_solution, solution_filename, success_message)
+        super().__init__(__file__, success_message)
         self.num_random_test_cases = 100
+
+        # Optional Exercise Constraints
+        # self.max_statement_count =                 # Default is 10_000_000
+        # self.max_lines_of_code =                   # Default is 10_000_000
+
+        # Additional PrintBasedExercise Option
+        # self.strict_print_usage = True             # Default is False
 
         self.fixed_test_cases = [
             [],
@@ -64,6 +64,10 @@ class ExerciseName(pyskillz_tools.PrintBasedExercise):
 
     def generate_random_test_case(self) -> list:
         return [random.randint(-100, 100), random.randint(-100, 100)]
+    
+
+    def check_additonal_solution_criteria(self) -> bool:
+        return True
 
 
 if __name__ == "__main__":

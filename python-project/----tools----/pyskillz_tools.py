@@ -310,8 +310,12 @@ class Exercise(TechioObject):
             return False
 
         return True
-                
-        
+
+
+    def check_additonal_solution_criteria(self):
+        return ''
+
+
     def run(self):
         
         count = 0
@@ -334,6 +338,12 @@ class Exercise(TechioObject):
             self.display_first_failed_test_case()
             return
                 
+        eror_msg = self.check_additonal_solution_criteria():
+        if error_msg:
+            self.fail()
+
+            msg = 'You have passed all test cases. However, your code needs'
+
         self.success()
         self.send_multiline_text(self.success_channel, self.success_message)
         self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
@@ -345,16 +355,17 @@ IOEvent = namedtuple('Event', ['type', 'text', 'line_count'])
 # Tech.io playgrounds cannot accomodate input from the learner.
 class IOLog:
 
-    def __init__(self, strict=False):
+    def __init__(self):
         self.events = []
-        self.strict = strict
+        self.strict = False
 
 
     def __len__(self):
         return len([event for event in self.events if event.type=='print'])
     
 
-    def reset(self):
+    def reset(self, stict=False):
+        self.strict = strict
         self.events = []
 
 
@@ -393,11 +404,11 @@ class IOLog:
 
 class PrintBasedExercise(Exercise):
 
-    def __init__(self, exercise_path, success_message, strict=False):
+    def __init__(self, exercise_path, success_message):
         super().__init__(exercise_path, success_message)
-        self.log = IOLog(strict)
         self.normal_print = builtins.print
-        self.strict = strict
+        self.strict_print_usage = False
+        self.log = IOLog()
 
 
     def logged_print(self, *args, **kwargs):
@@ -413,7 +424,7 @@ class PrintBasedExercise(Exercise):
 
     def generate_answer(self, solution, test_case) -> IOLog:
         builtins.print = self.logged_print
-        self.log.reset()
+        self.log.reset(self.strict_print_usage)
         solution(*deepcopy(test_case))
         builtins.print = self.normal_print
 
@@ -441,7 +452,7 @@ class PrintBasedExercise(Exercise):
         user_lines_str = f'{num_user_lines} line' + ('s' if num_user_lines != 1 else '')
 
         msg = ''
-        if num_user_calls_to_print > 0 and self.strict and num_expected_calls_to_print != num_user_calls_to_print:
+        if num_user_calls_to_print > 0 and self.strict_print_usage and num_expected_calls_to_print != num_user_calls_to_print:
             word_expected = 'time' if num_expected_calls_to_print == 1 else 'times'
             word_user = 'time' if num_user_calls_to_print == 1 else 'times'
             
