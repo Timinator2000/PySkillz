@@ -31,7 +31,7 @@ class CodeAnalyzer(pyskillz_tools.TechioObject):
 
     def run(self):
         summary = self.code_analysis
-        money_channel = pyskillz_tools.Channel(f'Show Me the Money $', '$$$🤔>')
+        money_channel = pyskillz_tools.Channel(f'Show Me the Money 💲', '$$$💲>')
         summary_channel = pyskillz_tools.Channel(f'Code Summary 🤔', 'Sum🤔>')
         details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🔍', 'Det🔍>')
 
