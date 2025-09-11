@@ -33,8 +33,7 @@ success_message += ''
 success_message += ''
 
 
-class ExerciseName(pyskillz_tools.Exercise):
-class ExerciseName(pyskillz_tools.PrintBasedExercise):
+class CircleArea(pyskillz_tools.Exercise):
     
     def __init__(self):
 
@@ -58,18 +57,14 @@ class ExerciseName(pyskillz_tools.PrintBasedExercise):
 
 
     def test_case_to_string(self, test_case) -> str:
-        a, b = test_case
-        return f'{a = }\n{b = }'
+        radius = test_case[0]
+        return f'{radius = }'
 
 
     def generate_random_test_case(self) -> list:
-        return [random.randint(-100, 100), random.randint(-100, 100)]
+        return [random.randint(1, 1000)]
     
 
-    def check_additonal_solution_criteria(self) -> bool:
-        return ''
-
-
 if __name__ == "__main__":
-    exercise = ExerciseName()
+    exercise = CircleArea()
     exercise.run()

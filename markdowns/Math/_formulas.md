@@ -67,7 +67,7 @@ Great idea 👍 — giving a new Python programmer math formulas to implement re
 10. **Convert degrees to radians**:
 
 ```math
-\text{rad} = \frac{\pi}{180} \times \text{deg}
+\text{radians} = \frac{\pi}{180} \times \text{degrees}
 ```
 
 ---
@@ -146,164 +146,13 @@ Do you want me to **generate small Python function templates** for all 20, so yo
 
 
 
-# Stubs
-
-
-Perfect 👍 — here’s a **Python exercise set** with 20 function templates, each corresponding to one of the formulas.
-I’ll keep them **clean and minimal**, so a learner has room to fill in the logic themselves.
-
----
-
-```python
-import math
-
-# 1. Quadratic formula
-def quadratic_roots(a, b, c):
-    pass
-
-# 2. Distance between two points
-def distance(x1, y1, x2, y2):
-    pass
-
-# 3. Slope of a line
-def slope(x1, y1, x2, y2):
-    pass
-
-# 4. Midpoint
-def midpoint(x1, y1, x2, y2):
-    pass
-
-# 5. Circle area
-def circle_area(r):
-    pass
-
-# 6. Volume of a sphere
-def sphere_volume(r):
-    pass
-
-# 7. Surface area of a cylinder
-def cylinder_surface_area(r, h):
-    pass
-
-# 8. Pythagorean theorem
-def hypotenuse(a, b):
-    pass
-
-# 9. Law of cosines
-def law_of_cosines(a, b, gamma):
-    pass
-
-# 10. Degrees to radians
-def deg_to_rad(deg):
-    pass
-
-# 11. Arithmetic series sum
-def arithmetic_sum(n, a1, an):
-    pass
-
-# 12. Geometric series sum
-def geometric_sum(a, r, n):
-    pass
-
-# 13. Fibonacci recursion
-def fibonacci(n):
-    pass
-
-# 14. Factorial
-def factorial(n):
-    pass
-
-# 15. Binomial coefficient
-def binomial_coeff(n, k):
-    pass
-
-# 16. Polynomial derivative (power rule)
-def derivative_power_rule(n):
-    pass
-
-# 17. Definite integral of power
-def integral_power_rule(n, a, b):
-    pass
-
-# 18. Taylor series for e^x
-def taylor_exp(x, n):
-    pass
-
-# 19. Newton-Raphson iteration
-def newton_raphson(f, f_prime, x0, iterations=10):
-    pass
-
-# 20. Logarithm change of base
-def log_change_base(a, b):
-    pass
-```
-
----
-
-👉 Each `pass` is where the student writes their code.
-You can make it more interactive by giving them **sample inputs/expected outputs** as tests.
-
-Would you like me to also **fill in the solutions** (with correct Python code) so you have an answer key?
-
-
-
 # Solutions
 
-Got it 👍 — here’s the **full solution set** for all 20 functions.
-These are written cleanly so they can also double as an answer key.
-
----
-
 ```python
-import math
-
-# 1. Quadratic formula
-def quadratic_roots(a, b, c):
-    disc = b**2 - 4*a*c
-    if disc < 0:
-        return None  # no real roots
-    sqrt_disc = math.sqrt(disc)
-    x1 = (-b + sqrt_disc) / (2*a)
-    x2 = (-b - sqrt_disc) / (2*a)
-    return (x1, x2)
-
-# 2. Distance between two points
-def distance(x1, y1, x2, y2):
-    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-
-# 3. Slope of a line
-def slope(x1, y1, x2, y2):
-    if x2 == x1:
-        return None  # vertical line
-    return (y2 - y1) / (x2 - x1)
-
-# 4. Midpoint
-def midpoint(x1, y1, x2, y2):
-    return ((x1 + x2) / 2, (y1 + y2) / 2)
-
-# 5. Circle area
-def circle_area(r):
-    return math.pi * r**2
-
-# 6. Volume of a sphere
-def sphere_volume(r):
-    return (4/3) * math.pi * r**3
-
-# 7. Surface area of a cylinder
-def cylinder_surface_area(r, h):
-    return 2*math.pi*r*h + 2*math.pi*r**2
-
-# 8. Pythagorean theorem
-def hypotenuse(a, b):
-    return math.sqrt(a**2 + b**2)
 
 # 9. Law of cosines
 def law_of_cosines(a, b, gamma):
     return math.sqrt(a**2 + b**2 - 2*a*b*math.cos(gamma))
-
-# 10. Degrees to radians
-def deg_to_rad(deg):
-    return deg * math.pi / 180
 
 # 11. Arithmetic series sum
 def arithmetic_sum(n, a1, an):

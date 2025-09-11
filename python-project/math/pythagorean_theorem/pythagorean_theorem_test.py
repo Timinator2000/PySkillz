@@ -33,8 +33,7 @@ success_message += ''
 success_message += ''
 
 
-class ExerciseName(pyskillz_tools.Exercise):
-class ExerciseName(pyskillz_tools.PrintBasedExercise):
+class PythagoreanTheorem(pyskillz_tools.Exercise):
     
     def __init__(self):
 
@@ -63,13 +62,9 @@ class ExerciseName(pyskillz_tools.PrintBasedExercise):
 
 
     def generate_random_test_case(self) -> list:
-        return [random.randint(-100, 100), random.randint(-100, 100)]
+        return [random.randint(1, 1000), random.randint(1, 1000)]
     
 
-    def check_additonal_solution_criteria(self) -> bool:
-        return ''
-
-
 if __name__ == "__main__":
-    exercise = ExerciseName()
+    exercise = PythagoreanTheorem()
     exercise.run()

@@ -1,0 +1,4 @@
+import math
+
+def degrees_to_radians(degrees: int) -> float:
+    return degrees * math.pi / 180

@@ -33,8 +33,7 @@ success_message += ''
 success_message += ''
 
 
-class ExerciseName(pyskillz_tools.Exercise):
-class ExerciseName(pyskillz_tools.PrintBasedExercise):
+class Slope(pyskillz_tools.Exercise):
     
     def __init__(self):
 
@@ -58,18 +57,18 @@ class ExerciseName(pyskillz_tools.PrintBasedExercise):
 
 
     def test_case_to_string(self, test_case) -> str:
-        a, b = test_case
-        return f'{a = }\n{b = }'
+        x1, y1, x2, y2 = test_case
+        return f'(x1, y1) = ({x1}, {y1})\n(x2, y2) = ({x2}, {y2})'
 
 
     def generate_random_test_case(self) -> list:
-        return [random.randint(-100, 100), random.randint(-100, 100)]
+        return [random.randint(-100, 100), random.randint(-100, 100), random.randint(-100, 100), random.randint(-100, 100)]
     
 
     def check_additonal_solution_criteria(self) -> bool:
-        return ''
+        return True
 
 
 if __name__ == "__main__":
-    exercise = ExerciseName()
+    exercise = Slope()
     exercise.run()
