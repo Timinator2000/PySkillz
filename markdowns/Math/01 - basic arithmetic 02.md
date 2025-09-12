@@ -1,8 +1,12 @@
 # Area of a Parallelogram
 
+<BR>
+
 ```math
 A = \text{base} \times \text{height}
 ```
+
+<BR>
 
 Create a function that takes a parallelogram's `base` length and the `height` and returns the parallelogram's _area_.
 
@@ -23,9 +27,13 @@ Expected Return Value:
 
 # Area of a Trapezoid
 
+<BR>
+
 ```math
 A = \tfrac{1}{2} \times (\text{base}_1 + \text{base}_2) \times \text{height}
 ```
+
+<BR>
 
 Create a function that takes a trapezoid's `base_1` length, `base_2` length and `height` and returns the trapezoid's _area_.
 
@@ -47,9 +55,13 @@ Expected Return Value:
 
 # Circumference of a Circle
 
+<BR>
+
 ```math
 C = 2\pi r
 ```
+
+<BR>
 
 Create a function that takes a circle's `radius` and returns the circle's _circumference_.
 
@@ -69,9 +81,13 @@ Expected Return Value:
 
 # Area of a Circle
 
+<BR>
+
 ```math
 A = \pi r^2
 ```
+
+<BR>
 
 Create a function that takes a circle's `radius` and returns the circle's _area_.
 
@@ -91,9 +107,13 @@ Expected Return Value:
 
 # Volume of a Cube
 
+<BR>
+
 ```math
 V = \text{side}^3
 ```
+
+<BR>
 
 Create a function that takes a square's `side` length and returns the square's _volume_.
 
