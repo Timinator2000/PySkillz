@@ -1,8 +1,12 @@
 # Area of a Rectangle
 
+<BR>
+
 ```math
 A = \text{length} \times \text{width}
 ```
+
+<BR>
 
 Create a function that takes the `length` and `width` of a rectangle and returns the rectangle's _area_.
 
@@ -23,9 +27,13 @@ Expected Return Value:
 
 # Perimeter of a Rectangle
 
+<BR>
+
 ```math
 P = 2(\text{length} + \text{width})
 ```
+
+<BR>
 
 Create a function that takes the `length` and `width` of a rectangle and returns the rectangle's _perimeter_.
 
@@ -46,9 +54,13 @@ Expected Return Value:
 
 # Area of a Square
 
+<BR>
+
 ```math
 A = \text{side}^2
 ```
+
+<BR>
 
 Create a function that takes the length a square's `side` and returns the square's _area_.
 
@@ -68,9 +80,13 @@ Expected Return Value:
 
 # Perimeter of a Square
 
+<BR>
+
 ```math
 P = 4 \times \text{side}
 ```
+
+<BR>
 
 Create a function that takes the length a square's `side` and returns the square's _perimeter_.
 
@@ -90,9 +106,13 @@ Expected Return Value:
 
 # Area of a Triangle
 
+<BR>
+
 ```math
 A = \tfrac{1}{2} \times \text{base} \times \text{height}
 ```
+
+<BR>
 
 Create a function that takes a triangle's `base` length and the `height` and returns the triangle's _area_.
 
