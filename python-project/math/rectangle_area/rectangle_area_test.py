@@ -48,11 +48,11 @@ class RectangleArea(pyskillz_tools.Exercise):
         # self.strict_print_usage = True             # Default is False
 
         self.fixed_test_cases = [
-            [],
-            [],
-            [],
-            [],
-            []
+            [1, 1],
+            [5, 2],
+            [1, 10],
+            [0, 3],
+            [0, 0]
         ]
 
 
