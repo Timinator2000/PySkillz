@@ -86,7 +86,7 @@ Expected Return Value:
 28
 ```
 
-@[Perimeter of a Square]({"stubs": ["math/square_perimeter/square_perimeter.py"], "command": "python3 math/square_perimeter/square_perimeter_test.py"})
+[Perimeter of a Square]({"stubs": ["math/square_perimeter/square_perimeter.py"], "command": "python3 math/square_perimeter/square_perimeter_test.py"})
 
 # Area of a Triangle
 
@@ -109,4 +109,4 @@ Expected Return Value:
 12
 ```
 
-@[Area of a Triangle]({"stubs": ["math/triangle_area/triangle_area.py"], "command": "python3 math/triangle_area/triangle_area_test.py"})
+[Area of a Triangle]({"stubs": ["math/triangle_area/triangle_area.py"], "command": "python3 math/triangle_area/triangle_area_test.py"})
