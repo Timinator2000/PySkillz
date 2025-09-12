@@ -1,4 +1,4 @@
-# Last Edited: Sept 10, 2025 11:15am
+# Last Edited: Sept 12, 2025 9:55am
 
 from copy import deepcopy
 from collections import namedtuple, Counter
@@ -67,7 +67,7 @@ class Channel():
         return self.full_name if on_tech_io else self.short_name
 
 
-class TechioObject():
+class TechioInteraction():
 
     RUNNING_ON_TECH_IO = __file__.startswith('/project/target')
     # RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
@@ -99,7 +99,7 @@ class TechioObject():
 
         
     def send_msg(self, channel, msg):
-        if TechioObject.RUNNING_ON_TECH_IO:
+        if TechioInteraction.RUNNING_ON_TECH_IO:
             print("TECHIO> message --channel \"{}\" \"{}\"".format(channel.name(), msg))
         else:
             if msg.startswith('> '):
@@ -108,12 +108,12 @@ class TechioObject():
 
             
     def success(self):
-        if TechioObject.RUNNING_ON_TECH_IO:
+        if TechioInteraction.RUNNING_ON_TECH_IO:
             print("TECHIO> success true")
 
             
     def fail(self):
-        if TechioObject.RUNNING_ON_TECH_IO:
+        if TechioInteraction.RUNNING_ON_TECH_IO:
             print("TECHIO> success false")
 
 
@@ -182,7 +182,7 @@ class TechioObject():
         }
 
 
-class Exercise(TechioObject):
+class Exercise(TechioInteraction):
     
     PRINT_TEST_CASES = False
     CONTAINERS = ['list', 'tuple', 'set']
@@ -367,7 +367,7 @@ class IOLog:
         return len([event for event in self.events if event.type=='print'])
     
 
-    def reset(self, stict=False):
+    def reset(self, strict=False):
         self.strict = strict
         self.events = []
 
