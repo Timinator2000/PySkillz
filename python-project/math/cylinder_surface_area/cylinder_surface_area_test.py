@@ -38,6 +38,7 @@ class CylinderSurfaceArea(pyskillz_tools.Exercise):
     def __init__(self):
 
         super().__init__(__file__, success_message)
+        self.parameter_names = ['radius', 'height']
         self.num_random_test_cases = 100
 
         # Optional Exercise Constraints
@@ -54,11 +55,6 @@ class CylinderSurfaceArea(pyskillz_tools.Exercise):
             [],
             []
         ]
-
-
-    def test_case_to_string(self, test_case) -> str:
-        radius, height = test_case
-        return f'{radius = }\n{height = }'
 
 
     def generate_random_test_case(self) -> list:

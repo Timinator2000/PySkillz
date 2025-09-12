@@ -37,6 +37,7 @@ class AddTwoNumbers(pyskillz_tools.Exercise):
     def __init__(self):
 
         super().__init__(__file__, success_message)
+        self.parameter_names = ['a', 'b']
         self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
@@ -46,11 +47,6 @@ class AddTwoNumbers(pyskillz_tools.Exercise):
             [5, 10],
             [542, 800]
         ]
-
-
-    def test_case_to_string(self, test_case) -> str:
-        a, b = test_case
-        return f'{a = }\n{b = }'
 
 
     def generate_random_test_case(self) -> list:

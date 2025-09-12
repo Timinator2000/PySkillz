@@ -44,6 +44,7 @@ class DivisibleBy5(pyskillz_tools.PrintBasedExercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['a_list']
         self.num_random_test_cases = 1000
 
         self.fixed_test_cases = [
@@ -57,10 +58,6 @@ class DivisibleBy5(pyskillz_tools.PrintBasedExercise):
         ]
 
 
-    def test_case_to_string(self, test_case) -> str:
-        return f'a_list = {test_case[0]}'
-        
-        
     def generate_random_test_case(self) -> list:
         return [[random.randint(1, 170) for _ in range(random.randint(0, 100))]]
 

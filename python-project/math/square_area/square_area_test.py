@@ -38,6 +38,7 @@ class SquareArea(pyskillz_tools.Exercise):
     def __init__(self):
 
         super().__init__(__file__, success_message)
+        self.parameter_names = ['side']
         self.num_random_test_cases = 1000
 
         # Optional Exercise Constraints
@@ -48,17 +49,12 @@ class SquareArea(pyskillz_tools.Exercise):
         # self.strict_print_usage = True             # Default is False
 
         self.fixed_test_cases = [
-            [],
-            [],
-            [],
-            [],
-            []
+            [2],
+            [0],
+            [9],
+            [4],
+            [25]
         ]
-
-
-    def test_case_to_string(self, test_case) -> str:
-        side = test_case[0]
-        return f'{side = }'
 
 
     def generate_random_test_case(self) -> list:

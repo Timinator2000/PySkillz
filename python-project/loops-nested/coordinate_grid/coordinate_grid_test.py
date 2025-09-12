@@ -47,14 +47,10 @@ class CoordinateGrid(pyskillz_tools.PrintBasedExercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
-
+        self.parameter_names = ['n']
         self.fixed_test_cases = [[i] for i in range(10)]
 
 
-    def test_case_to_string(self, test_case) -> str:
-        return f'n = {test_case[0]}'
-        
-        
 if __name__ == "__main__":
     exercise = CoordinateGrid()
     exercise.run()

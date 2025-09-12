@@ -41,13 +41,10 @@ class NumberTriangle(pyskillz_tools.PrintBasedExercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['number']
         self.fixed_test_cases = [[i] for i in range(1, 10)] + [[0]]
 
 
-    def test_case_to_string(self, test_case) -> str:
-        return f'number = {test_case[0]}'
-        
-        
     def generate_random_test_case(self) -> list:
         return [random.randint(-9, 9)]
 

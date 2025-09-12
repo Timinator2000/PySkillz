@@ -38,6 +38,7 @@ class DegreesToRadians(pyskillz_tools.Exercise):
     def __init__(self):
 
         super().__init__(__file__, success_message)
+        self.parameter_names = ['degrees']
         self.num_random_test_cases = 100
 
         # Optional Exercise Constraints
@@ -54,11 +55,6 @@ class DegreesToRadians(pyskillz_tools.Exercise):
             [],
             []
         ]
-
-
-    def test_case_to_string(self, test_case) -> str:
-        degrees = test_case[0]
-        return f'{degrees = }'
 
 
     def generate_random_test_case(self) -> list:

@@ -44,6 +44,7 @@ class RemoveOdds(pyskillz_tools.Exercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['a_list']
         self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
@@ -53,10 +54,6 @@ class RemoveOdds(pyskillz_tools.Exercise):
             [[1, 2, 3, 4, 5, 6]],
             [[25678, 435, 24, 999]]
         ]
-        
-        
-    def test_case_to_string(self, test_case) -> str:
-        return f'a_list = {test_case[0]}'
         
         
     def generate_random_test_case(self) -> list:

@@ -49,6 +49,7 @@ class Under1800(pyskillz_tools.Exercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['vehicle_weights']
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
@@ -60,10 +61,6 @@ class Under1800(pyskillz_tools.Exercise):
         ]
 
   
-    def test_case_to_string(self, test_case) -> str:
-        return f'vehicle_weights = {test_case[0]}'
-        
-        
     def generate_random_test_case(self) -> list:
         sample = {v:Under1800.VEHICLES[v] for v in random.sample(sorted(Under1800.VEHICLES), random.randint(0, len(Under1800.VEHICLES)))}
         return [sample]

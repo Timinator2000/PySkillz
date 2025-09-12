@@ -47,6 +47,7 @@ class NumSpaces(pyskillz_tools.Exercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['a_string']
         self.num_random_test_cases = 10
         
         self.fixed_test_cases = [
@@ -58,11 +59,6 @@ class NumSpaces(pyskillz_tools.Exercise):
         ]
     
     
-    def test_case_to_string(self, test_case) -> str:
-        data = f'{[test_case[0]]}'[1:-1]
-        return f'a_string = {data}'
-        
-        
     def generate_random_test_case(self) -> list:
         return [''.join([random.choice('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(random.randint(0, 50))])]
 

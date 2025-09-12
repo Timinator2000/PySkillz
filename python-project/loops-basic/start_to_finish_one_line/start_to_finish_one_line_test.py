@@ -39,6 +39,7 @@ class StartToFinishOneLine(pyskillz_tools.PrintBasedExercise):
     def __init__(self):
         
         super().__init__(__file__, success_message)
+        self.parameter_names = ['start', 'finish']
         self.num_random_test_cases = 100
 
         self.fixed_test_cases = [
@@ -51,11 +52,6 @@ class StartToFinishOneLine(pyskillz_tools.PrintBasedExercise):
         ]
 
 
-    def test_case_to_string(self, test_case) -> str:
-        start, finish = test_case
-        return f'{start = }\n{finish = }'
-        
-        
     def generate_random_test_case(self) -> list:
         return [random.randint(-20, 10), random.randint(0, 30)]
 

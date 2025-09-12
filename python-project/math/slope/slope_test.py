@@ -52,7 +52,7 @@ class Slope(pyskillz_tools.Exercise):
             [],
             [],
             [],
-            []
+            [3, 4, 5, 6]
         ]
 
 

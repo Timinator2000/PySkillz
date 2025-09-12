@@ -1,4 +1,4 @@
-# Last Edited: Sept 12, 2025 9:55am
+# Last Edited: Sept 12, 2025 3:46pm
 
 from copy import deepcopy
 from collections import namedtuple, Counter
@@ -73,6 +73,10 @@ class TechioInteraction():
     # RUNNING_ON_TECH_IO = os.path.split(os.path.normpath(__file__))[0].startswith('/project/target')
 
     def __init__(self, exercise_path):
+
+        self.success_channel = Channel(f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}', 'Win🎉>')
+        self.bug_channel = Channel(f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}', 'Bug🐞>')
+        self.std_out_channel = Channel('Standard Output', 'StdOut>')
 
         # Strip the exercise_name out of the full exercise path passed in as an argument.
         self.dir_path, filename = os.path.split(os.path.normpath(exercise_path))
@@ -170,6 +174,7 @@ class TechioInteraction():
 
         return {
             "filename": filename,
+            "tree": tree,
             "source": source,
             "categories": categories,  # list of (node, category, keep, depth)
             "total_count": total_count,
@@ -190,14 +195,12 @@ class Exercise(TechioInteraction):
     def __init__(self, exercise_path, success_message):
         super().__init__(exercise_path)
         self.fixed_test_cases = []
+        self.parameter_names = []
         self.num_random_test_cases = 0
         self.success_message = success_message.strip()
         self.first_failed_test_case = None
 
-        self.success_channel = Channel(f'{random.choice(CONGRATS)} {random.choice(CONGRATS_EMOJIS)}', 'Win🎉>')
-        self.bug_channel = Channel(f'{random.choice(BUG)} {random.choice(BUG_EMOJIS)}', 'Bug🐞>')
         self.solution_channel = Channel('Suggested Solution ✅', 'Sol✅>')
-        self.std_out_channel = Channel('Standard Output', 'StdOut>')
 
         # Import the user solution from exercise_name.py
         module = importlib.import_module(self.exercise_name)
@@ -253,8 +256,21 @@ class Exercise(TechioInteraction):
 
 
     def test_case_to_string(self, test_case) -> str:
-        print('THIS METHOD MUST BE OVERRIDDEN')
-        return None
+        if len(self.parameter_names) != len(test_case):
+            return  f'To use default test_case_to_string(), # of parameter names must be equal to # of test case arguments.\n' + \
+                    f'   parameter names     = {len(self.parameter_names)}\n' + \
+                    f'   test case arguments = {len(test_case)}'
+        
+        length = max(len(name) for name in self.parameter_names)
+
+        strings = []
+        for name, value in zip(self.parameter_names, test_case):
+            if type(value) == str:
+                value = f'{[value]}'[1:-1]
+
+            strings.append(f'{name:{length}} = {value}')
+
+        return '\n'.join(strings)
 
     
     def display_test_case(self, test_case) -> None:

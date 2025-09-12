@@ -38,6 +38,7 @@ class RectanglePerimeter(pyskillz_tools.Exercise):
     def __init__(self):
 
         super().__init__(__file__, success_message)
+        self.parameter_names = ['length', 'width']
         self.num_random_test_cases = 1000
 
         # Optional Exercise Constraints
@@ -54,11 +55,6 @@ class RectanglePerimeter(pyskillz_tools.Exercise):
             [],
             []
         ]
-
-
-    def test_case_to_string(self, test_case) -> str:
-        length, width = test_case
-        return f'{length = }\n{width = }'
 
 
     def generate_random_test_case(self) -> list:
