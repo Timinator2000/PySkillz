@@ -28,9 +28,9 @@ success_message = """
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The surface area of a rectangular prism is the sum of all its faces. '
+success_message += 'Surface area matters in real life — '
+success_message += 'for example, it affects how fast ice melts or how efficiently heat escapes a building.'
 
 
 class RectangularPrismSurfaceArea(pyskillz_tools.Exercise):

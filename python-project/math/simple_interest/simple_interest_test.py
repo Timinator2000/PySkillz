@@ -25,12 +25,13 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Simple interest is calculated on the original principal only. '
+success_message += 'The formula is I = P x R x T, where P is principal, R is rate, and T is time. '
+success_message += 'Fun fact: simple interest is rarely used for long-term loans because it doesn\'t compound, '
+success_message += 'but it\'s still common for short-term loans, car financing, and some savings accounts. '
+success_message += 'Understanding simple interest helps you compare costs and make smarter financial decisions.'
 
 
 class SimpleInterest(pyskillz_tools.Exercise):

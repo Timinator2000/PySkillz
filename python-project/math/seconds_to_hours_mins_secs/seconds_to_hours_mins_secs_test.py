@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'In computing, we often measure time in milliseconds (ms) and microseconds (µs). '
+success_message += '1 millisecond is 1/1,000 of a second, and 1 microsecond is 1/1,000,000 of a second. '
+success_message += 'Fun fact: modern processors can execute billions of instructions per second, '
+success_message += 'so measuring operations in seconds would be far too slow and imprecise! '
+success_message += 'Milliseconds and microseconds help programmers optimize performance, '
+success_message += 'handle real-time systems, and synchronize networks accurately.'
 
 
 class SecondsToHoursMinsSecs(pyskillz_tools.Exercise):

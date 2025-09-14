@@ -25,12 +25,11 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The volume of a rectangular prism tells us how much space the prism can hold. '
+success_message += 'Fun fact: volume is used in packaging design — '
+success_message += 'companies try to maximize product volume while minimizing material costs.'
 
 
 class RectangularPrismVolume(pyskillz_tools.Exercise):

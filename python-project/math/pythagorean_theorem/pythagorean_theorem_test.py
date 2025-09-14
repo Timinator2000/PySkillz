@@ -25,12 +25,16 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The Pythagorean theorem applies to right triangles. '
+success_message += 'If the legs are a and b, and the hypotenuse is c, '
+success_message += 'then a² + b² = c². '
+success_message += 'Example: a 3-4-5 triangle satisfies 3² + 4² = 5² (9 + 16 = 25). '
+success_message += 'Fun fact: the Babylonians knew this relationship around 1800 BCE, '
+success_message += 'long before Pythagoras. '
+success_message += 'There are infinitely many integer solutions called Pythagorean triples. '
+success_message += 'Bonus: the distance formula in coordinate geometry comes from this theorem.'
 
 
 class PythagoreanTheorem(pyskillz_tools.Exercise):

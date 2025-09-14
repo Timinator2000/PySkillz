@@ -28,9 +28,10 @@ success_message = """
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The perimeter of a rectangle is the total distance around it. '
+success_message += 'The formula is 2 x (length + width). '
+success_message += 'Fun fact: perimeter is a linear measure, '
+success_message += 'so while area is in square units, perimeter is in plain units.'
 
 
 class RectanglePerimeter(pyskillz_tools.Exercise):

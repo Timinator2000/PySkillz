@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
+Q: Why is probability like weather forecasts?
+A: Because a 50% chance of rain always feels like 100% if you forget your umbrella.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Probability measures how likely an event is to happen, from 0 (impossible) to 1 (certain). '
+success_message += 'It is used in games, science, and everyday decisions. '
+success_message += 'Fun fact: the famous Monty Hall problem shows how switching doors '
+success_message += 'actually doubles your chance of winning — from 1/3 to 2/3!'
 
 
 class Probability(pyskillz_tools.Exercise):

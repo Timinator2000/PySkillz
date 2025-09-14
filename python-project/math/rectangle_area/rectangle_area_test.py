@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
+Q: Why was the rectangle in love with a triangle?
+A: She has acute angle.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The area of a rectangle is length × width. '
+success_message += 'This simple formula is the basis of many geometry problems. '
+success_message += 'Fun fact: area is measured in square units, '
+success_message += 'so a rectangle 3 by 4 has an area of 12 square units.'
 
 
 class RectangleArea(pyskillz_tools.Exercise):

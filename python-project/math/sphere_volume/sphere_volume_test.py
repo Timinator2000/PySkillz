@@ -25,12 +25,13 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The volume of a sphere measures how much space the sphere occupies. '
+success_message += 'Fun fact: a sphere maximizes volume for a given surface area. '
+success_message += 'This is why planets, bubbles, and some fruits are nearly spherical — '
+success_message += 'it efficiently encloses space while minimizing surface exposure.'
+
 
 
 class SphereVolume(pyskillz_tools.Exercise):

@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Speed measures how fast an object moves, calculated as distance ÷ time. '
+success_message += 'Fun fact: the fastest human-made object is the Parker Solar Probe, '
+success_message += 'which travels around 700,000 km/h as it orbits the Sun. '
+success_message += 'At that speed, it can cross the United States in less than a minute! '
+success_message += 'Understanding speed helps scientists design spacecraft, improve transportation, '
+success_message += 'and analyze motion in physics and everyday life.'
 
 
 class Speed(pyskillz_tools.Exercise):

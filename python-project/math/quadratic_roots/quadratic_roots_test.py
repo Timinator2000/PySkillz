@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'A quadratic equation has the form ax² + bx + c = 0. '
+success_message += 'Its solutions, called roots, are found with the quadratic formula: '
+success_message += 'x = (-b ± √(b² - 4ac)) / (2a). '
+success_message += 'The expression under the square root, b² - 4ac, is the discriminant. '
+success_message += 'Fun fact: if the discriminant is positive, you get two real roots; '
+success_message += 'if zero, one real root; if negative, two complex roots. '
+success_message += 'Quadratic equations appear in physics, engineering, economics, and beyond.'
 
 
 class QuadraticRoots(pyskillz_tools.Exercise):
