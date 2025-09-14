@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The sum of the first n terms of a geometric sequence is called a geometric sum. '
+success_message += 'It can be calculated using the formula: Sₙ = a₁ × (1 - rⁿ) ÷ (1 - r), '
+success_message += 'where a₁ is the first term, r is the common ratio, and n is the number of terms (r ≠ 1).'
+success_message += '\n\n'
+success_message += 'Fun fact: geometric sums are used in finance to calculate things like loan payments, '
+success_message += 'compound interest, and investment growth over time. '
+success_message += 'They are also useful in computer science, physics, and population modeling.'
 
 
 class GeometricSum(pyskillz_tools.Exercise):

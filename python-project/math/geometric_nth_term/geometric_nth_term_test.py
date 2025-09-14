@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'In a geometric sequence, each term is obtained by multiplying the previous term by a constant called the common ratio. '
+success_message += 'The nth term of a geometric sequence can be calculated as: '
+success_message += 'aₙ = a₁ x r^(n - 1), where a₁ is the first term, r is the common ratio, and n is the term number. '
+success_message += '\n\n'
+success_message += 'Fun fact: geometric sequences appear in finance, population growth, and computer science, '
+success_message += 'because they model exponential growth or decay. '
+success_message += 'Recognizing the pattern allows us to predict future terms efficiently.'
 
 
 class GeometricNthTerm(pyskillz_tools.Exercise):

@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'In an arithmetic sequence, each term differs from the previous one by a constant '
+success_message += 'amount, called the common difference. '
+success_message += '\n\n'
+success_message += 'Fun fact: arithmetic sequences appear in real life in situations like '
+success_message += 'arranging seats, scheduling, or even saving money regularly. '
+success_message += 'Recognizing patterns and calculating the nth term helps predict future values efficiently.'
 
 
 class ArithmeticNthTerm(pyskillz_tools.Exercise):

@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The sum of the first n terms of an arithmetic sequence is called an arithmetic sum. '
+success_message += 'It can be calculated using the formula: Sₙ = n x (a₁ + aₙ) ÷ 2, '
+success_message += 'where a₁ is the first term, aₙ is the nth term, and n is the number of terms. '
+success_message += '\n\n'
+success_message += 'Fun fact: the formula was famously discovered by the mathematician Carl Gauss as a child, '
+success_message += 'when he quickly summed the numbers from 1 to 100 by pairing terms efficiently. '
+success_message += 'Arithmetic sums are useful in budgeting, planning, and analyzing regularly increasing quantities.'
 
 
 class ArithmeticSum(pyskillz_tools.Exercise):
