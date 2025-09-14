@@ -1,8 +1,3 @@
-# Math
-
-Great idea 👍 — giving a new Python programmer math formulas to implement really shows whether they understand both math concepts and how to translate them into code. Below I’ll give you **20 progressively challenging formulas**, each of which can be directly coded in Python.
-
----
 
 ### Basic Arithmetic & Algebra
 
@@ -12,51 +7,10 @@ Great idea 👍 — giving a new Python programmer math formulas to implement re
    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
    ```
 
-2. **Distance between two points** $(x_1,y_1)$ and $(x_2,y_2)$:
 
-   ```math
-   d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-   ```
-
-3. **Slope of a line through two points**:
-
-   ```math
-   m = \frac{y_2 - y_1}{x_2 - x_1}
-   ```
-
-4. **Midpoint of a line segment**:
-
-   ```math
-   M = \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right)
-   ```
-
-5. **Circle area**:
-
-   ```math
-   A = \pi r^2
-   ```
-
----math
 
 ### Geometry & Trigonometry
 
-6. **Volume of a sphere**:
-
-   ```math
-   V = \frac{4}{3}\pi r^3
-   ```
-
-7. **Surface area of a cylinder**:
-
-   ```math
-   A = 2\pi r h + 2\pi r^2
-   ```
-
-8. **Pythagorean theorem**:
-
-   ```math
-   c = \sqrt{a^2 + b^2}
-   ```
 
 9. **Law of cosines**:
 
@@ -64,13 +18,6 @@ Great idea 👍 — giving a new Python programmer math formulas to implement re
    c^2 = a^2 + b^2 - 2ab\cos(\gamma)
    ```
 
-10. **Convert degrees to radians**:
-
-```math
-\text{radians} = \frac{\pi}{180} \times \text{degrees}
-```
-
----
 
 ### Sequences & Series
 

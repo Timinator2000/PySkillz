@@ -25,12 +25,16 @@ except ImportError:
 
 success_message = """
 
+Q: What do you call a parallelogram who can't stop laughing?
+A: A para-LOL-ogram.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'A parallelogram is a four-sided figure with opposite sides parallel and equal. '
+success_message += 'The area is calculated as base x height. '
+success_message += 'You can think of a parallelogram as a rectangle that has been slanted — '
+success_message += 'just slide one side over without changing the area, and you have a new shape!'
+
 
 
 class ParallelogramArea(pyskillz_tools.Exercise):

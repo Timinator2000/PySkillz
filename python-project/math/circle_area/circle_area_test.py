@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the circle join the debate team?
+A: Because it wanted to expand its area of expertise.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The area of a circle is π x r², where r is the radius. '
+success_message += 'This formula dates back to the ancient Greeks, who used clever geometry to approximate it. '
+success_message += 'A neat fact: the area grows with the square of the radius, so doubling the radius makes the area four times bigger.'
 
 
 class CircleArea(pyskillz_tools.Exercise):

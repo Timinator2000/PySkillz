@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why are cubes such good friends?
+A: Because they always consider every side of the story.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The surface area of a cube is 6 x side², where “side” is the length of one edge. '
+success_message += 'This counts all six faces of the cube, since each face is a square. '
+success_message += 'Fun fact: if you double the side length, the surface area quadruples, not doubles!'
 
 
 class CubeSurfaceArea(pyskillz_tools.Exercise):

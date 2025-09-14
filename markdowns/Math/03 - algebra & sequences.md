@@ -8,7 +8,7 @@
 
 <BR>
 
-# $n$th Term of Arithmetic Sequence
+# $n$<sup>th</sup> Term of Arithmetic Sequence
 
 <BR>
 
@@ -28,7 +28,7 @@ S_n = \frac{n}{2}(2a_1 + (n-1)d)
 
 <BR>
 
-# $n$th Term of Geometric Sequence
+# $n$<sup>th</sup> Term of Geometric Sequence
 
 <BR>
 

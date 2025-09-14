@@ -16,7 +16,7 @@ try:
     import pyskillz_tools
 
 except ImportError:
-    print(f'Import Error: pyskillz_tools.py needs to be in the “____tools____” folder, one level deep from python-project.')
+    print(f"Import Error: pyskillz_tools.py needs to be in the '____tools____' folder, one level deep from python-project.")
 
 ###############################################################################################################
 # End Setup
@@ -25,30 +25,21 @@ except ImportError:
 
 success_message = """
 
-When a mathematics student graduates, do they get a degree, or a radian?
 
 """
 
-success_message += 'Degrees and radians are two ways to measure angles. '
-success_message += 'A full circle is 360° or 2π radians. '
-success_message += 'To convert from degrees to radians, multiply by π/180, '
-success_message += 'and to convert from radians to degrees, multiply by 180/π.'
+success_message += ''
+success_message += ''
+success_message += ''
 
 
-class DegreesToRadians(pyskillz_tools.Exercise):
+class UnitPrice(pyskillz_tools.Exercise):
     
     def __init__(self):
 
         super().__init__(__file__, success_message)
-        self.parameter_names = ['degrees']
-        self.num_random_test_cases = 100
-
-        # Optional Exercise Constraints
-        # self.max_statement_count =                 # Default is 10_000_000
-        # self.max_lines_of_code =                   # Default is 10_000_000
-
-        # Additional PrintBasedExercise Option
-        # self.strict_print_usage = True             # Default is False
+        self.parameter_names = ['number_of_items', 'total_cost']
+        self.num_random_test_cases = 1000
 
         self.fixed_test_cases = [
             [],
@@ -60,9 +51,9 @@ class DegreesToRadians(pyskillz_tools.Exercise):
 
 
     def generate_random_test_case(self) -> list:
-        return [random.randint(1, 1000)]
+        return [random.randint(-100, 100), random.randint(-100, 100)]
     
 
 if __name__ == "__main__":
-    exercise = DegreesToRadians()
+    exercise = UnitPrice()
     exercise.run()

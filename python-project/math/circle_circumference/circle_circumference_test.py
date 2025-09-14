@@ -25,12 +25,17 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the circle go to school?
+A: Because it wanted to be well-rounded.
+
+Q: Why did the circle break up with the line?
+A: It felt like the relationship was going nowhere.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'If you take the circumference of the Earth and divide it by its diameter, '
+success_message += 'you still get π — the same ratio as a coffee cup, a hula hoop, or a cookie. '
+success_message += 'Circles are the ultimate equalizers.'
 
 
 class CircleCircumference(pyskillz_tools.Exercise):

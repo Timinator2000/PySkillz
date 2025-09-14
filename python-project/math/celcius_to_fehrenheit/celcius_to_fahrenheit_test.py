@@ -16,7 +16,7 @@ try:
     import pyskillz_tools
 
 except ImportError:
-    print(f'Import Error: pyskillz_tools.py needs to be in the “____tools____” folder, one level deep from python-project.')
+    print(f"Import Error: pyskillz_tools.py needs to be in the '____tools____' folder, one level deep from python-project.")
 
 ###############################################################################################################
 # End Setup
@@ -25,30 +25,26 @@ except ImportError:
 
 success_message = """
 
-When a mathematics student graduates, do they get a degree, or a radian?
+Q: Why don’t Americans ever understand Celsius?
+A: Because when they try, things just heat up too quickly.
+
+Q: Why was Celsius jealous of Fahrenheit?
+A: Because Fahrenheit was getting all the hot dates.
 
 """
 
-success_message += 'Degrees and radians are two ways to measure angles. '
-success_message += 'A full circle is 360° or 2π radians. '
-success_message += 'To convert from degrees to radians, multiply by π/180, '
-success_message += 'and to convert from radians to degrees, multiply by 180/π.'
+success_message += 'The Celsius to Fahrenheit formula is F = (C x 9/5) + 32. '
+success_message += 'This means water freezes at 0°C (32°F) and boils at 100°C (212°F). '
+success_message += 'Interestingly, -40° is the same in both scales!'
 
 
-class DegreesToRadians(pyskillz_tools.Exercise):
+class CelciusToFahrenheit(pyskillz_tools.Exercise):
     
     def __init__(self):
 
         super().__init__(__file__, success_message)
-        self.parameter_names = ['degrees']
-        self.num_random_test_cases = 100
-
-        # Optional Exercise Constraints
-        # self.max_statement_count =                 # Default is 10_000_000
-        # self.max_lines_of_code =                   # Default is 10_000_000
-
-        # Additional PrintBasedExercise Option
-        # self.strict_print_usage = True             # Default is False
+        self.parameter_names = ['celcius']
+        self.num_random_test_cases = 1000
 
         self.fixed_test_cases = [
             [],
@@ -60,9 +56,9 @@ class DegreesToRadians(pyskillz_tools.Exercise):
 
 
     def generate_random_test_case(self) -> list:
-        return [random.randint(1, 1000)]
+        return [random.randint(-100, 100)]
     
 
 if __name__ == "__main__":
-    exercise = DegreesToRadians()
+    exercise = CelciusToFahrenheit()
     exercise.run()

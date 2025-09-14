@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+They say 88 percent people are bad at math. Luckily, I am among the remaining 22 percent.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'A percent is a way of expressing a number as a fraction of 100. '
+success_message += 'It is used in finance, statistics, and everyday life to compare quantities. '
+success_message += 'Fun fact: a 50% increase followed by a 50% decrease does not return you to the original number! '
+success_message += 'Percentages help us understand growth, discounts, and proportions in a clear way.'
 
 
 class PercentIncrease(pyskillz_tools.Exercise):

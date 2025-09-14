@@ -25,12 +25,16 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the man get fired from the watch factory?
+A: He just stood around all day making faces.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Before clocks, people used sundials to tell time using the sun\'s shadow. '
+success_message += 'A stick called a gnomon casts a shadow on a marked surface to show the hour. '
+success_message += 'Because the sun\'s path changes with the seasons, sundials were adjusted '
+success_message += 'to account for longer summer days and shorter winter days. '
+success_message += 'Some ancient sundials were even angled to match the latitude of the location!'
 
 
 class MinutesToHours(pyskillz_tools.Exercise):

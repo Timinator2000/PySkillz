@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why was the cube excited to study?
+A: Because it wanted to expand its volume.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The volume of a cube is side³, where “side” is the length of one edge. '
+success_message += 'This measures how much space the cube occupies. '
+success_message += 'Fun fact: if you double the side length, the volume increases eightfold!'
 
 
 class CubeVolume(pyskillz_tools.Exercise):

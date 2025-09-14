@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
+Q: What is the difference between a tube and a foolish Dutchman?
+A: One is a hollow cylinder and the other a silly Hollander.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The volume of a cylinder is π x radius² x height. '
+success_message += 'This measures how much space the cylinder occupies. '
+success_message += 'Fun fact: doubling the radius increases the volume fourfold, '
+success_message += 'and doubling the height doubles the volume.'
 
 
 class CylinderVolume(pyskillz_tools.Exercise):

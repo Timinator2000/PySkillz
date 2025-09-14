@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the point sit in the middle of the line?
+A: Because it wanted to be fair to both ends!
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The midpoint of a line segment is the point exactly halfway between the endpoints. '
+success_message += 'If the endpoints are (x₁, y₁) and (x₂, y₂), the midpoint is ((x₁ + x₂)/2, (y₁ + y₂)/2). '
+success_message += 'Finding the midpoint is like finding balance — it\'s the center of the line!'
 
 
 class LineMidpoint(pyskillz_tools.Exercise):

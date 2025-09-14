@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Did you hear about the two parallel lines that had so much in common? It's a shame they'll never meet.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The slope of a line measures how steep it is. '
+success_message += 'It is calculated as (y₂ - y₁) / (x₂ - x₁) for two points on the line. '
+success_message += 'Fun fact: positive slopes rise from left to right, '
+success_message += 'negative slopes fall from left to right, and zero slope is perfectly flat!'
 
 
 class LineSlope(pyskillz_tools.Exercise):

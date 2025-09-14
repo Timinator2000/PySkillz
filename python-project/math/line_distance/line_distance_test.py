@@ -25,12 +25,18 @@ except ImportError:
 
 success_message = """
 
+Q: What\'s it called when a King and Queen have no children?
+A: A receding heir line...
+
+Q: What do you call 100 rabbits walking backwards?
+A: A receding hare line.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The distance between two points in a plane can be found using the formula: '
+success_message += '√((x₂ - x₁)² + (y₂ - y₁)²), where (x₁, y₁) and (x₂, y₂) are the points. '
+success_message += 'Fun fact: this formula comes from the Pythagorean theorem, '
+success_message += 'and it works in any number of dimensions!'
 
 
 class LineDistance(pyskillz_tools.Exercise):

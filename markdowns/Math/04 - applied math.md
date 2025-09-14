@@ -1,3 +1,33 @@
+# Hourly Rate
+
+<BR>
+
+```math
+\text{hourly rate} = \frac{\text{wages}}{\text{hours}}
+```
+
+<BR>
+
+# Unit Price (Cost per Item)
+
+<BR>
+
+```math
+\text{unit price} = \frac{\text{total cost}}{\text{number of items}}
+```
+
+<BR>
+
+# Density
+
+<BR>
+
+```math
+\text{density} = \frac{\text{mass}}{\text{volume}}
+```
+
+<BR>
+
 # Simple Interest
 
 <BR>

@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why was the math book always calm?
+A: Because it knew how to deal with its mean problems.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The average (mean) of a list is like the balance point: '
+success_message += 'if each number were a weight on a seesaw, the average is where the seesaw would balance. '
+success_message += 'That’s why the mean is sometimes called the “balance point” of data.'
 
 
 class Average(pyskillz_tools.Exercise):

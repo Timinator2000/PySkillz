@@ -25,12 +25,17 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the second break up with the minute?
+A: Because it felt like the relationship was moving too slowly.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Hours, minutes, and seconds are units of time. '
+success_message += 'One hour has 60 minutes, and one minute has 60 seconds. '
+success_message += 'Fun fact: there are 86,400 seconds in a day, '
+success_message += 'about 31.5 million seconds in a year, and roughly 2.5 billion '
+success_message += 'seconds in an average human life. '
+success_message += 'So don\'t tell me you don\'t have time to practice Python!'
 
 
 class HoursAndMinutesToSeconds(pyskillz_tools.Exercise):

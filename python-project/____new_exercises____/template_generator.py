@@ -30,7 +30,7 @@ import shutil
 
 ###########################
 
-function_signature = "def probability(favorable: int, total: int) -> float:"
+function_signature = "def density(mass: int, volume: int) -> float:"
 
 ###########################
 

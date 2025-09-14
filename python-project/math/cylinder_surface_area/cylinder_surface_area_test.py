@@ -25,12 +25,17 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the cylinder open a dance studio?
+A: To show everyone how to roll with style.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The surface area of a cylinder is 2 x π x radius x height '
+success_message += '+ 2 x π x radius². '
+success_message += 'The first term is the lateral area, and the second term '
+success_message += 'covers the top and bottom circles. '
+success_message += 'Fun fact: doubling the radius quadruples the surface area, '
+success_message += 'and doubling the height doubles the lateral area.'
 
 
 class CylinderSurfaceArea(pyskillz_tools.Exercise):
