@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
+Q: What did the tilted square say when it sneezed?
+A: Askew.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+
+success_message += 'The area of a square is calculated as side × side (or side²). '
+success_message += 'Fun fact: squares are everywhere in architecture, design, and tiling because '
+success_message += 'they easily fit together without gaps, maximizing usable space.'
 
 
 class SquareArea(pyskillz_tools.Exercise):

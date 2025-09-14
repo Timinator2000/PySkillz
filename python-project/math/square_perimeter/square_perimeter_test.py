@@ -25,12 +25,14 @@ except ImportError:
 
 success_message = """
 
+Q: Why did the square go to therapy?
+A: Because it felt a little boxed in.
 
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'The perimeter of a square is the total distance around it. '
+success_message += 'The formula is 4 x side. Fun fact: knowing the '
+success_message += 'perimeter helps in fencing, framing, or designing any square-shaped area.'
 
 
 class SquarePerimeter(pyskillz_tools.Exercise):

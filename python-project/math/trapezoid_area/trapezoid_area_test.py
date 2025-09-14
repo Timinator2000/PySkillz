@@ -25,12 +25,16 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'A trapezoid has four sides, but only one pair of opposite sides is parallel. '
+success_message += 'Squares have all sides equal and opposite sides parallel, making them a special case of rectangles. '
+success_message += '\n\n'
+success_message += 'Fun fact: trapezoids are common in roof designs, bridges, and ramps. '
+success_message += 'Their slanted sides allow forces to be distributed more efficiently, '
+success_message += 'reducing stress at key points and allowing structures to bear heavier loads. '
+success_message += 'This makes trapezoidal shapes ideal in engineering, where both stability and '
+success_message += 'material efficiency are crucial.'
 
 
 class TrapezoidArea(pyskillz_tools.Exercise):

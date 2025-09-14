@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Triangles are a key shape in construction and engineering because they are inherently stable. '
+success_message += 'Unlike rectangles or other polygons, a triangle cannot be deformed without changing the length '
+success_message += 'of its sides. This makes them ideal for trusses, bridges, roofs, and scaffolding. '
+success_message += '\n\n'
+success_message += 'Fun fact: the famous Eiffel Tower relies heavily on triangular supports to maintain strength '
+success_message += 'while minimizing material. Triangles distribute weight evenly and resist bending, '
+success_message += 'which is why engineers use them extensively in both modern and historic architecture.'
 
 
 class TriangleArea(pyskillz_tools.Exercise):

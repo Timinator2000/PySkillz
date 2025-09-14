@@ -25,12 +25,15 @@ except ImportError:
 
 success_message = """
 
-
 """
 
-success_message += ''
-success_message += ''
-success_message += ''
+success_message += 'Unit price is the cost per single unit of a product, like per item, per kilogram, '
+success_message += 'or per liter. It helps compare prices between different sizes or brands. '
+success_message += '\n\n'
+success_message += 'Fun fact: savvy shoppers use unit price to find the best deal, '
+success_message += 'even if a larger package looks cheaper upfront. '
+success_message += 'Understanding unit price is also important in business, manufacturing, and budgeting, '
+success_message += 'because it allows accurate cost comparisons and resource planning.'
 
 
 class UnitPrice(pyskillz_tools.Exercise):
