@@ -22,15 +22,13 @@ except ImportError:
 # End Setup
 ###############################################################################################################
 
-import shutil
-
 
 # Enter a funciton signaure for the new exercise and run this script. A full set of 
 # template files will be created in the '____new_exercises____' folder.
 
 ###########################
 
-function_signature = "def density(mass: int, volume: int) -> float:"
+function_signature = "def hello_world_3x() -> None:"
 
 ###########################
 

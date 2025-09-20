@@ -1,4 +1,4 @@
-# Last Edited: Sept 13, 2025 2:59pm
+# Last Edited: Sept 15, 2025 11:37pm
 
 from copy import deepcopy
 from collections import namedtuple, Counter, defaultdict
@@ -262,7 +262,7 @@ class Exercise(TechioInteraction):
                     f'   parameter names     = {len(self.parameter_names)}\n' + \
                     f'   test case arguments = {len(test_case)}'
         
-        length = max(len(name) for name in self.parameter_names)
+        length = max([len(name) for name in self.parameter_names] + [0])
 
         strings = []
         for name, value in zip(self.parameter_names, test_case):
