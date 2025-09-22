@@ -29,7 +29,7 @@ plan:
   - title: List Comprehensions
     plan:
       - title: Exercises
-  #       statement: markdowns/08 - list comprehensions/list comprehension.md
+        statement: markdowns/08 - list comprehensions/list comprehension.md
   # - title: Working with Grids
   #   plan:
   #     - title: Work
