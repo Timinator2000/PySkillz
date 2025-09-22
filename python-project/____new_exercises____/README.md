@@ -3,7 +3,7 @@
 1. Find the following code in `template_generator.py`:
 
     ```python
-    function_signature = "def exercise_name(param1: str, param2:int) -> None:"
+    function_signature = "def exercise_name(param1: str, param2: int) -> None:"
     ```
 
 2. Change the function signature to accomodate your new exercise.
