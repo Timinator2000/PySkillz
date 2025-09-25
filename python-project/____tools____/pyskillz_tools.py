@@ -331,6 +331,14 @@ class Exercise(TechioInteraction):
 
     def check_additonal_solution_criteria(self):
         return ''
+    
+
+    def display_success_message(self):
+        self.send_multiline_text(self.success_channel, self.success_message)
+
+
+    def display_solution(self):
+        self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
 
 
     def run(self):
@@ -365,8 +373,8 @@ class Exercise(TechioInteraction):
             return
 
         self.success()
-        self.send_multiline_text(self.success_channel, self.success_message)
-        self.send_multiline_text(self.solution_channel, self.suggested_solution_text)
+        self.display_success_message()
+        self.display_solution()
 
 
 IOEvent = namedtuple('Event', ['type', 'text', 'line_count'])

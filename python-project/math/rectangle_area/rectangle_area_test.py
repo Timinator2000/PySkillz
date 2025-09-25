@@ -60,6 +60,10 @@ class RectangleArea(pyskillz_tools.Exercise):
         ]
 
 
+    def display_success_message(self):
+        self.send_multiline_text(self.bug_channel, 'I changed this.')
+
+
     def generate_random_test_case(self) -> list:
         return [random.randint(1, 1000), random.randint(1, 1000)]
     
