@@ -31,11 +31,11 @@ class CodeAnalyzer(pyskillz_tools.TechioInteraction):
 
     def run(self):
         # summary = self.code_analysis
-        money_channel = pyskillz_tools.Channel(f'Show Me the Money 💲', '$$$💲>')
+        money_channel = pyskillz_tools.Channel(f'Lines of Code and Python Statements #️⃣', 'LOC#️⃣>')
         summary_channel = pyskillz_tools.Channel(f'Code Summary 🤔', 'Sum🤔>')
         details_channel = pyskillz_tools.Channel(f'Detailed Statement Breakdown (Nested) 🔍', 'Det🔍>')
 
-        self.send_multiline_text(money_channel, self.get_code_analysis('stats'))
+        self.send_multiline_text(money_channel, self.get_code_analysis('basic_stats'))
         self.send_multiline_text(summary_channel, self.get_code_analysis('summary'))
         self.send_multiline_text(details_channel, self.get_code_analysis('details'))
 
