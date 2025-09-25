@@ -28,7 +28,7 @@ except ImportError:
 
 ###########################
 
-function_signature = "def hello_world_3x() -> None:"
+function_signature = "def hello_world_3x_restricted_loc() -> None:"
 
 ###########################
 
