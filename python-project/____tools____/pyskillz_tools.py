@@ -1,4 +1,4 @@
-# Last Edited: Sept 15, 2025 11:37pm
+# Last Edited: Sept 25, 2025 4:24am
 
 from copy import deepcopy
 from collections import namedtuple, Counter, defaultdict
@@ -219,7 +219,7 @@ class TechioInteraction():
                 text.append("  (none)")
 
             text.append('')
-            text.append("Statements sKipped:")
+            text.append("Statements Skipped:")
 
             length = 0 if not skipped else max(len(key) for key in skipped)
             for cat, n in skipped.items():
