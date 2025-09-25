@@ -188,6 +188,76 @@ class TechioInteraction():
         }
 
 
+    def get_code_analysis(self, level_of_detail):
+
+        categories = self.code_analysis["categories"]
+        kept = self.code_analysis["kept"]
+        skipped = self.code_analysis["skipped"]
+
+        text = []
+        if level_of_detail == 'basic_stats':
+
+            text.append(f"Lines of Code : {self.code_analysis['effective_code_lines']}")
+            text.append(f"Statements    : {self.code_analysis['total_count']}")
+
+        elif level_of_detail == 'summary':
+
+            text.append(f"Total Lines     : {self.code_analysis['total_lines']}")
+            text.append(f"Non-Blank Lines : {self.code_analysis['non_blank_lines']}")
+            text.append(f"Comment Lines   : {self.code_analysis['comment_lines']}")
+            text.append(f"Effective Code  : {self.code_analysis['effective_code_lines']}")
+
+            text.append('')
+            text.append("Summary of Statement Categories")
+            text.append("---------------- ----------------")
+            text.append("Statements Kept (Counted):")
+            
+            length = 0 if not kept else max(len(key) for key in kept)
+            for cat, n in kept.items():
+                text.append(f"  {cat:{length}} : {n}")
+            if not kept:
+                text.append("  (none)")
+
+            text.append('')
+            text.append("Statements sKipped:")
+
+            length = 0 if not skipped else max(len(key) for key in skipped)
+            for cat, n in skipped.items():
+                text.append(f"  {cat:{length}} : {n}")
+            if not skipped:
+                text.append("  (none)")
+
+            text.append('')
+            text.append("Summary Totals:")
+            text.append(f"  Total Statements Found : {len(categories)}")
+            text.append(f"  Counted Statements     : {self.code_analysis['total_count']}")
+            text.append(f"  Skipped Statements     : {len(categories) - self.code_analysis['total_count']}")
+            text.append('')
+            text.append(f"Final Statement Count    : {self.code_analysis['total_count']}")
+
+        elif level_of_detail == 'details':
+
+            text.append("Detailed Statement Breakdown (Nested)")
+            text.append("-------------------------------------")
+            for node, cat, keep, depth in sorted(categories, key=lambda x: getattr(x[0], "lineno", 0)):
+                lineno = getattr(node, "lineno", None)
+                lineinfo = f"line {lineno}" if lineno is not None else "no line"
+                status = "COUNTED" if keep else "SKIPPED"
+
+                snippet = ""
+                if lineno is not None:
+                    try:
+                        snippet = self.code_analysis['source'].splitlines()[lineno - 1].strip()
+                    except IndexError:
+                        snippet = "<source unavailable>"
+
+                indent = "    " * depth
+                text.append(f"{indent}{lineinfo:>8} | {cat:<25} | {status:<7} | {snippet}")
+
+        return '\n'.join(text)
+
+
+
 class Exercise(TechioInteraction):
     
     PRINT_TEST_CASES = False

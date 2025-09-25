@@ -44,13 +44,6 @@ class RectangleArea(pyskillz_tools.Exercise):
         self.parameter_names = ['length', 'width']
         self.num_random_test_cases = 1000
 
-        # Optional Exercise Constraints
-        # self.max_statement_count =                 # Default is 10_000_000
-        # self.max_lines_of_code =                   # Default is 10_000_000
-
-        # Additional PrintBasedExercise Option
-        # self.strict_print_usage = True             # Default is False
-
         self.fixed_test_cases = [
             [1, 1],
             [5, 2],
@@ -58,10 +51,6 @@ class RectangleArea(pyskillz_tools.Exercise):
             [0, 3],
             [0, 0]
         ]
-
-
-    def display_success_message(self):
-        self.send_multiline_text(self.bug_channel, 'I changed this.')
 
 
     def generate_random_test_case(self) -> list:
