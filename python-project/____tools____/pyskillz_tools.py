@@ -1,4 +1,4 @@
-# Last Edited: Sept 25, 2025 5:56am
+# Last Edited: Sept 29, 2025 6:21am
 
 from copy import deepcopy
 from collections import namedtuple, Counter, defaultdict
@@ -291,6 +291,10 @@ class Exercise(TechioInteraction):
             self.suggested_solution_text = f.read()
 
 
+    def pluralize(self, count: int, label: str) -> str:
+        return f'{count} {label}' + ('s' if count != 1 else '')
+    
+
     def container_element_types(self, container) -> str:
         element_types = {self.data_type(element) for element in container}
         
@@ -433,14 +437,32 @@ class Exercise(TechioInteraction):
             self.fail()
             self.display_first_failed_test_case()
             return
+        
+        error_msg = ''
+        learner_loc = self.code_analysis['effective_code_lines']
+        if learner_loc > self.max_lines_of_code:
+            learner_loc_string = self.pluralize(learner_loc, 'line')
+            max_loc_string = self.pluralize(self.max_lines_of_code, 'line')
+            error_msg = f'Your code has {learner_loc_string} of code. To successsfully pass this exercise, '
+            error_msg += f'your code must be no more than {max_loc_string} of code.'
+
+        if not error_msg:
+            learner_statement_count = self.code_analysis['total_count']
+            if learner_statement_count > self.max_statement_count:
+                learner_statement_count_string = self.pluralize(learner_statement_count, 'Python statement')
+                max_statement_count_string = self.pluralize(self.max_statement_count, 'Python statement')
+                error_msg = f'Your code has {learner_statement_count_string}. To successsfully pass this exercise, '
+                error_msg += f'your code must use no more than {max_statement_count_string}.'
                 
-        error_msg = self.check_additonal_solution_criteria()
+        if not error_msg:
+            error_msg = self.check_additonal_solution_criteria()
+
         if error_msg:
             self.fail()
 
             msg = 'You have passed all test cases. However, your '
             msg += 'code does not meet all the required criteria.\n\n' + error_msg
-            self.send_multiline_text(self.success_channel, msg)
+            self.send_multiline_text(self.bug_channel, msg)
             return
 
         self.success()
@@ -483,6 +505,10 @@ class IOLog:
                 return
             
         self.events.append(IOEvent(_type, text, line_count))
+
+
+    def num_lines_printed(self):
+        return sum(event.line_count for event in self.events if event.type == 'print')
 
 
     def full_output(self):
@@ -543,12 +569,12 @@ class PrintBasedExercise(Exercise):
         expected_answer = [] if not expected_answer_string else expected_answer_string.split('\n')
         user_answer = [] if not user_answer_string else user_answer_string.split('\n')
 
-        num_expected_lines = len(expected_answer)
-        num_user_lines = len(user_answer)
+        num_expected_lines = expected_io_log.num_lines_printed()
+        num_user_lines = user_io_log.num_lines_printed()
         verb = 'was' if num_expected_lines == 1 else 'were'
 
-        expected_lines_str = f'{num_expected_lines} line' + ('s' if num_expected_lines != 1 else '')
-        user_lines_str = f'{num_user_lines} line' + ('s' if num_user_lines != 1 else '')
+        expected_lines_str = self.pluralize(num_expected_lines, 'line')
+        user_lines_str = self.pluralize(num_user_lines, 'line')
 
         msg = ''
         if num_user_calls_to_print > 0 and self.strict_print_usage and num_expected_calls_to_print != num_user_calls_to_print:
@@ -562,6 +588,9 @@ class PrintBasedExercise(Exercise):
 
         if num_user_lines == 0:
             msg += f'You did not print anything. {expected_lines_str} of printed output {verb} expected.\n'
+
+        elif num_expected_lines == 0:
+            msg += f'No lines of printed output were expected. You printed {user_lines_str}.\n'
 
         elif expected_answer != user_answer:
             msg += ('\n' if msg else '') + 'First Failed Test Case:\n\n'

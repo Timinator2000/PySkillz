@@ -1,6 +1,6 @@
 # Exercise #1: Start to Finish
 
-Create a function that prints all integers between, and including the two integers given.
+Write a function that prints all integers from `start` up to and including `finish`, each on a new line.
 
 Example:
 
@@ -23,7 +23,7 @@ Expected Output:
 
 # Exercise #2: Start to Finish on One Line
 
-Create a function that prints all integers between, and including the two integers given, on a single line.
+Write a function that prints all integers from `start` up to and including `finish`, on a single line, separated by spaces.
 
 Example:
 
