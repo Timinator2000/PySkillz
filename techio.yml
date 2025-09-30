@@ -15,10 +15,12 @@ plan:
 
 
 
-  # - title: Math
-    # plan:
-    #   - title: Basic Arithmetic 01
-    #     statement: markdowns/Math/01 - basic arithmetic 01.md
+  - title: Math
+    plan:
+      - title: Basic Arithmetic 01
+        statement: markdowns/Math/01 - basic arithmetic 01.md
+      - title: Basic Arithmetic 02
+        statement: markdowns/Math/02 - basic arithmetic 02.md
   - title: Loops
     plan:
       - title: Basic Loops

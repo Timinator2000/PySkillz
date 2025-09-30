@@ -43,20 +43,7 @@ class CircleArea(pyskillz_tools.Exercise):
         self.parameter_names = ['radius']
         self.num_random_test_cases = 100
 
-        # Optional Exercise Constraints
-        # self.max_statement_count =                 # Default is 10_000_000
-        # self.max_lines_of_code =                   # Default is 10_000_000
-
-        # Additional PrintBasedExercise Option
-        # self.strict_print_usage = True             # Default is False
-
-        self.fixed_test_cases = [
-            [],
-            [],
-            [],
-            [],
-            []
-        ]
+        self.fixed_test_cases = [[i] for i in range(1, 6)]
 
 
     def generate_random_test_case(self) -> list:

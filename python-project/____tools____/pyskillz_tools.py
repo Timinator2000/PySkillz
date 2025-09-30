@@ -1,4 +1,4 @@
-# Last Edited: Sept 29, 2025 6:21am
+# Last Edited: Sept 30, 2025 12:44pm
 
 from copy import deepcopy
 from collections import namedtuple, Counter, defaultdict
@@ -270,6 +270,7 @@ class Exercise(TechioInteraction):
         self.num_random_test_cases = 0
         self.success_message = success_message.strip()
         self.first_failed_test_case = None
+        self.floating_point_precision = 2
 
         self.solution_channel = Channel('Suggested Solution ✅', 'Sol✅>')
 
@@ -386,7 +387,13 @@ class Exercise(TechioInteraction):
 
         expected_answer = self.generate_answer(self.suggested_solution, test_case)
         user_answer = self.generate_answer(self.user_solution, test_case)
-            
+
+        if type(expected_answer) == float:
+            expected_answer = round(expected_answer, self.floating_point_precision)
+
+        if type(user_answer) == float:
+            user_answer = round(user_answer, self.floating_point_precision)
+
         expected_answer_format = self.data_type(expected_answer)
         user_answer_format = self.data_type(user_answer)
 
@@ -403,7 +410,7 @@ class Exercise(TechioInteraction):
         return True
 
 
-    def check_additonal_solution_criteria(self):
+    def check_additional_solution_criteria(self):
         return ''
     
 
@@ -443,25 +450,25 @@ class Exercise(TechioInteraction):
         if learner_loc > self.max_lines_of_code:
             learner_loc_string = self.pluralize(learner_loc, 'line')
             max_loc_string = self.pluralize(self.max_lines_of_code, 'line')
-            error_msg = f'Your code has {learner_loc_string} of code. To successsfully pass this exercise, '
-            error_msg += f'your code must be no more than {max_loc_string} of code.'
+            error_msg = f'Your solution has {learner_loc_string} of code. To successsfully pass this exercise, '
+            error_msg += f'your solution must be no more than {max_loc_string} of code.'
 
         if not error_msg:
             learner_statement_count = self.code_analysis['total_count']
             if learner_statement_count > self.max_statement_count:
                 learner_statement_count_string = self.pluralize(learner_statement_count, 'Python statement')
                 max_statement_count_string = self.pluralize(self.max_statement_count, 'Python statement')
-                error_msg = f'Your code has {learner_statement_count_string}. To successsfully pass this exercise, '
-                error_msg += f'your code must use no more than {max_statement_count_string}.'
+                error_msg = f'Your solution has {learner_statement_count_string}. To successsfully pass this exercise, '
+                error_msg += f'your solution must use no more than {max_statement_count_string}.'
                 
         if not error_msg:
-            error_msg = self.check_additonal_solution_criteria()
+            error_msg = self.check_additional_solution_criteria()
 
         if error_msg:
             self.fail()
 
             msg = 'You have passed all test cases. However, your '
-            msg += 'code does not meet all the required criteria.\n\n' + error_msg
+            msg += 'solution does not meet all the required criteria.\n\n' + error_msg
             self.send_multiline_text(self.bug_channel, msg)
             return
 
@@ -578,13 +585,13 @@ class PrintBasedExercise(Exercise):
 
         msg = ''
         if num_user_calls_to_print > 0 and self.strict_print_usage and num_expected_calls_to_print != num_user_calls_to_print:
-            word_expected = 'time' if num_expected_calls_to_print == 1 else 'times'
-            word_user = 'time' if num_user_calls_to_print == 1 else 'times'
+            expected_times_str = self.pluralize(num_expected_calls_to_print, 'time')
+            learner_times_str = self.pluralize(num_user_calls_to_print, 'time')
             
             if expected_answer_string == user_answer_string:
-                msg += 'The text you output is correct. However...\n'
-            msg += f"Your code called 'print' {num_user_calls_to_print} {word_user}. "
-            msg += f"The grader called 'print' {num_expected_calls_to_print} {word_expected}.\n"
+                msg += 'The text you output is correct. However...\n\n'
+            msg += f"Your solution called 'print' {learner_times_str}. "
+            msg += f"The grader called 'print' {expected_times_str}.\n"
 
         if num_user_lines == 0:
             msg += f'You did not print anything. {expected_lines_str} of printed output {verb} expected.\n'
