@@ -64,7 +64,7 @@ class LineDistance(pyskillz_tools.Exercise):
 
     def test_case_to_string(self, test_case) -> str:
         x1, y1, x2, y2 = test_case
-        return f'(x1, y1) = ({x1}, {y1})\n(x2, y2) = ({x2}, {y2})'
+        return f'(x1, y1) = {(x1, y1)}\n(x2, y2) = {(x2, y2)}'
 
 
     def generate_random_test_case(self) -> list:

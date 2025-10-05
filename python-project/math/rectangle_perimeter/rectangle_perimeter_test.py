@@ -42,13 +42,6 @@ class RectanglePerimeter(pyskillz_tools.Exercise):
         self.parameter_names = ['length', 'width']
         self.num_random_test_cases = 1000
 
-        # Optional Exercise Constraints
-        # self.max_statement_count =                 # Default is 10_000_000
-        # self.max_lines_of_code =                   # Default is 10_000_000
-
-        # Additional PrintBasedExercise Option
-        # self.strict_print_usage = True             # Default is False
-
         self.fixed_test_cases = [
             [],
             [],
