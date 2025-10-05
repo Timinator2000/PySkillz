@@ -107,4 +107,3 @@ Expected Output:
 ************
 
 [![Skillz Catalog](../../graphics/PySkillzFooter.png)](skillz-catalog)
-
