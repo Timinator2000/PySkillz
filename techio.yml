@@ -8,10 +8,10 @@ plan:
         statement: markdowns/01 - introduction/01 - welcome.md
       # - title: Testing
       #   statement: markdowns/01 - introduction/testing.md
-  #     - title: Overview
-  #       statement: markdowns/01 - introduction/02 - overview.md
-  #     - title: Topic Catalog
-  #       statement: markdowns/01 - introduction/03 - skillz catalog.md
+      - title: Overview
+        statement: markdowns/01 - introduction/02 - overview.md
+      - title: Topic Catalog
+        statement: markdowns/01 - introduction/03 - skillz catalog.md
 
 
 
