@@ -1,7 +1,4 @@
 import math
 
 def speed(distance: int, time: int) -> float:
-    
-    # Your code goes here.
-    
-    return
+    return # Your code goes here.
