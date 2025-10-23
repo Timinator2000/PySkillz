@@ -15,16 +15,21 @@ plan:
 
 
 
-  - title: Loops
-    plan:
-      - title: Basic Loops
-        statement: markdowns/05 - loops/loops-basic.md
-      # - title: Nested Loops
-      #   statement: markdowns/05 - loops/loops-nested.md
   - title: Math
     plan:
       - title: Basic Arithmetic 01
         statement: markdowns/Math/01 - basic arithmetic 01.md
+  - title: Loops
+    plan:
+      - title: Basic Loops
+        statement: markdowns/05 - loops/loops-basic.md
+      - title: Nested Loops
+        statement: markdowns/05 - loops/loops-nested.md
+  - title: List Comprehensions
+    plan:
+      - title: Exercises
+        statement: markdowns/08 - list comprehensions/list comprehension.md
+
       # - title: Basic Arithmetic 02
       #   statement: markdowns/Math/01 - basic arithmetic 02.md
 
@@ -34,10 +39,6 @@ plan:
   #   plan:
   #     - title: Basic Set Operations
   #       statement: markdowns/04 - sets/basic set operations.md
-  - title: List Comprehensions
-    plan:
-      - title: Exercises
-        statement: markdowns/08 - list comprehensions/list comprehension.md
   # - title: Working with Grids
   #   plan:
   #     - title: Work

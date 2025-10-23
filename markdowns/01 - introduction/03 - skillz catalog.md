@@ -1,10 +1,11 @@
 # For the Brand New Beginner
 
-* [Coding for Kids: Python](coding-for-kids) by Adrienne B. Tacke
-* [Python Programming for the Humanities](python-for-humanities) by Folgert Karsdorp
+* **Coding for Kids: Python** LINK NEEDED by Adrienne B. Tacke
+* **Python Programming for the Humanities** LINK NEEDED by Folgert Karsdorp
 
 # Skill Building
 
+* [Math](basic-arithmetic-01)
 * [Loops](basic-loops)
 * [Nested Loops](nested-loops)
 * While Loops
