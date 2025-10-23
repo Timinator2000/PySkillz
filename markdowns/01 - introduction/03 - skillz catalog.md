@@ -6,10 +6,10 @@
 # Skill Building
 
 * [Math](basic-arithmetic-01)
-* [Loops](basic-loops)
+* [Loops](basic-loops-instruction)
 * [Nested Loops](nested-loops)
 * While Loops
-* [List Comprehensions](exercises)
+* [List Comprehensions](list-comprehsions-instruction)
 
 # Multi-Skill Exercises
 

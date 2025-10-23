@@ -21,12 +21,16 @@ plan:
         statement: markdowns/Math/01 - basic arithmetic 01.md
   - title: Loops
     plan:
+      - title: Instruction
+        statement: markdowns/05 - loops/loops-basic instruction.md
       - title: Basic Loops
         statement: markdowns/05 - loops/loops-basic.md
       - title: Nested Loops
         statement: markdowns/05 - loops/loops-nested.md
   - title: List Comprehensions
     plan:
+      - title: Instruction
+        statement: markdowns/08 - list comprehensions/list comprehension instruction.md
       - title: Exercises
         statement: markdowns/08 - list comprehensions/list comprehension.md
 
